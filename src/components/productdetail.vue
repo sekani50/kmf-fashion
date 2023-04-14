@@ -1,7 +1,9 @@
 <!-- eslint-disable -->
 <template>
-    <div class="w-[97%] sm:w-[95%] mx-auto p-2 sm:p-6 space-y-[5%] ">
-    <P class="text-gray-300 sm:text-2xl text-lg font-medium">Explore Products</P>
+  <div class="w-[97%] sm:w-[95%] mx-auto p-2 sm:p-6 space-y-[5%]">
+    <P class="text-gray-300 sm:text-2xl text-lg font-medium"
+      >Exploring Products</P
+    >
 
     <div
       class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-[70px] text-gray-300"
@@ -20,17 +22,18 @@
             />
           </div>
           <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-            <p
-              class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]"
-            >
+            <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
               {{ item.name }}
             </p>
             <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
               {{ item.description }}
             </p>
             <div class="w-full mx-auto">
-              <a href="https://wa.me/2348193667165" class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black">Explore</a>
-
+              <a
+                href="https://wa.me/2348193667165"
+                class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
+                >Explore</a
+              >
             </div>
           </div>
         </div>
@@ -41,19 +44,17 @@
 <!--eslint-disable-->
 <script>
 /* eslint-disable */
-import { featuredImages } from '@/assets/svgimages';
+import { featuredImages } from "@/assets/svgimages";
 
 export default {
-  name: "ExploreProducts",
+  name: "ExploredProducts",
 
   data() {
     return {
-      arr:featuredImages
+      arr: featuredImages,
     };
   },
-  mounted() {
-  
-  }
+  mounted() {},
 };
 </script>
 
