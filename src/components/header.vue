@@ -9,7 +9,7 @@
   <div class="rounded-full h-4 w-4 sm:h-8 sm:w-8 bg-[#f0e68c] relative">
     <span class="absolute h-[105%] w-1 sm:w-2 transform rotate-45 top-[-4px] right-1/2 bg-[#1E1E1E]"></span>
   </div>
-   <p class="name text-[#f0e68c] text-2xl sm:text-4xl font-medium">KMF</p>
+   <p class="name text-[#f0e68c] text-2xl sm:text-4xl font-medium">KMY</p>
    <p class="other-name text-[#f0e68c] text-xl sm:text-3xl font-medium">Fashion Avenue</p>
   </div>
   </router-link>

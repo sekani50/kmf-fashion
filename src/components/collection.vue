@@ -29,7 +29,9 @@
               {{ item.description }}
             </p>
             <div class="w-full mx-auto">
-              <a href="https://wa.me/2348193667165?text=https://kmf-fashion.vercel.app/product" class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black">Explore</a>
+              <button
+              @click="sendMessage"
+              class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black">Explore</button>
 
             </div>
           </div>
@@ -51,7 +53,10 @@ export default {
       arr:featuredImages
     };
   },
-  mounted() {
+  methods: {
+    sendMessage() {
+      
+    }
   
   }
 };
