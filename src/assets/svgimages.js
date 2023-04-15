@@ -101,42 +101,42 @@ export const featuredImages = [
     id: 1,
     image:
       "https://www.nairaland.com/attachments/8391361_images75_jpeg914aebd22bee5a6bf053cb8410e9fdc8",
-    name: "lorem ipsom",
+    name: "lorem ipsom F",
     description:"lorem ipsom the nsp isre dsd lorem ipsum"
   },
   {
     id: 3,
     image:
       "https://ankarafashion.com.ng/wp-content/uploads/2018/05/lace-styles-104.jpg",
-    name: "lorem ipsom",
+    name: "lorem ipsom A",
     description:"lorem ipsom the nsp isre dsd lorem ipsum"
   },
   {
     id: 4,
     image:
       "https://netstorage-legit.akamaized.net/images/7556ff5b83686996.png",
-    name: "lorem ipsom",
+    name: "lorem ipsom B",
     description:"lorem ipsom the nsp isre dsd lorem ipsum"
   },
   {
     id: 5,
     image:
       "https://netstorage-legit.akamaized.net/images/b4b6296119b316b5.jpg?imwidth=900",
-    name: "lorem ipsom",
+    name: "lorem ipsom C",
     description:"lorem ipsom the nsp isre dsd lorem ipsum"
   },
   {
     id: 2,
     image:
       "https://maboplus.com/wp-content/uploads/2020/07/latest-asoebi-lace-styles-12.jpg",
-    name: "lorem ipsum",
+    name: "lorem ipsum D",
     description:"lorem ipsom the nsp isre dsd lorem ipsum"
   },
   {
     id: 6,
     image:
       "https://i.pinimg.com/originals/eb/62/27/eb622732c15059044e4348bcc48e5024.jpg",
-    name: "lorem ipsom",
+    name: "lorem ipsom E",
     description:"lorem ipsom the nsp isre dsd lorem ipsum"
   },
 ];

@@ -6,9 +6,10 @@
  <div class="px-[5%] sm:py-4 py-3 w-full flex items-center justify-between">
   <router-link to="/">
     <div class="flex items-center space-x-2">
-  <div class="rounded-full h-4 w-4 sm:h-8 sm:w-8 bg-[#f0e68c] relative">
-    <span class="absolute h-[105%] w-1 sm:w-2 transform rotate-45 top-[-4px] right-1/2 bg-[#1E1E1E]"></span>
-  </div>
+      <div class="rounded-full h-6 w-6 sm:h-8 sm:w-8 border  border-[#f0e68c]">
+      <img src="@/assets/images/logoB.png" class="ml-[2px] mt-[2px] rounded-full w-full h-full object-cover" alt="l"/>
+
+      </div>
    <p class="name text-[#f0e68c] text-2xl sm:text-4xl font-medium">KMY</p>
    <p class="other-name text-[#f0e68c] text-xl sm:text-3xl font-medium">Fashion Avenue</p>
   </div>

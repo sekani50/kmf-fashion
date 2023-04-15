@@ -10,17 +10,17 @@
         to="/product"
         class="relative group sm:col-span-2 sm:row-span-2 bg-orange-200 rounded-md"
       >
-        <div class="flex justify-center w-full h-full">
+        <div class="flex justify-center w-full h-full overflow-hidden">
           <div
             class="absolute top-6 left-4 flex flex-col justify center items-center"
           >
-            <span class="other-name text-lg sm:text-xl">Trending Now</span>
+            <span class="other-name text-lg sm:text-xl">Muslim Wears</span>
             <button class="other-name text-lg sm:text-xl border-b border-black">
               Explore
             </button>
           </div>
           <img
-            class="object-cover transform duration-200 group-hover:scale-105 w-full h-full"
+            class="object-cover transform duration-200 group-hover:scale-105  w-full h-full"
             src="@/assets/images/first.png"
           />
         </div>
@@ -29,23 +29,23 @@
         to="/product"
         class="rounded-md group relative bg-yellow-200"
       >
-        <div class="flex justify-center w-full h-full">
+        <div class="flex justify-center w-full h-full overflow-hidden">
           <div
             class="absolute top-6 left-4 flex flex-col justify center items-center"
           >
-            <span class="other-name text-lg">Lace Styles</span>
+            <span class="other-name text-lg">Owanbe Styles</span>
             <button class="other-name text-lg border-b border-black">
               Explore
             </button>
           </div>
           <img
             class="object-cover duration-200 group-hover:scale-105 w-full h-full"
-            src="@/assets/images/lacerf.png"
+            src="@/assets/images/owanbe.png"
           />
         </div>
       </router-link>
       <router-link to="/product" class="relative group rounded-md bg-amber-300">
-        <div class="flex justify-center w-full h-full">
+        <div class="flex justify-center w-full h-full overflow-hidden">
           <div
             class="absolute top-6 left-4 flex flex-col justify center items-center"
           >
@@ -60,35 +60,35 @@
           />
         </div>
       </router-link>
-      <router-link to="/product" class="relative group rounded-md bg-slate-300">
-        <div class="flex justify-center w-full h-full">
+      <router-link to="/product" class="relative group rounded-md bg-blue-200">
+        <div class="flex justify-center w-full h-full overflow-hidden">
           <div
             class="absolute top-6 left-4 flex flex-col justify center items-center"
           >
-            <span class="other-name text-lg">Igbo Styles</span>
+            <span class="other-name text-lg">Gown</span>
             <button class="other-name text-lg border-b border-black">
               Explore
             </button>
           </div>
           <img
             class="object-cover duration-200 group-hover:scale-105 w-full h-full"
-            src="@/assets/images/ibo.png"
+            src="@/assets/images/gown.png"
           />
         </div>
       </router-link>
-      <router-link to="/product" class="relative rounded-md group bg-green-200">
-        <div class="flex justify-center w-full h-full">
+      <router-link to="/product" class="relative rounded-md group bg-slate-300">
+        <div class="flex justify-center w-full h-full overflow-hidden">
           <div
             class="absolute top-6 left-4 flex flex-col justify center items-center"
           >
-            <span class="other-name text-lg">Hausa Style</span>
+            <span class="other-name text-lg">Others</span>
             <button class="other-name text-lg border-b border-black">
               Explore
             </button>
           </div>
           <img
             class="object-cover duration-200 group-hover:scale-105 w-full h-full"
-            src="@/assets/images/green.png"
+            src="@/assets/images/lacer.png"
           />
         </div>
       </router-link>

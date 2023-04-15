@@ -1,6 +1,6 @@
 <!-- eslint-disable -->
 <template>
-  <div class=" w-full mt-[60px] sm:mt-[68px] space-y-[5%]">
+  <div class=" w-full mt-[60px] sm:mt-[80px] space-y-[5%]">
    <TopBanner/>
    <ItemCategory/>
    <ExploreProducts/>

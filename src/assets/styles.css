@@ -12,6 +12,9 @@
   .navs {
     width: 100%;
   }
+  .hide{
+    display:none
+  }
   }
 .name {
   font-family: DynaPuff;

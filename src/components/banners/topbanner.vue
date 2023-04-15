@@ -10,23 +10,20 @@
       autoplay
     >
       <vueper-slide
+        class="w-full h-full"
         v-for="(item, id) in imageList"
         :key="item.id"
         :image="item.image"
+        :title="item.title"
+        :content="item.content"
       >
-      <div :key="item.id">
-        <img class="w-full object-cover" :src="item.image" />
-        <div class="sec wave"></div>
-      </div>
-      
-
         <template #pause>
           <i class="icon pause_circle_outline"></i>
         </template>
       </vueper-slide>
     </vueper-slides>
 
-    <div class=" h-6"></div>
+    <div class="h-6"></div>
 
     <!--
        <div class="absolute w-10 m-auto inset-x-0 bottom-10 flex space-x-2">
@@ -40,10 +37,9 @@
 <!-- eslint-disable -->
 <script>
 /* eslint-disable */
-import { assets } from "@/assets/svgimages.js";
+//import { assets } from "@/assets/svgimages.js";
 import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
-
 
 export default {
   name: "TopBanner",
@@ -53,13 +49,23 @@ export default {
   },
   data() {
     return {
-        
-        imageList: [
-        { image: assets.mdBannerOne },
-        { image: assets.mdBannerTwo },
-        { image: assets.mdBannerThree },
+      imageList: [
+        {
+          image: require("@/assets/images/slideAt.png"),
+          title:
+            '<p style= "font-size:1.5rem;color:black;position:absolute;left:10%;font-weight:bold;padding:1%;border: 3px solid black;">TOP SELLER<p>',
+        },
+        {
+          image: require("@/assets/images/slideCt.png"),
+          title:
+            '<p style= "font-size:1.5rem;color:black;position:absolute;right:10%;font-weight:bold;padding:1%;border: 3px solid black;">FLASH SALES<p>',
+        },
+        {
+          image: require("@/assets/images/slideBt.png"),
+          title:
+            '<p style= "font-size:1.5rem;color:white;padding:1%;position:absolute;left:10%;font-weight:bold;border: 3px solid white;">FLASH SALES<p>',
+        },
       ],
-    
     };
   },
 };
@@ -67,5 +73,4 @@ export default {
 <!-- eslint-disable -->
 <style scoped>
 /* eslint-disable */
-
 </style>

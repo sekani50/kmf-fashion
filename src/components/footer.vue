@@ -10,11 +10,11 @@
         <p class="capitalize underline">Contact Info</p>
         <div class="flex space-x-2 items-center group">
           <span class="" v-html="images.tel"></span>
-          <p class="group-hover:text-[#f0e68c]">+234813933165</p>
+          <p class="group-hover:text-[#f0e68c]">+2348118617926</p>
         </div>
         <div class="flex space-x-2 items-center group">
           <span class="" v-html="images.email"></span>
-          <p class="group-hover:text-[#f0e68c]">scotmakinde1@gmail.com</p>
+          <p class="group-hover:text-[#f0e68c]">kmyfashionavenue@gmail.com</p>
         </div>
       </div>
       <div class="flex items-center space-x-2">

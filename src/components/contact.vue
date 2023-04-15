@@ -50,13 +50,13 @@
           <span class="sm:h-6 sm:w-6 h-4 w-4">
             <img src="@/assets/tel.svg" alt="wht" />
           </span>
-          <p class="">+234813933165</p>
+          <p class="">+2348118617926</p>
         </div>
         <div class="flex space-x-2 items-center group">
             <span class="sm:h-6 sm:w-6 h-4 w-4">
             <img src="@/assets/email.svg" alt="wht" />
           </span>
-          <p class="">scotmakinde1@gmail.com</p>
+          <p class="">kmyfashionavenue@gmail.com</p>
         </div>
       </div>
       <div class="flex items-center justify-center space-x-2">
