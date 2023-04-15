@@ -285,7 +285,7 @@
             </p>
             <div class="w-full mx-auto">
               <button
-                @click="sendMessage"
+                @click="sendMessage('lorem ipsom M')"
                 class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
               >
                 Explore
@@ -317,7 +317,7 @@
             </p>
             <div class="w-full mx-auto">
               <button
-                @click="sendMessage"
+                @class="sendMessage"
                 class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
               >
                 Explore
@@ -332,7 +332,6 @@
 <!--eslint-disable-->
 <script>
 /* eslint-disable */
-import { featuredImages } from "@/assets/svgimages";
 
 
 export default {
@@ -340,11 +339,19 @@ export default {
 
   data() {
     return {
-      arr: featuredImages,
+      image:""
+      
     };
   },
   methods: {
-    sendMessage() {},
+    sendMessage(name) {
+
+      const url = "https://wa.me/2348144052194?text= Hi there, i like this " + name;
+
+      window.open(url, 'blank').focus()
+      
+
+    },
   },
 };
 </script>
