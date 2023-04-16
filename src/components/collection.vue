@@ -30,7 +30,7 @@
             </p>
             <div class="w-full mx-auto">
               <button
-                @click="sendMessage"
+                @click="sendMessage('lorem ipsom C')"
                 class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
               >
                 Explore
@@ -62,7 +62,7 @@
             </p>
             <div class="w-full mx-auto">
               <button
-                @click="sendMessage"
+                @click="sendMessage('lorem ipsom D')"
                 class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
               >
                 Explore
@@ -94,7 +94,7 @@
             </p>
             <div class="w-full mx-auto">
               <button
-                @click="sendMessage"
+                @click="sendMessage('lorem ipsom F')"
                 class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
               >
                 Explore
@@ -126,7 +126,7 @@
             </p>
             <div class="w-full mx-auto">
               <button
-                @click="sendMessage"
+                @click="sendMessage('lorem ipsom A')"
                 class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
               >
                 Explore
@@ -157,7 +157,7 @@
             </p>
             <div class="w-full mx-auto">
               <button
-                @click="sendMessage"
+                @click="sendMessage('lorem ipsom E')"
                 class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
               >
                 Explore
@@ -189,7 +189,7 @@
             </p>
             <div class="w-full mx-auto">
               <button
-                @click="sendMessage"
+                @click="sendMessage('lorem ipsom E')"
                 class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
               >
                 Explore
@@ -221,7 +221,7 @@
             </p>
             <div class="w-full mx-auto">
               <button
-                @click="sendMessage"
+                @click="sendMessage('lorem ipsom K')"
                 class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
               >
                 Explore
@@ -253,7 +253,7 @@
             </p>
             <div class="w-full mx-auto">
               <button
-                @click="sendMessage"
+                @click="sendMessage('lorem ipsom J')"
                 class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
               >
                 Explore
@@ -317,7 +317,7 @@
             </p>
             <div class="w-full mx-auto">
               <button
-                @class="sendMessage"
+                @class="sendMessage('lorem ipsom G')"
                 class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
               >
                 Explore
@@ -346,7 +346,7 @@ export default {
   methods: {
     sendMessage(name) {
 
-      const url = "https://wa.me/2348144052194?text= Hi there, i like this " + name;
+      const url = "https://wa.me/2348118617926?text= Hi there, i like this " + name;
 
       window.open(url, 'blank').focus()
       
