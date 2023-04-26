@@ -1,20 +1,28 @@
 <!-- eslint-disable -->
 <template>
   <div
-    class="w-full h-full bg-[#1E1E1E] inset-0 fixed overflow-y-auto overflow-x-hidden"
+    class="w-full h-full bg-[#1E1E1E] inset-0 sm:pb-56 fixed overflow-y-auto overflow-x-hidden"
   >
     <HeaderSect />
+  <div
+  class="w-full h-full"
+  :class="isAddImage ? 'hidden':'block' ">
+    <AdminPage :togglepage="togglepage" />
+  </div>
+  
+  <div
+  class="w-full h-full"
+  :class="isAddImage ? 'block':'hidden'">
+    <AddProduct :togglepage="togglepage"/>
+  </div>
+    
 
-    <ShowMoreWidget
-      :bespoke="bespoke"
-      :bridal="bridal"
-      :asoebi="asoebi"
-      :muslim="muslim"
-      :fabrics="fabrics"
-      :cooperate="cooperate"
-      :getcat="getACategory"
-    />
+    <div class="fixed bottom-0 sm:w-[99%] w-full">
+      
     <NameAbout />
+    </div>
+
+    
   </div>
 </template>
 <!--eslint-disable-->
@@ -22,42 +30,28 @@
 /* eslint-disable */
 import NameAbout from "@/components/footer.vue";
 import HeaderSect from "@/components/header.vue";
-import { mapGetters } from "vuex";
-import ShowMoreWidget from "@/components/products/showmorewidget.vue";
-import { getCategory } from "../adminfirebase";
+import AdminPage from "@/components/admin/admin.vue";
+import AddProduct from "@/components/admin/addproduct.vue";
 
 export default {
   name: "MainPage",
   components: {
     NameAbout,
     HeaderSect,
-    ShowMoreWidget,
+    AddProduct,
+    AdminPage,
   },
 
   data() {
     return {
-      bespoke: [],
-      bridal: [],
-      asoebi: [],
-      muslim: [],
-      fabrics: [],
-      cooperate: [],
+      isAddImage: false,
     };
   },
-  computed: {
-    ...mapGetters(["getACategory"]),
-  },
-  async mounted() {
-    await getCategory(
-      this.bespoke,
-      this.bridal,
-      this.asoebi,
-      this.muslim,
-      this.fabrics,
-      this.cooperate
-    )
- 
-  },
+  methods: {
+    togglepage() {
+      this.isAddImage = !this.isAddImage;
+    }
+  }
 };
 </script>
 

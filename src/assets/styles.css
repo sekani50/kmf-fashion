@@ -25,6 +25,10 @@
 .trend {
     font-family:Kanit;
 }
+
+.collectio {
+  font-family: Montserrat;
+}
 .navs::after {
     content: "";
     position: absolute;
@@ -39,3 +43,64 @@
   .navs:hover::after {
     width: 100%;
   }
+
+  .let {
+    
+    -webkit-animation-duration: 0.8s;
+    animation-duration: 0.8s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  .swipeIn {
+    animation-name: swipeIn;
+    -webkit-animation-name: swipeIn;
+  }
+  
+  @keyframes swipeIn {
+    0% {
+        transform: translateX(200%);
+    }
+  
+    100% {
+        transform: translateX(0px);
+    }
+  }
+  
+  
+  @-webkit-keyframes swipeIn {
+    0% {
+        -webkit-transform: translateX(200%);
+    }
+  
+    100% {
+        -webkit-transform: translateX(0px);
+    }
+  }
+  
+  .swipeInLeft {
+    animation-name: swipeInLeft;
+    -webkit-animation-name: swipeInLeft;
+  }
+  
+  @keyframes swipeInLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+  
+    100% {
+      transform: translateX(0px);
+    }
+  }
+  
+  @-webkit-keyframes swipeInLeft {
+    0% {
+      -webkit-transform: translateX(-100%);
+    }
+  
+    100% {
+      -webkit-transform: translateX(0px);
+    }
+  }
+
+ 

@@ -14,7 +14,7 @@
           <div
             class="absolute top-6 left-4 flex flex-col justify center items-center"
           >
-            <span class="other-name text-lg sm:text-xl">Muslim Wears</span>
+            <span class="other-name text-lg sm:text-xl">Maxi</span>
             <button class="other-name text-lg sm:text-xl border-b border-black">
               Explore
             </button>
@@ -33,7 +33,7 @@
           <div
             class="absolute top-6 left-4 flex flex-col justify center items-center"
           >
-            <span class="other-name text-lg">Owanbe Styles</span>
+            <span class="other-name text-lg">Prom</span>
             <button class="other-name text-lg border-b border-black">
               Explore
             </button>
@@ -49,7 +49,7 @@
           <div
             class="absolute top-6 left-4 flex flex-col justify center items-center"
           >
-            <span class="other-name text-lg">Ankara Styles</span>
+            <span class="other-name text-lg">Skirt & Blouse</span>
             <button class="other-name text-lg border-b border-black">
               Explore
             </button>
@@ -65,7 +65,7 @@
           <div
             class="absolute top-6 left-4 flex flex-col justify center items-center"
           >
-            <span class="other-name text-lg">Gown</span>
+            <span class="other-name text-lg">Ankara</span>
             <button class="other-name text-lg border-b border-black">
               Explore
             </button>
@@ -76,7 +76,7 @@
           />
         </div>
       </router-link>
-      <router-link to="/product" class="relative rounded-md group bg-slate-300">
+      <router-link :to="{ name: 'ProductView', params: {msg: 'Others' }}" class="relative rounded-md group bg-slate-300">
         <div class="flex justify-center w-full h-full overflow-hidden">
           <div
             class="absolute top-6 left-4 flex flex-col justify center items-center"

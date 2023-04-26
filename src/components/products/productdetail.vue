@@ -2,7 +2,7 @@
 <template>
   <div class="w-[97%] sm:w-[95%] mx-auto p-2 sm:p-6 space-y-[5%]">
     <P class="text-gray-300 sm:text-2xl text-lg font-medium"
-      >Exploring Products</P
+      >{{ msg }}</P
     >
 
     <div
@@ -48,13 +48,16 @@ import { featuredImages } from "@/assets/svgimages";
 
 export default {
   name: "ExploredProducts",
+ 
 
   data() {
     return {
       arr: featuredImages,
     };
   },
-  mounted() {},
+  mounted() {
+    
+  },
 };
 </script>
 

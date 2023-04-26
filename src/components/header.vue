@@ -1,7 +1,7 @@
 <!-- eslint-disable -->
 <template>
   <div
-    class="h-fit w-full text-gray-300 text-sm sm:text-lg fixed inset-0 bg-[#1E1E1E] shadow-lg z-30"
+    class="h-fit w-full sm:w-[99%] text-gray-300 text-sm sm:text-lg fixed inset-0 bg-[#1E1E1E] shadow-lg z-30"
   >
  <div class="px-[5%] sm:py-4 py-3 w-full flex items-center justify-between">
   <router-link to="/">

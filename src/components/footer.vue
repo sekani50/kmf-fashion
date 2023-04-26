@@ -4,7 +4,7 @@
     <div class="flex flex-col sm:flex-row justify-around space-y-3">
       <div class="flex flex-col space-y-3 justify-start">
         <p class="capitalize underline">Location address</p>
-        <p>No 34, Adebayi Street, Japan, Osun State, Nigeria</p>
+        <p>Fatom Building Beside BCOS Ile Akede Orita Basorun, Basoriun Road, Ibadan, Oyo State</p>
       </div>
       <div class="flex flex-col space-y-3 justify-start">
         <p class="capitalize underline">Contact Info</p>
