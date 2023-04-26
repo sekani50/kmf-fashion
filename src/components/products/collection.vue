@@ -13,7 +13,7 @@
       </span>
     </div>
 
-   
+   <SecBanner class="w-full"/>
    
     <div class="flex justify-between items-center">
       <p class="text-gray-300 sm:text-xl text-[16px] font-semibold collectio">Asoebi</p>
@@ -162,6 +162,7 @@
 <script>
 /* eslint-disable */
 import ProductWidgets from "./widget.vue"
+import SecBanner from "@/components/banners/secondbanner.vue"
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -169,6 +170,7 @@ export default {
   props: ["bespoke", "bridal", "asoebi", "muslim", "fabrics", "cooperate"],
   components:{
     ProductWidgets,
+    SecBanner,
   },
   data() {
     return {
