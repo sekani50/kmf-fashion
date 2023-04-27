@@ -8,276 +8,354 @@
     </p>
     <div
       :class="
-         asoebi && asoebi.length !== 0 && asoebi[0].category.stringValue === getcat ? 'grids' : 'hidden'
+        asoebi &&
+        asoebi.length !== 0 &&
+        asoebi[0].category.stringValue === getcat
+          ? 'grids'
+          : 'hidden'
       "
-    
     >
-      <div class="h-fit sm:w-[300px] sm:h-fit" v-for="(item, index) in asoebi" :key="index">
-       
+      <div
+        class="h-fit sm:w-[300px] sm:h-fit"
+        v-for="(item, index) in asoebi"
+        :key="index"
+      >
         <div class="group w-full h-full">
-        <div
-          class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
-        >
           <div
-            class="w-full h-[160px] sm:h-[280px] overflow-hidden rounded-t-lg"
+            class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
-            <img  
-              :src="item.image.stringValue"
-              alt="new"
-              class="w-full h-full object-cover rounded-t-lg"
-            />
-          </div>
-          <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-            <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
-              {{item.name.stringValue }}
-            </p>
-            <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
-              {{item.description.stringValue }}
-            </p>
-            <p 
-            :class="item.price.integerValue === '0' || item.price.stringValue === '' ? 'hidden':'block'"
-            class="font-semibold text-sm sm:text-lg text-end">{{ `₦${item.price.stringValue}` }}</p>
-            <div class="w-full mx-auto">
-              <button
-                @click="sendMessage('lorem ipsom D')"
-                class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
+            <div
+              class="w-full h-[160px] sm:h-[280px] overflow-hidden rounded-t-lg"
+            >
+              <img
+                :src="item.image.stringValue"
+                alt="new"
+                class="w-full h-full object-cover rounded-t-lg"
+              />
+            </div>
+            <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
+              <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+                {{ item.name.stringValue }}
+              </p>
+              <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
+                {{ item.description.stringValue }}
+              </p>
+              <p
+                :class="
+                  item.price.integerValue === '0' ||
+                  item.price.stringValue === ''
+                    ? 'hidden'
+                    : 'block'
+                "
+                class="font-semibold text-sm sm:text-lg text-end"
               >
-                Explore
-              </button>
+                {{ `₦${item.price.stringValue}` }}
+              </p>
+              <div class="w-full mx-auto">
+                <button
+                  @click="
+                    sendMessage(item.image.stringValue, item.name.stringValue)
+                  "
+                  class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
+                >
+                  Explore
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
     </div>
 
     <div
       :class="
-         bridal && bridal.length !== 0 && bridal[0].category.stringValue === getcat ? 'grids' : 'hidden'
+        bridal &&
+        bridal.length !== 0 &&
+        bridal[0].category.stringValue === getcat
+          ? 'grids'
+          : 'hidden'
       "
-    
     >
-      <div class="h-fit sm:w-[300px] sm:h-fit" v-for="(item, index) in bridal" :key="index">
-       
+      <div
+        class="h-fit sm:w-[300px] sm:h-fit"
+        v-for="(item, index) in bridal"
+        :key="index"
+      >
         <div class="group w-full h-full">
-        <div
-          class="rounded-lg h-full w-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
-        >
           <div
-            class="w-full h-[160px] sm:h-[280px] overflow-hidden rounded-t-lg"
+            class="rounded-lg h-full w-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
-            <img  
-              :src="item.image.stringValue"
-              alt="new"
-              class="w-full h-full object-cover rounded-t-lg"
-            />
-          </div>
-          <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-            <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
-              {{item.name.stringValue }}
-            </p>
-            <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
-              {{item.description.stringValue }}
-            </p>
-            <p 
-            :class="item.price.stringValue === undefined ? 'hidden':'block'"
-            class="ont-semibold text-sm sm:text-lg text-end">{{ `₦${item.price.stringValue}` }}</p>
-            <div class="w-full mx-auto">
-              <button
-                @click="sendMessage('lorem ipsom D')"
-                class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
+            <div
+              class="w-full h-[160px] sm:h-[280px] overflow-hidden rounded-t-lg"
+            >
+              <img
+                :src="item.image.stringValue"
+                alt="new"
+                class="w-full h-full object-cover rounded-t-lg"
+              />
+            </div>
+            <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
+              <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+                {{ item.name.stringValue }}
+              </p>
+              <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
+                {{ item.description.stringValue }}
+              </p>
+              <p
+                :class="
+                  item.price.stringValue === undefined ? 'hidden' : 'block'
+                "
+                class="ont-semibold text-sm sm:text-lg text-end"
               >
-                Explore
-              </button>
+                {{ `₦${item.price.stringValue}` }}
+              </p>
+              <div class="w-full mx-auto">
+                <button
+                  @click="
+                    sendMessage(item.image.stringValue, item.name.stringValue)
+                  "
+                  class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
+                >
+                  Explore
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
     </div>
 
     <div
       :class="
-         cooperate && cooperate.length !== 0 && cooperate[0].category.stringValue === getcat ? 'grids' : 'hidden'
+        cooperate &&
+        cooperate.length !== 0 &&
+        cooperate[0].category.stringValue === getcat
+          ? 'grids'
+          : 'hidden'
       "
-    
     >
-      <div class="h-fit sm:w-[300px] sm:h-fit" v-for="(item, index) in cooperate" :key="index">
-       
+      <div
+        class="h-fit sm:w-[300px] sm:h-fit"
+        v-for="(item, index) in cooperate"
+        :key="index"
+      >
         <div class="group w-full h-full">
-        <div
-          class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
-        >
           <div
-            class="w-full h-[160px] sm:h-[280px] overflow-hidden rounded-t-lg"
+            class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
-            <img  
-              :src="item.image.stringValue"
-              alt="new"
-              class="w-full h-full object-cover rounded-t-lg"
-            />
-          </div>
-          <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-            <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
-              {{item.name.stringValue }}
-            </p>
-            <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
-              {{item.description.stringValue }}
-            </p>
-            <p 
-            :class="item.price.stringValue === undefined ? 'hidden':'block'"
-            class="ont-semibold text-sm sm:text-lg text-end">{{ `₦${item.price.stringValue}` }}</p>
-            <div class="w-full mx-auto">
-              <button
-                @click="sendMessage('lorem ipsom D')"
-                class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
+            <div
+              class="w-full h-[160px] sm:h-[280px] overflow-hidden rounded-t-lg"
+            >
+              <img
+                :src="item.image.stringValue"
+                alt="new"
+                class="w-full h-full object-cover rounded-t-lg"
+              />
+            </div>
+            <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
+              <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+                {{ item.name.stringValue }}
+              </p>
+              <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
+                {{ item.description.stringValue }}
+              </p>
+              <p
+                :class="
+                  item.price.stringValue === undefined ? 'hidden' : 'block'
+                "
+                class="ont-semibold text-sm sm:text-lg text-end"
               >
-                Explore
-              </button>
+                {{ `₦${item.price.stringValue}` }}
+              </p>
+              <div class="w-full mx-auto">
+                <button
+                  @click="
+                    sendMessage(item.image.stringValue, item.name.stringValue)
+                  "
+                  class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
+                >
+                  Explore
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      </div>
-    </div>
-
-
-    <div
-      :class="
-         fabrics && fabrics.length !== 0 && fabrics[0].category.stringValue === getcat ? 'grids' : 'hidden'
-      "
-    
-    >
-      <div class="h-fit sm:w-[300px] sm:h-fit" v-for="(item, index) in fabrics" :key="index">
-       
-        <div class="group w-full h-full">
-        <div
-          class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
-        >
-          <div
-            class="w-full h-[160px] sm:h-[280px] overflow-hidden rounded-t-lg"
-          >
-            <img  
-              :src="item.image.stringValue"
-              alt="new"
-              class="w-full h-full object-cover rounded-t-lg"
-            />
-          </div>
-          <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-            <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
-              {{item.name.stringValue }}
-            </p>
-            <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
-              {{item.description.stringValue }}
-            </p>
-            <p 
-            :class="item.price.stringValue === undefined ? 'hidden':'block'"
-            class="ont-semibold text-sm sm:text-lg text-end">{{ `₦${item.price.stringValue}` }}</p>
-            <div class="w-full mx-auto">
-              <button
-                @click="sendMessage('lorem ipsom D')"
-                class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
-              >
-                Explore
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
       </div>
     </div>
 
     <div
       :class="
-         bespoke && bespoke.length !== 0 && bespoke[0].category.stringValue === getcat ? 'grids' : 'hidden'
+        fabrics &&
+        fabrics.length !== 0 &&
+        fabrics[0].category.stringValue === getcat
+          ? 'grids'
+          : 'hidden'
       "
-    
     >
-      <div class="h-fit sm:w-[300px] sm:h-fit" v-for="(item, index) in bespoke" :key="index">
-       
+      <div
+        class="h-fit sm:w-[300px] sm:h-fit"
+        v-for="(item, index) in fabrics"
+        :key="index"
+      >
         <div class="group w-full h-full">
-        <div
-          class="rounded-lg h-full w-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
-        >
           <div
-            class="w-full h-[160px] sm:h-[280px] overflow-hidden rounded-t-lg"
+            class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
-            <img  
-              :src="item.image.stringValue"
-              alt="new"
-              class="w-full h-full object-cover rounded-t-lg"
-            />
-          </div>
-          <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-            <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
-              {{item.name.stringValue }}
-            </p>
-            <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
-              {{item.description.stringValue }}
-            </p>
-            <p 
-            :class="item.price.stringValue === undefined ? 'hidden':'block'"
-            class="ont-semibold text-sm sm:text-lg text-end">{{ `₦${item.price.stringValue}` }}</p>
-            <div class="w-full mx-auto">
-              <button
-                @click="sendMessage('lorem ipsom D')"
-                class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
+            <div
+              class="w-full h-[160px] sm:h-[280px] overflow-hidden rounded-t-lg"
+            >
+              <img
+                :src="item.image.stringValue"
+                alt="new"
+                class="w-full h-full object-cover rounded-t-lg"
+              />
+            </div>
+            <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
+              <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+                {{ item.name.stringValue }}
+              </p>
+              <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
+                {{ item.description.stringValue }}
+              </p>
+              <p
+                :class="
+                  item.price.stringValue === undefined ? 'hidden' : 'block'
+                "
+                class="ont-semibold text-sm sm:text-lg text-end"
               >
-                Explore
-              </button>
+                {{ `₦${item.price.stringValue}` }}
+              </p>
+              <div class="w-full mx-auto">
+                <button
+                  @click="
+                    sendMessage(item.image.stringValue, item.name.stringValue)
+                  "
+                  class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
+                >
+                  Explore
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
     </div>
 
     <div
       :class="
-         muslim && muslim.length !== 0 && muslim[0].category.stringValue === getcat ? 'grids' : 'hidden'
+        bespoke &&
+        bespoke.length !== 0 &&
+        bespoke[0].category.stringValue === getcat
+          ? 'grids'
+          : 'hidden'
       "
-   
     >
-      <div class="h-fit sm:w-[300px] sm:h-fit" v-for="(item, index) in muslim" :key="index">
-       
+      <div
+        class="h-fit sm:w-[300px] sm:h-fit"
+        v-for="(item, index) in bespoke"
+        :key="index"
+      >
         <div class="group w-full h-full">
-        <div
-          class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
-        >
           <div
-            class="w-full h-[160px] sm:h-[280px] overflow-hidden rounded-t-lg"
+            class="rounded-lg h-full w-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
-            <img  
-              :src="item.image.stringValue"
-              alt="new"
-              class="w-full h-full object-cover rounded-t-lg"
-            />
-          </div>
-          <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-            <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
-              {{item.name.stringValue }}
-            </p>
-            <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
-              {{item.description.stringValue }}
-            </p>
-            <p 
-            :class="item.price.stringValue === undefined ? 'hidden':'block'"
-            class="ont-semibold text-sm sm:text-lg text-end">{{ `₦${item.price.stringValue}` }}</p>
-            <div class="w-full mx-auto">
-              <button
-                @click="sendMessage('lorem ipsom D')"
-                class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
+            <div
+              class="w-full h-[160px] sm:h-[280px] overflow-hidden rounded-t-lg"
+            >
+              <img
+                :src="item.image.stringValue"
+                alt="new"
+                class="w-full h-full object-cover rounded-t-lg"
+              />
+            </div>
+            <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
+              <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+                {{ item.name.stringValue }}
+              </p>
+              <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
+                {{ item.description.stringValue }}
+              </p>
+              <p
+                :class="
+                  item.price.stringValue === undefined ? 'hidden' : 'block'
+                "
+                class="ont-semibold text-sm sm:text-lg text-end"
               >
-                Explore
-              </button>
+                {{ `₦${item.price.stringValue}` }}
+              </p>
+              <div class="w-full mx-auto">
+                <button
+                  @click="
+                    sendMessage(item.image.stringValue, item.name.stringValue)
+                  "
+                  class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
+                >
+                  Explore
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      </div>
     </div>
 
-
+    <div
+      :class="
+        muslim &&
+        muslim.length !== 0 &&
+        muslim[0].category.stringValue === getcat
+          ? 'grids'
+          : 'hidden'
+      "
+    >
+      <div
+        class="h-fit sm:w-[300px] sm:h-fit"
+        v-for="(item, index) in muslim"
+        :key="index"
+      >
+        <div class="group w-full h-full">
+          <div
+            class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
+          >
+            <div
+              class="w-full h-[160px] sm:h-[280px] overflow-hidden rounded-t-lg"
+            >
+              <img
+                :src="item.image.stringValue"
+                alt="new"
+                class="w-full h-full object-cover rounded-t-lg"
+              />
+            </div>
+            <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
+              <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+                {{ item.name.stringValue }}
+              </p>
+              <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
+                {{ item.description.stringValue }}
+              </p>
+              <p
+                :class="
+                  item.price.stringValue === undefined ? 'hidden' : 'block'
+                "
+                class="ont-semibold text-sm sm:text-lg text-end"
+              >
+                {{ `₦${item.price.stringValue}` }}
+              </p>
+              <div class="w-full mx-auto">
+                <button
+                  @click="
+                    sendMessage(item.image.stringValue, item.name.stringValue)
+                  "
+                  class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
+                >
+                  Explore
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <!--eslint-disable-->
@@ -289,35 +367,29 @@ import ProductWidgets from "./widget.vue";
 
 export default {
   name: "ProductWidgets",
-  props: ["getcat","bespoke", "bridal", "asoebi", "muslim", "fabrics", "cooperate"],
+  props: [
+    "getcat",
+    "bespoke",
+    "bridal",
+    "asoebi",
+    "muslim",
+    "fabrics",
+    "cooperate",
+  ],
   components: {
     ProductWidgets,
   },
   data() {
-    return {
-      
-    };
+    return {};
   },
-  computed: {
-    
-    
-  },
-  async mounted() {
-    /**
-     * 
-     await getCategory(
-      this.bespoke,
-      this.bridal,
-      this.asoebi,
-      this.muslim,
-      this.fabrics,
-      this.cooperate
-    );
-     */
-    
-  },
+
   methods: {
-    
+    sendMessage(image, name) {
+      const url =
+        "https://wa.me/2348144952194?text= " + image + "  I like the " + name;
+
+      window.open(url, "blank").focus();
+    },
   },
 };
 </script>

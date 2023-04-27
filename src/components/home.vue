@@ -1,7 +1,7 @@
 <!-- eslint-disable -->
 <template>
   <div class="w-full mt-[60px] sm:mt-[80px] space-y-[5%]">
-    <TopBanner />
+   
     <ItemCategory />
     <ExploreProducts
       :bespoke="bespoke"
@@ -16,14 +16,14 @@
 <!--eslint-disable-->
 <script>
 /* eslint-disable */
-import TopBanner from "@/components/banners/topbanner.vue";
+
 import ItemCategory from "@/components/products/itemcategories.vue";
 import ExploreProducts from "@/components/products/collection.vue";
 import {getCategory} from "../adminfirebase"
 export default {
   name: "HomePage",
   components: {
-    TopBanner,
+  
     ItemCategory,
     ExploreProducts,
   },
