@@ -19,6 +19,7 @@ export const getData = async (data) => {
   await uploadBytes(imgRef, data.image)
     .then((res) => {
       console.log(res);
+
     })
     .catch((err) => {
       console.log(err);
@@ -27,7 +28,7 @@ export const getData = async (data) => {
   await getDownloadURL(imgRef)
     .then(async (res) => {
       console.log(res);
-
+ 
       await addDoc(productRef, {
         name: data.name,
         description: data.description,

@@ -26,7 +26,7 @@
             class="ont-semibold text-sm sm:text-lg text-end">{{ `₦${price}` }}</p>
             <div class="w-full mx-auto">
               <button
-                @click="sendMessage(image, name)"
+                @click="sendMessage(name)"
                 class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
               >
                 Explore
@@ -51,11 +51,14 @@ export default {
     };
   },
   methods: {
-    sendMessage(image,name) {
+    sendMessage(name) {
+
+      
       const url =
-        "https://wa.me/2348118617926?text= " + image + "  I like the " + name;
+        "https://wa.me/2348118617926?text=  I like the " + name;
 
       window.open(url, "blank").focus();
+
     },
   },
 };

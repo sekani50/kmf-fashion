@@ -54,7 +54,7 @@
               <div class="w-full mx-auto">
                 <button
                   @click="
-                    sendMessage(item.image.stringValue, item.name.stringValue)
+                    sendMessage(item.name.stringValue)
                   "
                   class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
                 >
@@ -112,7 +112,7 @@
               <div class="w-full mx-auto">
                 <button
                   @click="
-                    sendMessage(item.image.stringValue, item.name.stringValue)
+                    sendMessage(item.name.stringValue)
                   "
                   class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
                 >
@@ -170,7 +170,7 @@
               <div class="w-full mx-auto">
                 <button
                   @click="
-                    sendMessage(item.image.stringValue, item.name.stringValue)
+                    sendMessage(item.name.stringValue)
                   "
                   class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
                 >
@@ -228,7 +228,7 @@
               <div class="w-full mx-auto">
                 <button
                   @click="
-                    sendMessage(item.image.stringValue, item.name.stringValue)
+                    sendMessage(item.name.stringValue)
                   "
                   class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
                 >
@@ -286,7 +286,7 @@
               <div class="w-full mx-auto">
                 <button
                   @click="
-                    sendMessage(item.image.stringValue, item.name.stringValue)
+                    sendMessage(item.name.stringValue)
                   "
                   class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
                 >
@@ -344,7 +344,7 @@
               <div class="w-full mx-auto">
                 <button
                   @click="
-                    sendMessage(item.image.stringValue, item.name.stringValue)
+                    sendMessage(item.name.stringValue)
                   "
                   class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
                 >
@@ -384,9 +384,9 @@ export default {
   },
 
   methods: {
-    sendMessage(image, name) {
+    sendMessage(name) {
       const url =
-        "https://wa.me/2348118617926?text= " + image + "  I like the " + name;
+        "https://wa.me/2348118617926?text=  I like the " + name;
 
       window.open(url, "blank").focus();
     },

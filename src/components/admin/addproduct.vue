@@ -177,7 +177,7 @@ export default {
         const file = e.target.files[0];
         this.imageFile = file;
         if (file.size > 3000000) {
-          this.$toast.warn("Image size should not exceeds 3MB");
+          this.$toast.error("Image size should not exceeds 3MB");
           return;
         }
 
