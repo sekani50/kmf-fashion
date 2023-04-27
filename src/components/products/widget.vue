@@ -53,7 +53,7 @@ export default {
   methods: {
     sendMessage(image,name) {
       const url =
-        "https://wa.me/2348144952194?text= " + image + "  I like the " + name;
+        "https://wa.me/2348118617926?text= " + image + "  I like the " + name;
 
       window.open(url, "blank").focus();
     },

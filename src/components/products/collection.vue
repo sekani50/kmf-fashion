@@ -13,9 +13,13 @@
       </span>
     </div>
  <!--second banner.... chat with admin-->
-   <SecBanner
-   @click="sendMessage(`Hi, I want to sew my clothes`)"
-   class="w-full"/>
+ <div
+ @click="sendMessage(`Hi, I want to sew my clothes`)"
+ class="w-full"
+ >
+ <SecBanner/>
+ </div>
+  
    
     <div class="flex justify-between items-center">
       <p class="text-gray-300 sm:text-xl text-[14px] font-semibold collectio">Asoebi</p>
@@ -208,7 +212,7 @@ export default {
     ...mapActions(["updateCategory"]),
     sendMessage(text) {
       const url =
-        "https://wa.me/2348144952194?text=" + text;
+        "https://wa.me/2348118617926?text=" + text;
 
       window.open(url, "blank").focus();
     },
