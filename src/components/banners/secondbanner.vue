@@ -2,7 +2,7 @@
 <template>
   <div class="w-full relative m-auto overflow-hidden my-3 sm:my-6 bg-slate-300 rounded-sm sm:rounded-md sm:h-fit h-fit">
        
-            <img class="w-full h-full object-fill rounded-sm sm:rounded-md" src="@/assets/images/secban.png" alt="" />
+            <img class="w-full h-full object-fill rounded-sm sm:rounded-md" src="@/assets/images/second.png" alt="" />
 
         <div class="absolute inset-0 w-full h-fit m-auto">
             <p class="text-center special font-thin text-4xl sm:text-6xl xl:text-7xl">Special Offer</p>

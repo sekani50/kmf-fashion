@@ -1,8 +1,7 @@
 <!-- eslint-disable -->
 <template>
   <div class="w-full mt-[60px] sm:mt-[80px] space-y-[5%]">
-   
-    <ItemCategory />
+    <HeroPage />
     <ExploreProducts
       :bespoke="bespoke"
       :bridal="bridal"
@@ -17,14 +16,13 @@
 <script>
 /* eslint-disable */
 
-import ItemCategory from "@/components/products/itemcategories.vue";
+import HeroPage from "@/components/banners/heropage.vue";
 import ExploreProducts from "@/components/products/collection.vue";
-import {getCategory} from "../adminfirebase"
+import { getCategory } from "../adminfirebase";
 export default {
   name: "HomePage",
   components: {
-  
-    ItemCategory,
+    HeroPage,
     ExploreProducts,
   },
 
@@ -36,7 +34,6 @@ export default {
       muslim: [],
       fabrics: [],
       cooperate: [],
-      
     };
   },
 
