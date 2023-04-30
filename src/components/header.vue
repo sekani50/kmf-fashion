@@ -38,7 +38,7 @@
  <div
  @click.self="menuClick"
  :class="isVisible ? 'block' : 'hidden' "
-  class=" bg-opacity-70 bg-[#1E1E1E] fixed w-full h-full overflow-hidden inset-0">
+  class="let swipeIn bg-opacity-70 bg-[#1E1E1E] fixed w-full h-full overflow-hidden inset-0">
     <div class=" absolute right-0 top-0 bg-[#1E1E1E] w-1/3 h-full">
       <div class="flex flex-col justify-end items-end p-[18px]">
       <div

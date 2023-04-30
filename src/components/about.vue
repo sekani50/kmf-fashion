@@ -8,12 +8,9 @@
         About Us
       </p>
       <div class="text-justify">
-        Be mindful of God, and you will find God in front of you. Acknowledge
-        God in ease, and God will acknowledge you in distress. And know that
-        what misleads you will never enable you to do right, and what enables
-        you to do right will never mislead you. And know that help comes with
-        patience, and that relief comes with distress; and with difficulty comes
-        ease.
+        We create unique and stylish pieces. From casual outfits
+          to formal ensembles. We work closely with our clients to ensure their
+          vision becomes reality.
       </div>
     </div>
   </div>

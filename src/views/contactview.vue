@@ -7,23 +7,21 @@
 
     <ContactCont />
     
-        <NameAbout />
-
-    
+      
    
   </div>
 </template>
 <!--eslint-disable-->
 <script>
 /* eslint-disable */
-import NameAbout from "@/components/footer.vue";
+//import NameAbout from "@/components/footer.vue";
 import HeaderSect from "@/components/header.vue";
 import ContactCont from "@/components/contact.vue";
 
 export default {
   name: "MainPage",
   components: {
-    NameAbout,
+   // NameAbout,
     HeaderSect,
     ContactCont,
   },
