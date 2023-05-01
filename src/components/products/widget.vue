@@ -18,9 +18,9 @@
             <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
               {{ name }}
             </p>
-            <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
+            <div class="text-sm sm:text-lg font-thin sm:pr-[10%]">
               {{ description }}
-            </p>
+            </div>
             <p 
             :class="price === undefined ? 'hidden':'block'"
             class="ont-semibold text-sm sm:text-lg text-end">{{ `₦${price}` }}</p>

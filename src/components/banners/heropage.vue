@@ -1,7 +1,7 @@
 <!-- eslint-disable -->
 <template>
   <div
-    class="w-full relative m-auto overflow-hidden my-3 sm:my-6   md:h-[400px] lg:h-[500px] h-fit"
+    class="w-full sm:w-[99%] relative m-auto overflow-hidden my-3 sm:my-6   md:h-[400px] lg:h-[500px] h-fit"
   >
     <div class="flex flex-col relative text-gray-200 bg-opacity-80 sm:bg-opacity-100 bg-[#1E1E1E] space-y-6 w-full sm:p-6 px-3 pt-3 h-full sm:grid sm:text-[#1E1E1E] grid-cols-6 sm:bg-[#f0e68c]">
         <div class="w-full h-full inset-0 absolute -z-10 block ">
