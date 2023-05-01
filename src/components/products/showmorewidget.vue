@@ -42,6 +42,7 @@
             </div>
               <p
                 :class="
+                 item.price.stringValue === undefined ||
                   item.price.integerValue === '0' ||
                   item.price.stringValue === ''
                     ? 'hidden'
@@ -103,9 +104,13 @@
               </p>
               <p
                 :class="
-                  item.price.stringValue === undefined ? 'hidden' : 'block'
+                 item.price.stringValue === undefined ||
+                  item.price.integerValue === '0' ||
+                  item.price.stringValue === ''
+                    ? 'hidden'
+                    : 'block'
                 "
-                class="ont-semibold text-sm sm:text-lg text-end"
+                class="font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
@@ -161,9 +166,13 @@
               </p>
               <p
                 :class="
-                  item.price.stringValue === undefined ? 'hidden' : 'block'
+                 item.price.stringValue === undefined ||
+                  item.price.integerValue === '0' ||
+                  item.price.stringValue === ''
+                    ? 'hidden'
+                    : 'block'
                 "
-                class="ont-semibold text-sm sm:text-lg text-end"
+                class="font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
@@ -219,9 +228,13 @@
               </p>
               <p
                 :class="
-                  item.price.stringValue === undefined ? 'hidden' : 'block'
+                 item.price.stringValue === undefined ||
+                  item.price.integerValue === '0' ||
+                  item.price.stringValue === ''
+                    ? 'hidden'
+                    : 'block'
                 "
-                class="ont-semibold text-sm sm:text-lg text-end"
+                class="font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
@@ -277,9 +290,13 @@
               </p>
               <p
                 :class="
-                  item.price.stringValue === undefined ? 'hidden' : 'block'
+                 item.price.stringValue === undefined ||
+                  item.price.integerValue === '0' ||
+                  item.price.stringValue === ''
+                    ? 'hidden'
+                    : 'block'
                 "
-                class="ont-semibold text-sm sm:text-lg text-end"
+                class="font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
@@ -335,9 +352,13 @@
               </p>
               <p
                 :class="
-                  item.price.stringValue === undefined ? 'hidden' : 'block'
+                 item.price.stringValue === undefined ||
+                  item.price.integerValue === '0' ||
+                  item.price.stringValue === ''
+                    ? 'hidden'
+                    : 'block'
                 "
-                class="ont-semibold text-sm sm:text-lg text-end"
+                class="font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>

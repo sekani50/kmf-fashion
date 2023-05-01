@@ -23,6 +23,7 @@
             </div>
             <p
                 :class="
+                  price === undefined ||
                   price === '0' ||
                   price === ''
                     ? 'hidden'
