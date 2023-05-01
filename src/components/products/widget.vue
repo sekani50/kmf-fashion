@@ -15,9 +15,9 @@
             />
           </div>
           <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-            <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+            <div class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
               {{ name }}
-            </p>
+            </div>
             <div class="text-sm sm:text-lg font-thin sm:pr-[10%]">
               {{ description }}
             </div>
