@@ -37,9 +37,9 @@
               <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
                 {{ item.name.stringValue }}
               </p>
-              <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
-                {{ item.description.stringValue }}
-              </p>
+             <div class="text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden w-full">
+              <span>{{ item.description.stringValue }}</span>
+            </div>
               <p
                 :class="
                   item.price.integerValue === '0' ||
