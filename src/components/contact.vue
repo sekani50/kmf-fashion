@@ -1,9 +1,9 @@
 <!-- eslint-disable -->
 <template>
-  <div class="w-full mt-[60px] sm:mt-[68px] space-y-[5%] mx-auto p-6 text-gray-300">
+  <div class="w-full mt-[60px] sm:mt-[68px] space-y-[5%] mx-auto p-6 text-zinc-700">
     <div class="space-y-[5%] w-full sm:w-[60%] mx-auto">
         <p class="other-name font-medium text-center text-lg sm:text-xl">Get In Touch</p>
-        <div class="rounded-md p-3 sm:p-6 border space-y-[5%] border-gray-300">
+        <div class="rounded-md p-3 sm:p-6 border space-y-[5%] border-zinc-700">
             <div class="form-group space-y-3">
           <label
             class="block form__label text-sm sm:text-lg"
@@ -28,18 +28,18 @@
             <textarea
             placeholder="Write a message"
             v-model.trim="message"
-            class="w-full h-28 p-3 sm:p-4 rounded-md resize-none bg-[#1E1E1E] text-gray-300 border border-gray-300"
+            class="w-full h-28 p-3 sm:p-4 rounded-md resize-none bg-white text-zinc-700 border border-zinc-700"
             >
 
             </textarea>
         </div>
-        <button class="rounded-md text-black p-2 w-full font-medium bg-[#f0e68c]">
+        <button class="rounded-md text-zinc-700 p-2 w-full font-medium bg-[#daa520]">
             Submit
         </button>
         </div>
         
     </div>
-    <div class="space-y-[5%] sm:p-6 p-3 font-medium rounded-md w-full sm:w-[60%] bg-[#f0e68c] text-[#1E1E1E] mx-auto">
+    <div class="space-y-[5%] sm:p-6 p-3 font-medium rounded-md w-full sm:w-[60%] bg-[#daa520] text-zinc-700 mx-auto">
         <div class="flex flex-col space-y-3 justify-start">
         <p class="capitalize underline">Location address</p>
         <div class="flex space-x-2 items-center">
@@ -105,7 +105,7 @@ export default {
 /* eslint-disable */
 
 .input-field {
-  @apply border bg-[#1E1E1E] text-gray-300 border-gray-300 rounded-md focus:outline-none w-full h-10 sm:h-14 px-2;
+  @apply border bg-white text-zinc-700 border-zinc-700 rounded-md focus:outline-none w-full h-10 sm:h-14 px-2;
 }
 
 </style>

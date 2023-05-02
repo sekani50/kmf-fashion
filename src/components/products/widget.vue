@@ -36,7 +36,7 @@
             <div class="w-full mx-auto">
               <button
                 @click="sendMessage(name)"
-                class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
+                class="other-name py-1 px-2 rounded-md bg-[#daa520] text-black"
               >
                 Explore
               </button>

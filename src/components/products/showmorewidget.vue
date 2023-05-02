@@ -57,7 +57,7 @@
                   @click="
                     sendMessage(item.name.stringValue)
                   "
-                  class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
+                  class="other-name py-1 px-2 rounded-md bg-[#daa520] text-black"
                 >
                   Explore
                 </button>
@@ -119,7 +119,7 @@
                   @click="
                     sendMessage(item.name.stringValue)
                   "
-                  class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
+                  class="other-name py-1 px-2 rounded-md bg-[#daa520] text-black"
                 >
                   Explore
                 </button>
@@ -181,7 +181,7 @@
                   @click="
                     sendMessage(item.name.stringValue)
                   "
-                  class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
+                  class="other-name py-1 px-2 rounded-md bg-[#daa520] text-black"
                 >
                   Explore
                 </button>
@@ -243,7 +243,7 @@
                   @click="
                     sendMessage(item.name.stringValue)
                   "
-                  class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
+                  class="other-name py-1 px-2 rounded-md bg-[#daa520] text-black"
                 >
                   Explore
                 </button>
@@ -305,7 +305,7 @@
                   @click="
                     sendMessage(item.name.stringValue)
                   "
-                  class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
+                  class="other-name py-1 px-2 rounded-md bg-[#daa520] text-black"
                 >
                   Explore
                 </button>
@@ -367,7 +367,7 @@
                   @click="
                     sendMessage(item.name.stringValue)
                   "
-                  class="other-name py-1 px-2 rounded-md bg-[#f0e68c] text-black"
+                  class="other-name py-1 px-2 rounded-md bg-[#daa520] text-black"
                 >
                   Explore
                 </button>

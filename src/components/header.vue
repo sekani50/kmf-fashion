@@ -1,29 +1,29 @@
 <!-- eslint-disable -->
 <template>
   <div
-    class="h-fit w-full sm:w-[99%] text-gray-300 text-sm sm:text-lg fixed inset-0 bg-[#1E1E1E] shadow-lg z-30"
+    class="h-fit w-full sm:w-[99%] text-zinc-700 text-sm sm:text-lg fixed inset-0 bg-[#FFFFFF] shadow-lg z-30"
   >
  <div class="px-[5%] sm:py-4 py-3 w-full flex items-center justify-between">
   <router-link to="/">
     <div class="flex items-center space-x-2">
-      <div class="rounded-full h-6 w-6 sm:h-8 sm:w-8 border  border-[#f0e68c]">
+      <div class="rounded-full h-6 w-6 sm:h-8 sm:w-8 border  border-[#daa520]">
       <img src="@/assets/images/logoB.png" class="ml-[2px] mt-[2px] rounded-full w-full h-full object-cover" alt="l"/>
 
       </div>
-   <p class="name text-[#f0e68c] text-2xl sm:text-4xl font-medium">KMY</p>
-   <p class="other-name text-[#f0e68c] text-xl sm:text-3xl font-medium">Fashion Avenue</p>
+   <p class="name text-[#daa520] text-2xl sm:text-4xl font-medium">KMY</p>
+   <p class="other-name text-[#daa520] text-xl sm:text-3xl font-medium">Fashion Avenue</p>
   </div>
   </router-link>
  
-  <div class="hidden text-white  sm:flex items-center space-x-10">
+  <div class="hidden text-zinc-700  sm:flex items-center space-x-10">
     <router-link to="/">
-      <button class="navs relative text-gray-300">Home</button>
+      <button class="navs relative text-zinc-700">Home</button>
     </router-link>
     <router-link to="/contact">
-      <button class="navs relative text-gray-300">Contact</button>
+      <button class="navs relative text-zinc-700">Contact</button>
     </router-link>
     <router-link to="/about">
-      <button class="navs relative text-gray-300">About</button>
+      <button class="navs relative text-zinc-700">About</button>
     </router-link>
    
     
@@ -38,8 +38,8 @@
  <div
  @click.self="menuClick"
  :class="isVisible ? 'block' : 'hidden' "
-  class="let swipeIn bg-opacity-70 bg-[#1E1E1E] fixed w-full h-full overflow-hidden inset-0">
-    <div class=" absolute right-0 top-0 bg-[#1E1E1E] w-1/3 h-full">
+  class="let swipeIn bg-opacity-70 bg-[#FFFFFF] fixed w-full h-full overflow-hidden inset-0">
+    <div class=" absolute right-0 top-0 bg-[#FFFFFF] w-1/3 h-full">
       <div class="flex flex-col justify-end items-end p-[18px]">
       <div
       @click="menuClick"

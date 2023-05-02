@@ -1,7 +1,7 @@
 <!-- eslint-disable -->
 <template>
   <div
-    class="w-full mt-[60px] sm:mt-[68px] space-y-[5%] mx-auto p-6 text-gray-300"
+    class="w-full mt-[60px] sm:mt-[68px] space-y-[5%] mx-auto p-6 text-zinc-700"
   >
     <div class="space-y-[5%] w-full sm:w-[60%] mx-auto">
       <p class="other-name font-medium text-center text-lg sm:text-xl">
