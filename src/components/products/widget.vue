@@ -3,7 +3,7 @@
 
     <div class="group w-full h-full">
         <div
-          class="rounded-lg w-full flex flex-col h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
+          class="rounded-lg collectio w-full flex flex-col h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
         >
           <div
             class="w-full h-[160px] sm:w-[300px] sm:h-[280px] overflow-hidden rounded-t-lg"
@@ -15,10 +15,10 @@
             />
           </div>
           <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-            <div class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+            <div class=" text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
               {{ name }}
             </div>
-            <div class="text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden w-full">
+            <div class=" text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden w-full">
               <span>{{ description }}</span>
             </div>
             <p
@@ -29,14 +29,14 @@
                     ? 'hidden'
                     : 'block'
                 "
-                class="font-semibold text-sm sm:text-lg text-end"
+                class=" text-zinc-900 font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${price}` }}
               </p>
             <div class="w-full mx-auto">
               <button
                 @click="sendMessage(name)"
-                class="other-name py-1 px-2 rounded-md bg-[#daa520] text-black"
+                class=" py-1 px-2 rounded-md border border-zinc-900 text-zinc-900 font-thin"
               >
                 Explore
               </button>

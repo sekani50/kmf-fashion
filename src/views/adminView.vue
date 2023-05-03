@@ -4,31 +4,19 @@
     class="w-full h-full bg-[#FFF] inset-0 sm:pb-56 fixed overflow-y-auto overflow-x-hidden"
   >
     <HeaderSect />
-  <div
-  class="w-full h-full"
-  :class="isAddImage ? 'hidden':'block' ">
-    <AdminPage :togglepage="togglepage" />
-  </div>
-  
-  <div
-  class="w-full h-full"
-  :class="isAddImage ? 'block':'hidden'">
-    <AddProduct :togglepage="togglepage"/>
-  </div>
-    
-
-    <div class="fixed bottom-0 sm:w-[99%] w-full">
-      
-    <NameAbout />
+    <div class="w-full h-full" :class="isAddImage ? 'hidden' : 'block'">
+      <AdminPage :togglepage="togglepage" />
     </div>
 
-    
+    <div class="w-full h-full" :class="isAddImage ? 'block' : 'hidden'">
+      <AddProduct :togglepage="togglepage" />
+    </div>
   </div>
 </template>
 <!--eslint-disable-->
 <script>
 /* eslint-disable */
-import NameAbout from "@/components/footer.vue";
+
 import HeaderSect from "@/components/header.vue";
 import AdminPage from "@/components/admin/admin.vue";
 import AddProduct from "@/components/admin/addproduct.vue";
@@ -36,7 +24,6 @@ import AddProduct from "@/components/admin/addproduct.vue";
 export default {
   name: "MainPage",
   components: {
-    NameAbout,
     HeaderSect,
     AddProduct,
     AdminPage,
@@ -50,8 +37,8 @@ export default {
   methods: {
     togglepage() {
       this.isAddImage = !this.isAddImage;
-    }
-  }
+    },
+  },
 };
 </script>
 

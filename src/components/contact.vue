@@ -1,9 +1,9 @@
 <!-- eslint-disable -->
 <template>
-  <div class="w-full mt-[60px] sm:mt-[68px] space-y-[5%] mx-auto p-6 text-zinc-700">
+  <div class="w-full mt-[60px] sm:mt-[68px] space-y-[5%] mx-auto p-6 text-zinc-900">
     <div class="space-y-[5%] w-full sm:w-[60%] mx-auto">
         <p class="other-name font-medium text-center text-lg sm:text-xl">Get In Touch</p>
-        <div class="rounded-md p-3 sm:p-6 border space-y-[5%] border-zinc-700">
+        <div class="rounded-md p-3 sm:p-6 border space-y-[5%] border-zinc-900">
             <div class="form-group space-y-3">
           <label
             class="block form__label text-sm sm:text-lg"
@@ -28,7 +28,7 @@
             <textarea
             placeholder="Write a message"
             v-model.trim="message"
-            class="w-full h-28 p-3 sm:p-4 rounded-md resize-none bg-white text-zinc-700 border border-zinc-700"
+            class="w-full h-28 p-3 sm:p-4 rounded-md resize-none bg-white text-zinc-900 border border-zinc-900"
             >
 
             </textarea>
@@ -39,7 +39,7 @@
         </div>
         
     </div>
-    <div class="space-y-[5%] sm:p-6 p-3 font-medium rounded-md w-full sm:w-[60%] bg-[#daa520] text-zinc-700 mx-auto">
+    <div class="space-y-[5%] sm:p-6 p-3 font-medium rounded-md w-full sm:w-[60%] bg-[#daa520] text-zinc-900 mx-auto">
         <div class="flex flex-col space-y-3 justify-start">
         <p class="capitalize underline">Location address</p>
         <div class="flex space-x-2 items-center">

@@ -6,18 +6,24 @@
  <div class="px-[5%] sm:py-4 py-3 w-full flex items-center justify-between">
   <router-link to="/">
     <div class="flex items-center space-x-2">
-      <div class="rounded-full h-6 w-6 sm:h-8 sm:w-8 border  border-[#daa520]">
+      <!--
+
+        <div class="rounded-full h-6 w-6 sm:h-8 sm:w-8 border  border-zinc-800">
       <img src="@/assets/images/logoB.png" class="ml-[2px] mt-[2px] rounded-full w-full h-full object-cover" alt="l"/>
 
       </div>
-   <p class="name text-[#daa520] text-2xl sm:text-4xl font-medium">KMY</p>
-   <p class="other-name text-[#daa520] text-xl sm:text-3xl font-medium">Fashion Avenue</p>
+      -->
+   <p class="name text-zinc-800 text-2xl sm:text-4xl font-medium">KMY</p>
+   <p class="other-name text-zinc-800 text-xl sm:text-3xl font-medium">Fashion Avenue</p>
   </div>
   </router-link>
  
-  <div class="hidden text-zinc-700  sm:flex items-center space-x-10">
+  <div class="hidden text-zinc-700  md:flex items-center space-x-10">
     <router-link to="/">
       <button class="navs relative text-zinc-700">Home</button>
+    </router-link>
+    <router-link to="/services">
+      <button class="navs relative text-zinc-700">Services</button>
     </router-link>
     <router-link to="/contact">
       <button class="navs relative text-zinc-700">Contact</button>

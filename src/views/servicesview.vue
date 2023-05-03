@@ -5,22 +5,22 @@
   >
     <HeaderSect />
 
-    <ContactCont />
+   
+
+    <OurServices />
   </div>
 </template>
 <!--eslint-disable-->
 <script>
 /* eslint-disable */
-//import NameAbout from "@/components/footer.vue";
+import OurServices from "@/components/services.vue";
 import HeaderSect from "@/components/header.vue";
-import ContactCont from "@/components/contact.vue";
 
 export default {
-  name: "ContactView",
+  name: "ServicesView",
   components: {
-    // NameAbout,
     HeaderSect,
-    ContactCont,
+    OurServices,
   },
 
   data() {

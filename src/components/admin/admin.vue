@@ -6,7 +6,7 @@
     <div class="space-y-[5%] w-full sm:w-[60%] mx-auto">
       <p class="font-medium text-center text-lg sm:text-xl uppercase">Admin</p>
 
-      <div class="rounded-md p-3 sm:p-6 border space-y-[5%] border-gray-300">
+      <div class="rounded-md p-3 sm:p-6 border space-y-[5%] border-zinc-700">
         <div class="form-group space-y-3">
           <label class="block form__label text-sm sm:text-lg" for=""
             ><b>Email address</b></label
@@ -36,7 +36,7 @@
 
         <button
           @click="getUserInfo"
-          class="rounded-md text-black p-2 w-full font-medium bg-[#f0e68c]"
+          class="rounded-md text-zinc-700 p-2 w-full font-medium bg-[#daa520]"
         >
           Submit
         </button>

@@ -6,6 +6,7 @@ import ContactView from "@/views/contactview.vue";
 import AboutView from "@/views/aboutview.vue";
 import ProductView from "@/views/productview.vue";
 import AdminView from "@/views/adminView.vue";
+import ServicesView from "@/views/servicesview.vue";
 
 Vue.use(VueRouter);
 
@@ -29,12 +30,16 @@ const routes = [
     path: "/product",
     name: "ProductView",
     component: ProductView,
-  
   },
   {
     path: "/admin",
     name: "AdminView",
     component: AdminView,
+  },
+  {
+    path: "/services",
+    name: "ServicesView",
+    component: ServicesView,
   },
 ];
 

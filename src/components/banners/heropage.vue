@@ -1,75 +1,127 @@
 <!-- eslint-disable -->
 <template>
   <div
-    class="w-full sm:w-[99%] relative m-auto overflow-hidden my-3 sm:my-6   md:h-[400px] lg:h-[500px] h-fit"
+    class="w-full sm:w-[99%] relative m-auto overflow-hidden my-3 sm:mb-6 md:h-[400px] lg:h-[500px] h-[220px]"
   >
-    <div class="flex flex-col relative text-gray-200 bg-opacity-80 sm:bg-opacity-100 bg-[#1E1E1E] space-y-6 w-full sm:p-6 px-3 pt-3 h-full sm:grid sm:text-[#1E1E1E] grid-cols-6 sm:bg-[#f0e68c]">
-        <div class="w-full h-full inset-0 absolute -z-10 block ">
-        <img class="w-full h-full object-fill" src="@/assets/images/try.jpg" alt="dd" />
-        
-      </div>
+    <transition-group name="fade" tag="div">
+      <div class="relative w-full h-full" v-for="i in [currentIndex]" :key="i">
+        <img :src="currentImg" />
         <div
-        class="collectio p-4 sm:p-0 col-span-2 flex flex-col sm:space-y-3 space-y-2 justify-center items-center"
-      >
-     
-        <div class="text-creat text-sm md:text-[16px] text-center w-full lg:text-2xl font-bold sm:font-semibold">
-          <span class="tracking-widest"
-            >We Create
-            <span class="tracking-widest text-">Tech'Style</span></span
-          >
-        </div>
-        <div class="descript leading-7 text-sm lg:text-lg text-center">
-          Our goal is to create unique and stylish pieces. From casual outfits
-          to formal ensembles. We work closely with our clients to ensure their
-          vision becomes reality.
-        </div>
-        <router-link to="/contact">
-            <button 
+          class="absolute colectio w-[70%] text-sm sm:text-lg md:top-[100px] lg:top-[150px] top-[50px] left-10 text-start right-0 h-fit text-zinc-900"
+          v-html="currentText"
+        ></div>
         
-        class="sm:bg-[#1E1E1E] text-sm lg:text-lg rounded-md p-2 text-[#1E1E1E] bg-[#f0e68c] sm:text-[#f0e68c]">Contact us</button>
-
-        </router-link>
-       
       </div>
-
-      <div class="flex justify-center items-center h-full m-auto">
-        <div
-          class="rounded-full transform rotate-[134deg] sm:rotate-[0deg]  bg-[#1E1E1E] relative md:w-20 md:h-20 w-12 h-12 lg:w-24 lg:h-24"
-        >
-          <div
-            class="absolute bg-[#f0e68c] transform rotate-[135deg] sm:rotate-[0deg] bg-opacity-70 sm:bg-opacity-100 sm:bg-[#f0e68c] w-[2px] md:w-[4px] top-[-1px]  sm:top-0 left-[24px] sm:left-[22px] lg:left-[45px] md:left-[36px] md:h-24 h-[3rem] sm:h-16 lg:h-28"
-          >
-        <span class="rounded-full md:w-[8px] md:h-[8px] transform rotate-[135deg] sm:rotate-[0deg]  w-[6px] h-[6px] bg-[#f0e68c]  bg-opacity-70 sm:bg-opacity-100 sm:bg-[#f0e68c] absolute left-[-2px] top-[19px]  sm:top-[21px] md:top-[37px] lg:top-[41px]"></span>
-        </div>
-        </div>
-      </div>
-
-      <div class="col-span-3 h-full sm:relative">
-        <div class="w-full h-full sm:absolute bottom-[-24px]">
-            <img src="@/assets/images/wishtx.png" alt="ss" class="w-full h-full object-contain" />
-
-        </div>
-        
-
-      </div>
-    </div>
-   
+    </transition-group>
+    <a class="prev" @click="prev" href="#">&#10094;</a>
+    <a class="next" @click="next" href="#">&#10095;</a>
   </div>
 </template>
 <!-- eslint-disable -->
 <script>
 /* eslint-disable */
 //import { assets } from "@/assets/svgimages.js";
+import {
+  herotexta,
+  herotextb,
+  herotextc,
+  herotextd,
+} from "@/components/banners/herotext/herotextA.js";
 
 export default {
   name: "HeroPage",
 
   data() {
-    return {};
+    return {
+      images: [
+      "https://imagetolink.com/ib/NPXTzQbD09.png",
+        "https://imagetolink.com/ib/8BqmmD7I2g.png",
+        "https://imagetolink.com/ib/o4YPbfocIS.png",
+        "https://imagetolink.com/ib/IHizuTrQRF.png",
+      ],
+      texts: [herotexta, herotextb, herotextc, herotextd],
+      timer: null,
+      currentIndex: 0,
+    };
+  },
+
+  mounted: function () {
+    this.startSlide();
+  },
+
+  methods: {
+    startSlide() {
+      this.timer = setInterval(this.next, 4000);
+    },
+
+    next() {
+      this.currentIndex += 1;
+    },
+    prev() {
+      this.currentIndex -= 1;
+    },
+  },
+
+  computed: {
+    currentImg: function () {
+      return this.images[Math.abs(this.currentIndex) % this.images.length];
+    },
+    currentText: function () {
+      return this.texts[Math.abs(this.currentIndex) % this.texts.length];
+    },
   },
 };
 </script>
 <!-- eslint-disable -->
 <style scoped>
 /* eslint-disable */
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.9s ease;
+  overflow: hidden;
+  height: 100%;
+  position: absolute;
+
+  width: 100%;
+  opacity: 1;
+}
+.fade-enter,
+.fade-leave-to {
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+img {
+  width: 100%;
+}
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.7s ease;
+  border-radius: 0 4px 4px 0;
+  text-decoration: none;
+  user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+}
+.prev {
+  left: 0;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.style {
+  font-family: "Poppins";
+}
 </style>
