@@ -27,7 +27,7 @@
     </div>
    
     <div
-      class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-[70px] text-zinc-900"
+      class="mx-auto grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-[70px] text-zinc-900"
     >
    
     <div class="h-fit sm:w-[300px] sm:h-fit" v-for="(item, index) in asoebi.slice(0,4)" :key="index">
@@ -240,6 +240,6 @@ export default {
 <style scoped>
 /* eslint-disable */
 .grids {
-  @apply grid grid-cols-2 lg:grid-cols-3 gap-1 xl:grid-cols-4  text-gray-300;
+  @apply grid grid-cols-2 md:grid-cols-3 gap-2 xl:grid-cols-4  text-gray-300;
 }
 </style>

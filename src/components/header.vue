@@ -36,7 +36,7 @@
     </div>
     <div
     @click="menuClick"
-     class="sm:hidden" v-html="images.menu"></div>
+     class="md:hidden" v-html="images.menu"></div>
 
  </div>
 
@@ -44,9 +44,9 @@
  <div
  @click.self="menuClick"
  :class="isVisible ? 'block' : 'hidden' "
-  class="let swipeIn bg-opacity-70 bg-[#FFFFFF] fixed w-full h-full overflow-hidden inset-0">
+  class="let swipeIn bg-opacity-50 bg-[#000] fixed w-full h-full overflow-hidden inset-0">
     <div class=" absolute right-0 top-0 bg-[#FFFFFF] w-1/3 h-full">
-      <div class="flex flex-col justify-end items-end p-[18px]">
+      <div class="flex flex-col mr-[4%] sm:mr-[9%] justify-end items-end p-[18px]">
       <div
       @click="menuClick"
       class=" " v-html="images.close"></div>
@@ -54,8 +54,10 @@
       </div>
       <div class="flex flex-col w-full justify-start space-y-3 px-6">
         <router-link to="/">Home</router-link>
+        <router-link to="/services">Services</router-link>
         <router-link to="/contact">Contact</router-link>
         <router-link to="/about">About</router-link>
+       
        
         
 

@@ -419,6 +419,6 @@ export default {
 /* eslint-disable */
 
 .grids {
-  @apply grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 text-gray-300;
+  @apply grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2 text-gray-300;
 }
 </style>
