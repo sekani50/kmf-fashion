@@ -3,10 +3,10 @@
 
     <div class="group w-full h-full">
         <div
-          class="rounded-lg collectio w-full flex flex-col h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
+          class="rounded-lg  overflow-hidden  collectio w-full flex flex-col h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
         >
           <div
-            class="w-full h-[160px] sm:w-[300px] sm:h-[280px] overflow-hidden rounded-t-lg"
+            class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
           >
             <img
               :src="image"
@@ -14,13 +14,13 @@
               class="w-full h-full object-cover rounded-t-lg"
             />
           </div>
-          <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-            <div class=" text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
-              {{ name }}
-            </div>
-            <div class=" text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden w-full">
-              <span>{{ description }}</span>
-            </div>
+          <div class="sm:space-y-4 space-y-3 w-full p-2 sm:p-6">
+            <p class="truncate  w-[100vw] text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+              <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ name }}</span>
+            </p>
+            <p class="truncate w-[98vw] text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden w-full">
+              <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ description }}</span> 
+            </p>
             <p
                 :class="
                   price === undefined ||
@@ -33,14 +33,7 @@
               >
                 {{ `₦${price}` }}
               </p>
-            <div class="w-full mx-auto">
-              <button
-                @click="sendMessage(name)"
-                class=" py-1 px-2 rounded-md border border-zinc-900 text-zinc-900 font-thin"
-              >
-                Explore
-              </button>
-            </div>
+           
           </div>
         </div>
       </div>

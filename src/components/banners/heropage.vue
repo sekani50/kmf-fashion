@@ -1,13 +1,13 @@
 <!-- eslint-disable -->
 <template>
   <div
-    class="w-full sm:w-[99%] relative m-auto overflow-hidden my-3 sm:mb-6 md:h-[400px] lg:h-[500px] h-[220px]"
+    class="w-full sm:w-[99%] relative m-auto overflow-hidden mt-[-1.25rem] sm:mb-6 md:h-[400px] lg:h-[500px] h-[220px]"
   >
     <transition-group name="fade" tag="div">
       <div class="relative w-full h-full" v-for="i in [currentIndex]" :key="i">
         <img :src="currentImg" />
         <div
-          class="absolute colectio w-[70%] text-sm sm:text-lg md:top-[100px] lg:top-[150px] top-[50px] left-10 text-start right-0 h-fit text-zinc-900"
+          class="absolute colectio w-[70%] text-sm sm:text-lg md:top-[100px] lg:top-[150px] top-[50px] left-10 text-start right-0 h-fit text-white"
           v-html="currentText"
         ></div>
         
@@ -34,10 +34,10 @@ export default {
   data() {
     return {
       images: [
-      "https://imagetolink.com/ib/NPXTzQbD09.png",
-        "https://imagetolink.com/ib/8BqmmD7I2g.png",
-        "https://imagetolink.com/ib/o4YPbfocIS.png",
-        "https://imagetolink.com/ib/IHizuTrQRF.png",
+      "https://imagetolink.com/ib/hgiA3VlVB8.png",
+        "https://imagetolink.com/ib/z1zhH5Hmr0.png",
+        "https://imagetolink.com/ib/NtS0VOcNfy.png",
+        "https://imagetolink.com/ib/Boaa0HGnis.png",
       ],
       texts: [herotexta, herotextb, herotextc, herotextd],
       timer: null,

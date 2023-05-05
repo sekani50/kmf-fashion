@@ -98,7 +98,7 @@
           class="absolute overflow-hidden inset-x-0 mx-auto z-10 rounded-full h-[150px] sm:h-[170px] w-[150px] sm:w-[170px] bg-red-700"
         >
           <img
-            src="@/assets/images/cooferate.jpg"
+            src="@/assets/images/muslim.jpg"
             alt=""
             class="w-full h-full object-cover"
           />
