@@ -1,11 +1,11 @@
 <!-- eslint-disable -->
 <template>
   <div
-    class="let swipeIn w-full mt-[60px] sm:mt-[68px] pb-[20rem] sm:pb-[20rem] space-y-[5%] mx-auto p-6 text-gray-300"
+    class="let swipeIn w-[95%] min-[1000px]:w-[85%] pb-[20rem] sm:pb-[20rem] space-y-[5%] float-right p-6 text-zinc-900"
   >
-    <div class="space-y-[5%] w-full sm:w-[60%] mx-auto">
+    <div class="space-y-[5%] w-full sm:w-[80%] mx-auto">
       <div class="flex items-center justify-between">
-        <div @click="togglepage" class="sm:w-8 sm:h-8 w-6 h-6">
+        <div class="sm:w-8 sm:h-8 w-6 h-6">
           <img class="w-full h-full" src="@/assets/back.svg" alt="back" />
         </div>
         <p class="font-medium text-center text-lg sm:text-xl uppercase">
@@ -15,23 +15,26 @@
       </div>
 
       <div
-        class="rounded-md relative p-3 sm:p-6 border space-y-[5%] border-gray-300"
+        class="rounded-md relative p-3 sm:p-6 border space-y-[5%] border-zinc-900"
       >
-        <div
-          class="relative w-full border h-[300px] rounded-md border-gray-300"
+
+        <div class="grid grid-cols-2 gap-6">
+
+          <div
+          class="relative w-full border text-sm h-[230px] rounded-md border-zinc-900"
         >
           <div
-            :class="selectedImage ? 'block' : 'hidden'"
-            class="w-full h-[300px] rounded md"
+            :class="selectedImageObj.first ? 'block' : 'hidden'"
+            class="w-full  h-[230px] rounded md"
           >
             <img
-              :src="selectedImage"
+              :src="selectedImageObj.first"
               alt=""
               class="w-full h-full object-cover rounded-md"
             />
           </div>
           <div
-            :class="selectedImage ? 'hidden' : 'block'"
+            :class="selectedImageObj.first ? 'hidden' : 'block'"
             class="w-[50%] absolute inset-0 m-auto h-fit flex flex-col justify-center items-center"
           >
             <div class="w-8 h-8 sm:w-6 sm:h-6">
@@ -42,23 +45,163 @@
                 <input
                   type="file"
                   name="file"
+                  id="first"
                   accept="image/jpeg, image/png, image/jpg"
                   @change="chooseImage($event)"
                 />
-                <span class="font-normal text-[#f0e68c]">
+                <span class="font-normal text-zinc-900">
                   Select an image
                 </span>
               </label>
             </div>
           </div>
           <button
-            :class="selectedImage ? 'block' : 'hidden'"
-            @click="removeImage"
-            class="absolute text-black py-1 px-2 bg-[#f0e68c] rounded-md right-[18px] sm:right-[-24px] top-[-50px] sm:top-[-64px]"
+            :class="selectedImageObj.first ? 'block' : 'hidden'"
+            @click="removeImage($event)"
+            id="first"
+            class="absolute text-white py-1 px-2 bg-zinc-900 rounded-md right-[18px] sm:right-[-24px] top-[-50px] sm:top-[-64px]"
           >
             Edit
           </button>
         </div>
+
+        <div
+          class="relative w-full text-sm border h-[230px] rounded-md border-zinc-900"
+        >
+          <div
+            :class="selectedImageObj.second ? 'block' : 'hidden'"
+            class="w-full  h-[230px] rounded md"
+          >
+            <img
+              :src="selectedImageObj.second"
+              alt=""
+              class="w-full h-full object-cover rounded-md"
+            />
+          </div>
+          <div
+            :class="selectedImageObj.second ? 'hidden' : 'block'"
+            class="w-[50%] absolute inset-0 m-auto h-fit flex flex-col justify-center items-center"
+          >
+            <div class="w-8 h-8 sm:w-6 sm:h-6">
+              <img src="@/assets/sel.svg" alt="" />
+            </div>
+            <div class="flex flex-row">
+              <label class="label">
+                <input
+                  type="file"
+                  name="file"
+                  id="second"
+                  accept="image/jpeg, image/png, image/jpg"
+                  @change="chooseImage($event)"
+                />
+                <span class="font-normal text-zinc-900">
+                  Select an image
+                </span>
+              </label>
+            </div>
+          </div>
+          <button
+            :class="selectedImageObj.second ? 'block' : 'hidden'"
+            @click="removeImage($event)"
+            id="second"
+            class="absolute text-white py-1 px-2 bg-zinc-900 rounded-md right-[18px] sm:right-[-24px] top-[-50px] sm:top-[-64px]"
+          >
+            Edit
+          </button>
+        </div>
+
+          <div
+          class="relative w-full text-sm border h-[230px] rounded-md border-zinc-900"
+        >
+          <div
+            :class="selectedImageObj.third ? 'block' : 'hidden'"
+            class="w-full  h-[230px] rounded md"
+          >
+            <img
+              :src="selectedImageObj.third"
+              alt=""
+              class="w-full h-full object-cover rounded-md"
+            />
+          </div>
+          <div
+            :class="selectedImageObj.third ? 'hidden' : 'block'"
+            class="w-[50%] absolute inset-0 m-auto h-fit flex flex-col justify-center items-center"
+          >
+            <div class="w-8 h-8 sm:w-6 sm:h-6">
+              <img src="@/assets/sel.svg" alt="" />
+            </div>
+            <div class="flex flex-row">
+              <label class="label">
+                <input
+                  type="file"
+                  name="file"
+                  id="third"
+                  accept="image/jpeg, image/png, image/jpg"
+                  @change="chooseImage($event)"
+                />
+                <span class="font-normal text-zinc-900">
+                  Select an image
+                </span>
+              </label>
+            </div>
+          </div>
+          <button
+            :class="selectedImageObj.third ? 'block' : 'hidden'"
+            @click="removeImage($event)"
+            id="third"
+            class="absolute text-white py-1 px-2 bg-zinc-900 rounded-md right-[18px] sm:right-[-24px] top-[-50px] sm:top-[-64px]"
+          >
+            Edit
+          </button>
+        </div>
+
+        <div
+          class="relative w-full text-sm border h-[230px] rounded-md border-zinc-900"
+        >
+          <div
+            :class="selectedImageObj.forth? 'block' : 'hidden'"
+            class="w-full  h-[230px] rounded md"
+          >
+            <img
+              :src="selectedImageObj.forth"
+              alt=""
+              class="w-full h-full object-cover rounded-md"
+            />
+          </div>
+          <div
+            :class="selectedImageObj.forth ? 'hidden' : 'block'"
+            class="w-[50%] absolute inset-0 m-auto h-fit flex flex-col justify-center items-center"
+          >
+            <div class="w-8 h-8 sm:w-6 sm:h-6">
+              <img src="@/assets/sel.svg" alt="" />
+            </div>
+            <div class="flex flex-row">
+              <label class="label">
+                <input
+                  type="file"
+                  name="file"
+                  id="forth"
+                  accept="image/jpeg, image/png, image/jpg"
+                  @change="chooseImage($event)"
+                />
+                <span class="font-normal text-zinc-900">
+                  Select an image
+                </span>
+              </label>
+            </div>
+          </div>
+          <button
+            :class="selectedImageObj.forth ? 'block' : 'hidden'"
+            @click="removeImage($event)"
+            id="forth"
+            class="absolute text-white py-1 px-2 bg-zinc-900 rounded-md right-[18px] sm:right-[-24px] top-[-50px] sm:top-[-64px]"
+          >
+            Edit
+          </button>
+        </div>
+
+        </div>
+    
 
         <div class="flex flex-col space-y-2">
           <p class="text-sm sm:text-lg"><b>Select Category</b></p>
@@ -125,7 +268,7 @@
 
         <button
           @click="saveToDatabse"
-          class="rounded-md text-black p-2 w-full font-medium bg-[#f0e68c]"
+          class="rounded-md text-white p-2 w-full font-medium bg-zinc-600 hover:bg-zinc-700 "
         >
           Submit
         </button>
@@ -161,6 +304,13 @@ export default {
       isEditButton: false,
       downloadedImage: null,
       imageFile: null,
+      selectedImageObj: {
+        first:null, 
+        second:null,
+        third:null,
+        forth:null
+
+      },
       price: 0,
     };
   },
@@ -173,15 +323,19 @@ export default {
     },
 
     chooseImage(e) {
+      //const imageData = { ...this.selectedImageObj }
       if (e.target.files[0]) {
         const file = e.target.files[0];
-        this.imageFile = file;
+        this.selectedImageObj[e.target.id] = file
+        //this.imageFile = file;
         if (file.size > 3000000) {
           this.$toast.error("Image size should not exceeds 3MB");
           return;
         }
+        console.log(imageData)
+        this.selectedImageObj[e.target.id] = URL.createObjectURL(file);
 
-        this.selectedImage = URL.createObjectURL(file);
+        
       }
     },
     removeImage() {
@@ -239,7 +393,8 @@ export default {
 <style scoped>
 /* eslint-disable */
 .input-field {
-  @apply border bg-[#1E1E1E] text-gray-300 border-gray-300 rounded-md focus:outline-none w-full h-10 sm:h-14 px-2;
+  @apply border bg-white text-zinc-900 border-zinc-900 rounded-md focus:outline-none w-full h-8 sm:h-11 px-2;
+
 }
 
 label.label input[type="file"] {
@@ -290,7 +445,7 @@ label.label input[type="file"] {
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: #f0e68c;
+  background-color: black;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */

@@ -1,7 +1,7 @@
 <!-- eslint-disable -->
 <template>
   <div
-    class="let swipeIn w-full sm:pb-56 mt-[60px] sm:mt-[68px] space-y-[5%] mx-auto p-6 text-gray-300"
+    class="let swipeIn w-full sm:pb-56 mt-[60px] sm:mt-[68px] space-y-[5%] mx-auto p-6 text-zinc-900"
   >
     <div class="space-y-[5%] w-full sm:w-[60%] mx-auto">
       <p class="font-medium text-center text-lg sm:text-xl uppercase">Admin</p>
@@ -29,14 +29,14 @@
             class="block form__input input-field"
             type="password"
             name="psw"
-            placeholder="Enter your email address"
+            placeholder="Enter your password"
             v-model.trim="password"
           />
         </div>
 
         <button
           @click="getUserInfo"
-          class="rounded-md text-zinc-700 p-2 w-full font-medium bg-[#daa520]"
+          class="rounded-md text-white p-2 w-full font-medium bg-zinc-800 hover:bg-black"
         >
           Submit
         </button>
@@ -53,7 +53,6 @@ import 'vue-toast-notification/dist/theme-bootstrap.css';
 
 export default {
   name: "AdminPage",
-  props: ["togglepage"],
   components: {},
   data() {
     return {
@@ -68,9 +67,10 @@ export default {
       .then ((res) => {
         console.log(res)
         this.$toast.success("Login successful")
-        this.togglepage()
+      
         this.email =""
         this.password = ""
+        this.$router.push("/admindashboard")
 
       })
       .catch((err) => {
@@ -88,6 +88,6 @@ export default {
 <style scoped>
 /* eslint-disable */
 .input-field {
-  @apply border bg-[#1E1E1E] text-gray-300 border-gray-300 rounded-md focus:outline-none w-full h-10 sm:h-14 px-2;
+  @apply border bg-white text-zinc-900 border-zinc-900 rounded-md focus:outline-none w-full h-8 sm:h-11 px-2;
 }
 </style>

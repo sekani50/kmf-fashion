@@ -7,6 +7,7 @@ import AboutView from "@/views/aboutview.vue";
 import ProductView from "@/views/productview.vue";
 import AdminView from "@/views/adminView.vue";
 import ServicesView from "@/views/servicesview.vue";
+import AdminDashboard from "@/views/adminDashboard.vue"
 
 Vue.use(VueRouter);
 
@@ -35,6 +36,11 @@ const routes = [
     path: "/admin",
     name: "AdminView",
     component: AdminView,
+  },
+  {
+    path: "/admindashboard",
+    name: "AdminDashboard",
+    component: AdminDashboard,
   },
   {
     path: "/services",

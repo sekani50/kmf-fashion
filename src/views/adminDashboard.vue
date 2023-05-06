@@ -3,27 +3,29 @@
   <div
     class="w-full h-full bg-[#FFF] inset-0 sm:pb-56 fixed overflow-y-auto overflow-x-hidden"
   >
-    <HeaderSect />
-    <div class="w-full h-full">
-      <AdminPage />
-    </div>
-
    
+
+    <AdminDashboard/>
+    <div class="w-full h-full">
+      <AddProduct />
+    </div>
   </div>
 </template>
 <!--eslint-disable-->
 <script>
 /* eslint-disable */
 
-import HeaderSect from "@/components/header.vue";
-import AdminPage from "@/components/admin/admin.vue";
 
+
+import AddProduct from "@/components/admin/addproduct.vue";
+import AdminDashboard from "@/components/admin/dashboard.vue";
 
 export default {
   name: "MainPage",
   components: {
-    HeaderSect,
-    AdminPage,
+    AddProduct,
+    AdminDashboard,
+
   },
 
   data() {
