@@ -3,7 +3,7 @@
   <div
     class="let swipeIn w-full sm:pb-56 mt-[60px] sm:mt-[68px] space-y-[5%] mx-auto p-6 text-gray-300"
   >
-    <p class="text-gray-300 sm:text-xl text-lg font-semibold collectio">
+    <p class="text-zinc-900 sm:text-xl text-lg font-semibold collectio">
       {{ getcat }}
     </p>
     <div
@@ -25,7 +25,7 @@
             class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
             <div
-              class="w-full h-[160px] sm:h-[280px] overflow-hidden rounded-t-lg"
+              class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
             >
               <img
                 :src="item.image.stringValue"
@@ -34,12 +34,12 @@
               />
             </div>
             <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-              <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
-                {{ item.name.stringValue }}
-              </p>
-             <div class="text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden w-full">
-              <span>{{ item.description.stringValue }}</span>
-            </div>
+              <p class="truncate  w-[100vw] text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+              <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.name.stringValue }}</span>
+            </p>
+            <p class="truncate w-[98vw] text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden">
+              <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.description.stringValue }}</span> 
+            </p>
               <p
                 :class="
                  item.price.stringValue === undefined ||
@@ -48,20 +48,11 @@
                     ? 'hidden'
                     : 'block'
                 "
-                class="font-semibold text-sm sm:text-lg text-end"
+                class="text-zinc-900 font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
-              <div class="w-full mx-auto">
-                <button
-                  @click="
-                    sendMessage(item.name.stringValue)
-                  "
-                  class="other-name py-1 px-2 rounded-md bg-[#daa520] text-black"
-                >
-                  Explore
-                </button>
-              </div>
+             
             </div>
           </div>
         </div>
@@ -87,7 +78,7 @@
             class="rounded-lg h-full w-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
             <div
-              class="w-full h-[160px] sm:h-[280px] overflow-hidden rounded-t-lg"
+              class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
             >
               <img
                 :src="item.image.stringValue"
@@ -96,12 +87,12 @@
               />
             </div>
             <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-              <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
-                {{ item.name.stringValue }}
-              </p>
-              <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
-                {{ item.description.stringValue }}
-              </p>
+              <p class="truncate  w-[100vw] text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+              <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.name.stringValue }}</span>
+            </p>
+            <p class="truncate w-[98vw] text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden">
+              <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.description.stringValue }}</span> 
+            </p>
               <p
                 :class="
                  item.price.stringValue === undefined ||
@@ -110,20 +101,11 @@
                     ? 'hidden'
                     : 'block'
                 "
-                class="font-semibold text-sm sm:text-lg text-end"
+                class="text-zinc-900 font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
-              <div class="w-full mx-auto">
-                <button
-                  @click="
-                    sendMessage(item.name.stringValue)
-                  "
-                  class="other-name py-1 px-2 rounded-md bg-[#daa520] text-black"
-                >
-                  Explore
-                </button>
-              </div>
+           
             </div>
           </div>
         </div>
@@ -149,7 +131,7 @@
             class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
             <div
-              class="w-full h-[160px] sm:h-[280px] overflow-hidden rounded-t-lg"
+              class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
             >
               <img
                 :src="item.image.stringValue"
@@ -158,12 +140,12 @@
               />
             </div>
             <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-              <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
-                {{ item.name.stringValue }}
-              </p>
-              <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
-                {{ item.description.stringValue }}
-              </p>
+              <p class="truncate  w-[100vw] text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+              <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.name.stringValue }}</span>
+            </p>
+            <p class="truncate w-[98vw] text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden">
+              <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.description.stringValue }}</span> 
+            </p>
               <p
                 :class="
                  item.price.stringValue === undefined ||
@@ -172,20 +154,11 @@
                     ? 'hidden'
                     : 'block'
                 "
-                class="font-semibold text-sm sm:text-lg text-end"
+                class="text-zinc-900 font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
-              <div class="w-full mx-auto">
-                <button
-                  @click="
-                    sendMessage(item.name.stringValue)
-                  "
-                  class="other-name py-1 px-2 rounded-md bg-[#daa520] text-black"
-                >
-                  Explore
-                </button>
-              </div>
+             
             </div>
           </div>
         </div>
@@ -211,7 +184,7 @@
             class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
             <div
-              class="w-full h-[160px] sm:h-[280px] overflow-hidden rounded-t-lg"
+              class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
             >
               <img
                 :src="item.image.stringValue"
@@ -220,12 +193,12 @@
               />
             </div>
             <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-              <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
-                {{ item.name.stringValue }}
-              </p>
-              <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
-                {{ item.description.stringValue }}
-              </p>
+              <p class="truncate  w-[100vw] text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+              <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.name.stringValue }}</span>
+            </p>
+            <p class="truncate w-[98vw] text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden">
+              <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.description.stringValue }}</span> 
+            </p>
               <p
                 :class="
                  item.price.stringValue === undefined ||
@@ -234,20 +207,11 @@
                     ? 'hidden'
                     : 'block'
                 "
-                class="font-semibold text-sm sm:text-lg text-end"
+                class="text-zinc-900 font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
-              <div class="w-full mx-auto">
-                <button
-                  @click="
-                    sendMessage(item.name.stringValue)
-                  "
-                  class="other-name py-1 px-2 rounded-md bg-[#daa520] text-black"
-                >
-                  Explore
-                </button>
-              </div>
+             
             </div>
           </div>
         </div>
@@ -273,7 +237,7 @@
             class="rounded-lg h-full w-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
             <div
-              class="w-full h-[160px] sm:h-[280px] overflow-hidden rounded-t-lg"
+              class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
             >
               <img
                 :src="item.image.stringValue"
@@ -282,12 +246,12 @@
               />
             </div>
             <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-              <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
-                {{ item.name.stringValue }}
-              </p>
-              <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
-                {{ item.description.stringValue }}
-              </p>
+              <p class="truncate  w-[100vw] text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+              <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.name.stringValue }}</span>
+            </p>
+            <p class="truncate w-[98vw] text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden">
+              <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.description.stringValue }}</span> 
+            </p>
               <p
                 :class="
                  item.price.stringValue === undefined ||
@@ -296,20 +260,11 @@
                     ? 'hidden'
                     : 'block'
                 "
-                class="font-semibold text-sm sm:text-lg text-end"
+                class="text-zinc-900 font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
-              <div class="w-full mx-auto">
-                <button
-                  @click="
-                    sendMessage(item.name.stringValue)
-                  "
-                  class="other-name py-1 px-2 rounded-md bg-[#daa520] text-black"
-                >
-                  Explore
-                </button>
-              </div>
+             
             </div>
           </div>
         </div>
@@ -335,7 +290,7 @@
             class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
             <div
-              class="w-full h-[160px] sm:h-[280px] overflow-hidden rounded-t-lg"
+              class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
             >
               <img
                 :src="item.image.stringValue"
@@ -344,12 +299,12 @@
               />
             </div>
             <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-              <p class="font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
-                {{ item.name.stringValue }}
-              </p>
-              <p class="text-sm sm:text-lg font-thin sm:pr-[10%]">
-                {{ item.description.stringValue }}
-              </p>
+              <p class="truncate  w-[100vw] text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+              <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.name.stringValue }}</span>
+            </p>
+            <p class="truncate w-[98vw] text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden">
+              <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.description.stringValue }}</span> 
+            </p>
               <p
                 :class="
                  item.price.stringValue === undefined ||
@@ -358,20 +313,11 @@
                     ? 'hidden'
                     : 'block'
                 "
-                class="font-semibold text-sm sm:text-lg text-end"
+                class="text-zinc-900 font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
-              <div class="w-full mx-auto">
-                <button
-                  @click="
-                    sendMessage(item.name.stringValue)
-                  "
-                  class="other-name py-1 px-2 rounded-md bg-[#daa520] text-black"
-                >
-                  Explore
-                </button>
-              </div>
+           
             </div>
           </div>
         </div>

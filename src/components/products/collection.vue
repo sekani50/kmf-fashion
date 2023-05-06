@@ -34,18 +34,18 @@
         class="h-fit md:w-[240px] sm:h-fit"
         v-for="(item, index) in asoebi.slice(0, 4)"
         :key="index"
+        @click="
+          showMiniDetail(
+            index,
+            item.name.stringValue,
+            item.description.stringValue,
+            item.image.stringValue,
+            item.price.stringValue,
+            'asoebi'
+          )
+        "
       >
         <ProductWidgets
-          @click="
-            showMiniDetail(
-              index,
-              item.name.stringValue,
-              item.description.stringValue,
-              item.image.stringValue,
-              item.price.stringValue,
-              'asoebi'
-            )
-          "
           :name="item.name.stringValue"
           :description="item.description.stringValue"
           :image="item.image.stringValue"
@@ -71,6 +71,16 @@
         class="h-fit md:w-[240px] sm:h-fit"
         v-for="(item, index) in muslim.slice(0, 4)"
         :key="index"
+        @click="
+          showMiniDetail(
+            index,
+            item.name.stringValue,
+            item.description.stringValue,
+            item.image.stringValue,
+            item.price.stringValue,
+            'muslim wears'
+          )
+        "
       >
         <ProductWidgets
           :name="item.name.stringValue"
@@ -98,6 +108,16 @@
         class="h-fit md:w-[240px] sm:h-fit"
         v-for="(item, index) in bespoke.slice(0, 4)"
         :key="index"
+        @click="
+          showMiniDetail(
+            index,
+            item.name.stringValue,
+            item.description.stringValue,
+            item.image.stringValue,
+            item.price.stringValue,
+            'unisex bespoke'
+          )
+        "
       >
         <ProductWidgets
           :name="item.name.stringValue"
@@ -127,6 +147,16 @@
         class="h-fit md:w-[240px] sm:h-fit"
         v-for="(item, index) in bridal.slice(0, 4)"
         :key="index"
+        @click="
+          showMiniDetail(
+            index,
+            item.name.stringValue,
+            item.description.stringValue,
+            item.image.stringValue,
+            item.price.stringValue,
+            'bridal wear'
+          )
+        "
       >
         <ProductWidgets
           :name="item.name.stringValue"
@@ -153,6 +183,16 @@
         class="h-fit md:w-[240px] sm:h-fit"
         v-for="(item, index) in cooperate.slice(0, 4)"
         :key="index"
+        @click="
+          showMiniDetail(
+            index,
+            item.name.stringValue,
+            item.description.stringValue,
+            item.image.stringValue,
+            item.price.stringValue,
+            'cooperate wear'
+          )
+        "
       >
         <ProductWidgets
           :name="item.name.stringValue"
@@ -179,6 +219,16 @@
         class="h-fit md:w-[240px] sm:h-fit"
         v-for="(item, index) in fabrics.slice(0, 4)"
         :key="index"
+        @click="
+          showMiniDetail(
+            index,
+            item.name.stringValue,
+            item.description.stringValue,
+            item.image.stringValue,
+            item.price.stringValue,
+            'fabrics'
+          )
+        "
       >
         <ProductWidgets
           :name="item.name.stringValue"
@@ -256,7 +306,7 @@
         :cats="cats"
         :price="price"
         :idx="idx"
-        :isminiDetail="isminiDetail"
+        :toggleminiDetails="toggleminiDetails"
       />
     </div>
   </div>
@@ -292,13 +342,17 @@ export default {
   },
   methods: {
     ...mapActions(["updateCategory"]),
-    showMiniDetail(index, name, desc, img, price) {
-      this.isMiniDetail = true;
+    showMiniDetail(index, name, desc, img, price, cat) {
+      this.isminiDetail = true;
       this.image = img;
       this.price = price;
-      this.description  = desc;
+      this.description = desc;
       this.name = name;
-      this.idx = index
+      this.idx = index;
+      this.cats = cat;
+    },
+    toggleminiDetails() {
+      this.isminiDetail = !this.isminiDetail;
     },
     sendMessage(text) {
       const url = "https://wa.me/2348118617926?text=" + text;
