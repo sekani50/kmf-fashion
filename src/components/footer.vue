@@ -1,6 +1,6 @@
 <!-- eslint-disable -->
 <template>
-  <div class="bg-[#FFFF] w-full p-6 text-zinc-700 text-sm sm:text-lg">
+  <div class="bg-zinc-900 w-full p-6 text-slate-50 text-sm sm:text-lg">
     <div class="flex flex-col sm:flex-row justify-around space-y-3">
       <div class="flex flex-col space-y-3 justify-start">
         <p class="capitalize underline">Location address</p>
@@ -10,11 +10,11 @@
         <p class="capitalize underline">Contact Info</p>
         <div class="flex space-x-2 items-center group">
           <span class="" v-html="images.tel"></span>
-          <p class="group-hover:text-[#daa520]">+2348118617926</p>
+          <p class="">+2348118617926</p>
         </div>
         <div class="flex space-x-2 items-center group">
           <span class="" v-html="images.email"></span>
-          <p class="group-hover:text-[#daa520]">kmyfashionavenue@gmail.com</p>
+          <p class="">kmyfashionavenue@gmail.com</p>
         </div>
       </div>
       <div class="flex items-center space-x-2">

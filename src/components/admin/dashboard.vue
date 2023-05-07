@@ -3,7 +3,7 @@
   <div
   @click.self="setOpen"
   :class="isOpen ? 'wrapper' :'nowrapper'"
-    class="fixed cursor-pointer let swipeInLeft  text-white  h-full"
+    class="fixed cursor-pointer let swipeInLeft  text-gray-300  h-full"
 
   >
   <div

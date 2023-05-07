@@ -81,7 +81,7 @@
               class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
             >
               <img
-                :src="item.image.stringValue"
+                :src="item.image.arrayValue?.values[0].stringValue || item.image.stringValue"
                 alt="new"
                 class="w-full h-full object-cover rounded-t-lg"
               />
@@ -293,7 +293,7 @@
               class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
             >
               <img
-                :src="item.image.stringValue"
+                :src="item.image.arrayValue?.values[0].stringValue || item.image.stringValue"
                 alt="new"
                 class="w-full h-full object-cover rounded-t-lg"
               />

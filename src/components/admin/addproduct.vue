@@ -1,7 +1,7 @@
 <!-- eslint-disable -->
 <template>
   <div
-    class="let swipeIn w-[95%] min-[1000px]:w-[85%] pb-[20rem] sm:pb-[20rem] space-y-[5%] float-right p-6 text-zinc-900"
+    class="let swipeIn w-[95%] min-[1000px]:w-[85%] pb-[5rem] sm:pb-[5rem] space-y-[5%] float-right p-6 text-zinc-900"
   >
     <div class="space-y-[5%] w-full sm:w-[80%] mx-auto">
       <div class="flex items-center justify-between">
@@ -18,14 +18,14 @@
         class="rounded-md relative p-3 sm:p-6 border space-y-[5%] border-zinc-900"
       >
 
-        <div class="grid grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
           <div
-          class="relative w-full border text-sm h-[230px] rounded-md border-zinc-900"
+          class="relative w-full border text-sm h-[160px] sm:h-[230px] rounded-md border-zinc-900"
         >
           <div
             :class="selectedImageObj.first ? 'block' : 'hidden'"
-            class="w-full  h-[230px] rounded md"
+            class="w-full   h-[160px] sm:h-[230px] rounded md"
           >
             <img
               :src="selectedImageObj.first"
@@ -59,18 +59,18 @@
             :class="selectedImageObj.first ? 'block' : 'hidden'"
             @click="removeImage($event)"
             id="first"
-            class="absolute text-white py-1 px-2 bg-zinc-900 rounded-md right-[18px] sm:right-[-24px] top-[-50px] sm:top-[-64px]"
+            class="absolute text-white py-1 px-2 bg-zinc-900 rounded-md right-0 top-0"
           >
             Edit
           </button>
         </div>
 
         <div
-          class="relative w-full text-sm border h-[230px] rounded-md border-zinc-900"
+          class="relative w-full text-sm border h-[160px] sm:h-[230px] rounded-md border-zinc-900"
         >
           <div
             :class="selectedImageObj.second ? 'block' : 'hidden'"
-            class="w-full  h-[230px] rounded md"
+            class="w-full  h-[160px] sm:h-[230px] rounded md"
           >
             <img
               :src="selectedImageObj.second"
@@ -104,18 +104,18 @@
             :class="selectedImageObj.second ? 'block' : 'hidden'"
             @click="removeImage($event)"
             id="second"
-            class="absolute text-white py-1 px-2 bg-zinc-900 rounded-md right-[18px] sm:right-[-24px] top-[-50px] sm:top-[-64px]"
+            class="absolute text-white py-1 px-2 bg-zinc-900 rounded-md right-0 top-0"
           >
             Edit
           </button>
         </div>
 
           <div
-          class="relative w-full text-sm border h-[230px] rounded-md border-zinc-900"
+          class="relative w-full text-sm border h-[160px] sm:h-[230px] rounded-md border-zinc-900"
         >
           <div
             :class="selectedImageObj.third ? 'block' : 'hidden'"
-            class="w-full  h-[230px] rounded md"
+            class="w-full  h-[160px] sm:h-[230px] rounded md"
           >
             <img
               :src="selectedImageObj.third"
@@ -149,18 +149,18 @@
             :class="selectedImageObj.third ? 'block' : 'hidden'"
             @click="removeImage($event)"
             id="third"
-            class="absolute text-white py-1 px-2 bg-zinc-900 rounded-md right-[18px] sm:right-[-24px] top-[-50px] sm:top-[-64px]"
+            class="absolute text-white py-1 px-2 bg-zinc-900 rounded-md right-0 top-0"
           >
             Edit
           </button>
         </div>
 
         <div
-          class="relative w-full text-sm border h-[230px] rounded-md border-zinc-900"
+          class="relative w-full text-sm border h-[160px] sm:h-[230px] rounded-md border-zinc-900"
         >
           <div
             :class="selectedImageObj.forth? 'block' : 'hidden'"
-            class="w-full  h-[230px] rounded md"
+            class="w-full  h-[160px] sm:h-[230px] rounded md"
           >
             <img
               :src="selectedImageObj.forth"
@@ -194,7 +194,7 @@
             :class="selectedImageObj.forth ? 'block' : 'hidden'"
             @click="removeImage($event)"
             id="forth"
-            class="absolute text-white py-1 px-2 bg-zinc-900 rounded-md right-[18px] sm:right-[-24px] top-[-50px] sm:top-[-64px]"
+            class="absolute text-white py-1 px-2 bg-zinc-900 rounded-md right-0 top-0"
           >
             Edit
           </button>
@@ -299,11 +299,17 @@ export default {
       isChecked: false,
       description: "",
       name: "",
-      imagefile: "",
+      imageFile: {
+        first:null, 
+        second:null,
+        third:null,
+        forth:null
+
+      },
       selectedImage: null,
       isEditButton: false,
       downloadedImage: null,
-      imageFile: null,
+     
       selectedImageObj: {
         first:null, 
         second:null,
@@ -327,20 +333,20 @@ export default {
       if (e.target.files[0]) {
         const file = e.target.files[0];
         this.selectedImageObj[e.target.id] = file
-        //this.imageFile = file;
+        this.imageFile[e.target.id] = file;
         if (file.size > 3000000) {
           this.$toast.error("Image size should not exceeds 3MB");
           return;
         }
-        console.log(imageData)
+       // console.log(imageData)
         this.selectedImageObj[e.target.id] = URL.createObjectURL(file);
 
-        
+        console.log(this.imageFile)
       }
     },
-    removeImage() {
-      this.selectedImage = null;
-      this.imageFile = null;
+    removeImage(e) {
+      this.selectedImageObj[e.target.id] = null;
+      this.imageFile[e.target.id] = null;
     },
     async saveToDatabse() {
       const validateData = {
@@ -377,7 +383,7 @@ export default {
             this.imageFile = null;
             this.selectedCategory = "";
             this.price = 0;
-            this.selectedImage = null;
+            this.selectedImageObj = null;
           } else {
             this.$toast.error("Error");
           }

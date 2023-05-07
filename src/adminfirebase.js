@@ -13,10 +13,15 @@ export const adminlogin = (email, password) => {
 
 //save image to database and download it
 export const getData = async (data) => {
-  const imgRef = ref(storage, `images/${data.image + v4()}`);
-  const productRef = collection(db, "productDetails");
-  let result;
-  await uploadBytes(imgRef, data.image)
+  const {image} = data
+  const {first, second, third, forth} = image
+  const imgArray = [first, second, third, forth]
+  const result = [];
+  let success;
+
+  const imgRef =  ref(storage, `images/${first + v4()}`);
+
+    await uploadBytes(imgRef, first)
     .then((res) => {
       console.log(res);
 
@@ -26,29 +31,135 @@ export const getData = async (data) => {
     });
 
   await getDownloadURL(imgRef)
-    .then(async (res) => {
+    .then( (res) => {
       console.log(res);
+      result.push(res)
  
-      await addDoc(productRef, {
-        name: data.name,
-        description: data.description,
-        category: data.category,
-        image: res,
-        price: data.price,
-      })
-        .then((res) => {
-          console.log(res);
-          result = res
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+
     })
     .catch((err) => {
       console.log(err);
     });
 
-    return  result;
+    const imgRefS =  ref(storage, `images/${second + v4()}`);
+
+    await uploadBytes(imgRefS, second)
+    .then((res) => {
+      console.log(res);
+
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  await getDownloadURL(imgRefS)
+    .then( (res) => {
+      console.log(res);
+      result.push(res)
+ 
+
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+
+    const imgRefT =  ref(storage, `images/${third + v4()}`);
+
+    await uploadBytes(imgRefT, third)
+    .then((res) => {
+      console.log(res);
+
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  await getDownloadURL(imgRefT)
+    .then( (res) => {
+      console.log(res);
+      result.push(res)
+ 
+
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+
+    const imgRefF =  ref(storage, `images/${forth + v4()}`);
+
+    await uploadBytes(imgRefF, forth)
+    .then((res) => {
+      console.log(res);
+
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  await getDownloadURL(imgRefF)
+    .then( (res) => {
+      console.log(res);
+      result.push(res)
+ 
+
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+
+  /* 
+    for (let img in imgArray) {
+
+    const imgRef =  ref(storage, `images/${img + v4()}`);
+
+    await uploadBytes(imgRef, img)
+    .then((res) => {
+      console.log(res);
+
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  await getDownloadURL(imgRef)
+    .then( (res) => {
+      console.log(res);
+      result.push(res)
+ 
+
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  }
+  
+  */
+
+  console.log(result)
+  
+  const productRef = collection(db, "productDetails");
+  //let result;
+
+    await addDoc(productRef, {
+      name: data.name,
+      description: data.description,
+      category: data.category,
+      image: result,
+      price: data.price,
+    })
+      .then((res) => {
+        console.log(res);
+        success = res
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    return  success;
 };
 
 

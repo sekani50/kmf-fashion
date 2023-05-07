@@ -159,9 +159,9 @@
         "
       >
         <ProductWidgets
-          :name="item.name.stringValue"
+          :name="item.image.arrayValue?.values[0].stringValue "
           :description="item.description.stringValue"
-          :image="item.image.stringValue"
+          :image="item.image.arrayValue?.values[0].stringValue || item.image.stringValue"
         />
       </div>
     </div>
@@ -197,7 +197,7 @@
         <ProductWidgets
           :name="item.name.stringValue"
           :description="item.description.stringValue"
-          :image="item.image.stringValue"
+          :image="item.image.arrayValue?.values[0].stringValue || item.image.stringValue"
         />
       </div>
     </div>
@@ -260,25 +260,25 @@
         alt="training"
       />
       <div
-        class="absolute inset-0 w-full h-full bg-black bg-opacity-60 space-y-[1%] md:space-y-[3%] sm:p-6 p-1"
+        class="absolute inset-0 w-full h-full bg-black bg-opacity-60 space-y-[1%] sm:space-y-[4%] md:space-y-[3%] sm:p-6 p-1"
       >
         <p
-          class="capitalize text-gray-300 text-center font-semibold text-xl sm:text-5xl collectio"
+          class="capitalize text-gray-300 text-center font-semibold text-xl sm:text-4xl md:text-5xl collectio"
         >
           Unleash your creativity
         </p>
         <p
-          class="text-center text-gray-300 font-medium capitalize text-sm sm:text-xl other-name"
+          class="text-center text-gray-300 font-medium capitalize text-sm sm:text-lg md:text-xl other-name"
         >
           With our
           <span
-            class="font-semibold uppercase text-[#daa520] p-1 bg-black text-xl sm:text-5xl tracking-wider collectio"
+            class="font-semibold uppercase text-[#daa520] p-1 bg-black text-xl sm:text-4xl md:text-5xl tracking-wider collectio"
             >fashion design</span
           >
         </p>
         <p class="text-center font-semibold uppercase">
           <span
-            class="text-[#daa520] rounded-sm md:rounded-md p-1 bg-black text-xl sm:text-5xl tracking-wider collectio"
+            class="text-[#daa520] rounded-sm md:rounded-md p-1 bg-black text-xl sm:text-4xl md:text-5xl tracking-wider collectio"
             >Training</span
           >
         </p>
