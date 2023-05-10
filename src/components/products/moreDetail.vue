@@ -1,0 +1,124 @@
+<!-- eslint-disable -->
+<template>
+  <div class="w-full h-full  collectio inset-0 bg-black bg-opacity-70">
+    <div
+      class="marg-style w-[700px] max-[720px]:w-[550px] max-[565px]:w-[350px] h-[80%] overflow-auto sm:overflow-hidden transform transition duration-300 ease-in-out absolute inset-0 m-auto grid grid-cols-1 sm:grid-cols-2 bg-white rounded-lg sm:rounded-xl"
+    >
+      <div
+     
+        class="absolute top-[-30px] right-0"
+        v-html="images.closedetail"
+      ></div>
+      <div
+        class="relative h-full w-full overflow-hidden rounded-tl-lg sm:rounded-l-xl rounded-tr-lg sm:rounded-tr-none"
+      >
+        <a class="prev" @click="prev" href="#">&#10094;</a>
+        <a class="next" @click="next" href="#">&#10095;</a>
+        <div ref="slide" class="hide-scroll overflow-x-auto w-full h-full">
+          <div class="min-w-max flex h-full">
+            <div
+              class="w-[400px] max-[720px]:w-[280px] max-[565px]:w-[350px] h-full rounded-tl-lg sm:rounded-l-xl rounded-tr-lg sm:rounded-tr-none object-cover"
+              v-for="(img, index) in getDetails.image"
+              :key="index"
+            >
+              <img
+                class="w-full h-full rounded-tl-lg sm:rounded-l-xl rounded-tr-lg sm:rounded-tr-none object-cover"
+                :src="img.stringValue"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sm:p-4 p-3 flex flex-col relative w-full h-full space-y-2 sm:space-y-5"
+      >
+        <p class="uppercase font-semibold">{{ getDetails.cats }}</p>
+        <p class="font-semibold">{{ getDetails.name }}</p>
+        <div class="space-y-2 max-h-[100px] w-full">
+          <p class="font-semibold">Description</p>
+          <div class="w-full h-full">
+            <p>{{ getDetails.description }}</p>
+          </div>
+        </div>
+        <p v-if="getDetails.price !== undefined || getDetails.price === 0" class="font-semibold">
+          {{ `Price: ₦${getDetails.price}` }}
+        </p>
+        <button
+         
+          class="text-white w-[90%] rounded-md flex text-center justify-center p-2 text-sm sm:text-lg bg-zinc-700 outline-none hover:bg-zinc-800"
+        >
+          Chat with us
+        </button>
+      </div>
+    </div>
+  </div>
+</template>
+<!-- eslint-disable -->
+<script>
+/* eslint-disable */
+import { assets } from "@/assets/svgimages.js";
+import { mapGetters } from "vuex";
+
+export default {
+  name: "MoreDetails",
+
+  components: {},
+  data() {
+    return {
+      images: assets,
+    };
+  },
+  computed: {
+    ...mapGetters(["getDetails"]),
+  },
+  methods: {
+    prev() {
+      let slide = this.$refs.slide;
+      console.log(slide.scrollWidth);
+      console.log(slide.offsetWidth);
+      slide.scrollBy({ left: -slide.scrollWidth / 4, behavior: "smooth" });
+    },
+    next() {
+      let slide = this.$refs.slide;
+      slide.scrollBy({ left: slide.scrollWidth / 4, behavior: "smooth" });
+      console.log(slide.scrollWidth);
+      console.log(slide.offsetWidth);
+    },
+  },
+};
+</script>
+<!-- eslint-disable -->
+<style scoped>
+/* eslint-disable */
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  padding: 3px 12px;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 18px;
+  transition: 0.7s ease;
+  border-radius: 50%;
+  text-decoration: none;
+  user-select: none;
+}
+.next {
+  right: 0;
+}
+.prev {
+  left: 0;
+}
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+.marg-style {
+    margin-top: 90px;
+}
+</style>

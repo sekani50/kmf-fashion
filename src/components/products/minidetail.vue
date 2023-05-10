@@ -68,7 +68,7 @@
 <script>
 /* eslint-disable */
 import { assets } from "@/assets/svgimages.js"
-
+import { mapActions } from "vuex";
 
 export default {
   name: "MiniDetail",
@@ -90,6 +90,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(["updateDetails"]),
     prev () {
       let slide = this.$refs.slide;
       console.log(slide.scrollWidth)
@@ -103,13 +104,19 @@ export default {
       console.log(slide.scrollWidth)
       console.log(slide.offsetWidth)
     },
-    explore (img) {
+    explore () {
+        const toStore = {
+            name: this.name,
+            description: this.description,
+            image:this.image,
+             price:this.price,
+            cats:this.cats
+        }
 
-      forEach((img, index) => {
-        console.log(img.stringValue)
-      })
-      
-    }
+        this.updateDetails(toStore)
+        this.$router.push("/moredetail")
+        
+      }
   },
 };
 </script>

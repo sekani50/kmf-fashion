@@ -9,6 +9,7 @@ export default new Vuex.Store({
   plugins: [createPersistedState()],
   state: {
     selectedCategory: null,
+    moreDetails:null
   },
 
   actions: {
@@ -16,14 +17,22 @@ export default new Vuex.Store({
       commit("UPDATE_CATEGORY", cat);
       console.log(cat)
     },
+    updateDetails({commit}, details) {
+      commit("UPDATE_DETAILS", details);
   },
+},
   mutations: {
     UPDATE_CATEGORY(state, cat) {
       state.selectedCategory = cat;
     },
+    UPDATE_DETAILS(state, details) {
+      state.moreDetails = details;
+    }
+
   },
   getters: {
     getACategory: (state) => state.selectedCategory,
+    getDetails: (state) => state.moreDetails
   },
   modules: {},
 });
