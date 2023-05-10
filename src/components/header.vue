@@ -1,7 +1,9 @@
 <!-- eslint-disable -->
 <template>
   <div
-    class="h-fit w-full sm:w-[99%] text-zinc-700 text-sm sm:text-lg fixed inset-0 bg-[#FFFFFF] shadow-lg z-30"
+
+  :class="currentRoute === 'MoredetailView' ? 'sm:w-full' : 'sm:w-[99%]'"
+    class="h-fit w-full text-zinc-700 text-sm sm:text-lg fixed inset-0 bg-[#FFFFFF] shadow-lg z-30"
   >
  <div class="px-[5%] sm:py-4 py-3 w-full flex items-center justify-between">
   <router-link to="/">
@@ -80,6 +82,12 @@ export default {
       isVisible: false
       
     };
+  },
+  computed: {
+    currentRoute () {
+      return this.$route.name
+    }
+
   },
   methods: {
     menuClick() {

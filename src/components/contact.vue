@@ -33,13 +33,13 @@
 
             </textarea>
         </div>
-        <button class="rounded-md text-zinc-700 p-2 w-full font-medium bg-[#daa520]">
+        <button class="rounded-md text-slate-50 p-2 w-full font-medium bg-zinc-900">
             Submit
         </button>
         </div>
         
     </div>
-    <div class="space-y-[5%] sm:p-6 p-3 font-medium rounded-md w-full sm:w-[60%] bg-[#daa520] text-zinc-900 mx-auto">
+    <div class="space-y-[5%] sm:p-6 p-3 font-medium rounded-md w-full sm:w-[60%] bg-zinc-900 text-slate-50 mx-auto">
         <div class="flex flex-col space-y-3 justify-start">
         <p class="capitalize underline">Location address</p>
         <div class="flex space-x-2 items-center">

@@ -5,9 +5,7 @@
   >
     <div class="space-y-[5%] w-full sm:w-[80%] mx-auto">
       <div class="flex items-center justify-between">
-        <div class="sm:w-8 sm:h-8 w-6 h-6">
-          <img class="w-full h-full" src="@/assets/back.svg" alt="back" />
-        </div>
+        <div class="w-6 h-6 bg-none"></div>
         <p class="font-medium text-center text-lg sm:text-xl uppercase">
           product details
         </p>
@@ -268,7 +266,12 @@
           @click="saveToDatabse"
           class="rounded-md text-white p-2 w-full font-medium bg-zinc-600 hover:bg-zinc-700"
         >
-          Submit
+          <span v-if="!isSubmit">Submit</span>
+          <div v-else class="flex justify-center items-center">
+            <div
+              class="rounded-full border-2 animate-spin border-r-0 border-b-0 w-6 h-6 border-slate-50"
+            ></div>
+          </div>
         </button>
       </div>
     </div>
@@ -278,13 +281,15 @@
 <script>
 /* eslint-disable */
 import "vue-toast-notification/dist/theme-bootstrap.css";
-import { getData } from "../../adminfirebase";
+import { getData, getExistingDoc } from "../../adminfirebase";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "AddProduct",
   props: ["togglepage"],
   data() {
     return {
+      isSubmit: false,
       categories: [
         "Unisex Bespoke",
         "Bridal wears",
@@ -316,15 +321,50 @@ export default {
       price: 0,
     };
   },
+  computed: {
+    ...mapGetters(["getEdit"]),
+  },
+  async mounted() {
+    if (this.getEdit) {
+      await getExistingDoc(this.getEdit)
+        .then((res) => {
+          console.log(res);
+          const { category, description, name, price, image } = res;
+          this.selectedCategory = category;
+
+          this.description = description;
+          (this.name = name),
+            (this.imageFile = {
+              first: image[0],
+              second: image[1],
+              third: image[2],
+              forth: image[3],
+            });
+          this.selectedImageObj = {
+            first: image[0],
+            second: image[1],
+            third: image[2],
+            forth: image[3],
+          };
+          this.price = price;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  },
 
   methods: {
+    ...mapActions(['editCategory']),
     selectedFn(cat) {
       this.selectedCategory = cat;
       console.log(cat);
+      this.editCategory(null)
       // console.log(cat.target.value)
     },
 
     chooseImage(e) {
+      this.editCategory(null)
       //const imageData = { ...this.selectedImageObj }
       if (e.target.files[0]) {
         const file = e.target.files[0];
@@ -345,6 +385,7 @@ export default {
       this.imageFile[e.target.id] = null;
     },
     async saveToDatabse() {
+      this.isSubmit = true;
       const validateData = {
         name: this.name,
         description: this.description,
@@ -365,12 +406,13 @@ export default {
         image: this.imageFile,
         category: this.selectedCategory,
         price: this.price,
+        id: this.getEdit
       };
 
       await getData(payload)
         .then((res) => {
           console.log(res);
-
+          this.isSubmit = false;
           if (res) {
             this.$toast.success("Saved successfully");
 

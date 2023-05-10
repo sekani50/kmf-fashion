@@ -38,7 +38,12 @@
           @click="getUserInfo"
           class="rounded-md text-white p-2 w-full font-medium bg-zinc-800 hover:bg-black"
         >
-          Submit
+          <span v-if="!isSubmit">Submit</span>
+          <div v-else class="flex justify-center items-center">
+            <div
+              class="rounded-full border-2 animate-spin border-r-0 border-b-0 w-6 h-6 border-slate-50"
+            ></div>
+          </div>
         </button>
       </div>
     </div>
@@ -58,14 +63,17 @@ export default {
     return {
       password: "",
       email: "",
+      isSubmit:false,
     };
   },
 
   methods: {
     getUserInfo() {
+      this.isSubmit = true;
     adminlogin(this.email, this.password)
       .then ((res) => {
         console.log(res)
+        this.isSubmit = false
         this.$toast.success("Login successful")
       
         this.email =""

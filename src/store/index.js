@@ -9,7 +9,8 @@ export default new Vuex.Store({
   plugins: [createPersistedState()],
   state: {
     selectedCategory: null,
-    moreDetails:null
+    moreDetails:null,
+    currentCategories: null
   },
 
   actions: {
@@ -20,6 +21,13 @@ export default new Vuex.Store({
     updateDetails({commit}, details) {
       commit("UPDATE_DETAILS", details);
   },
+  updateCurrent({commit}, current) {
+    commit("UPDATE_CURRENT", current);
+    //console.log(current)
+  },
+  editCategory({commit}, category) {
+      commit('EDIT_CATEGORY', category);
+  }
 },
   mutations: {
     UPDATE_CATEGORY(state, cat) {
@@ -28,11 +36,20 @@ export default new Vuex.Store({
     UPDATE_DETAILS(state, details) {
       state.moreDetails = details;
     }
+    ,
+    UPDATE_CURRENT(state, current) {
+      state.currentCategories = current;
+    },
+    EDIT_CATEGORY(state, category) {
+      state.editCat = category
+    }
 
   },
   getters: {
     getACategory: (state) => state.selectedCategory,
-    getDetails: (state) => state.moreDetails
+    getDetails: (state) => state.moreDetails,
+    getCurrent: (state) => state.currentCategories,
+    getEdit: (state) => state.editCat
   },
   modules: {},
 });

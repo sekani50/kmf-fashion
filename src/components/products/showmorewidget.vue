@@ -16,7 +16,7 @@
       "
     >
       <div
-        class="h-fit sm:w-[300px] sm:h-fit"
+        class="h-fit  md:w-[240px] sm:h-fit"
         v-for="(item, index) in asoebi"
         :key="index"
       >
@@ -69,7 +69,7 @@
       "
     >
       <div
-        class="h-fit sm:w-[300px] sm:h-fit"
+        class="h-fit  md:w-[240px] sm:h-fit"
         v-for="(item, index) in bridal"
         :key="index"
       >
@@ -122,7 +122,7 @@
       "
     >
       <div
-        class="h-fit sm:w-[300px] sm:h-fit"
+        class="h-fit  md:w-[240px] sm:h-fit"
         v-for="(item, index) in cooperate"
         :key="index"
       >
@@ -175,7 +175,7 @@
       "
     >
       <div
-        class="h-fit sm:w-[300px] sm:h-fit"
+        class="h-fit  md:w-[240px] sm:h-fit"
         v-for="(item, index) in fabrics"
         :key="index"
       >
@@ -228,7 +228,7 @@
       "
     >
       <div
-        class="h-fit sm:w-[300px] sm:h-fit"
+        class="h-fit  md:w-[240px] sm:h-fit"
         v-for="(item, index) in bespoke"
         :key="index"
       >
@@ -281,7 +281,7 @@
       "
     >
       <div
-        class="h-fit sm:w-[300px] sm:h-fit"
+        class="h-fit  md:w-[240px] sm:h-fit"
         v-for="(item, index) in muslim"
         :key="index"
       >
@@ -365,6 +365,6 @@ export default {
 /* eslint-disable */
 
 .grids {
-  @apply grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 text-gray-300;
+  @apply mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-[3rem] lg:gap-[70px] text-zinc-900;
 }
 </style>

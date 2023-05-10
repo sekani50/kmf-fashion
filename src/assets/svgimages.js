@@ -1,6 +1,6 @@
 /* eslint-disable */
 export const assets = {
-  loc:`<svg xmlns="http://www.w3.org/2000/svg" width="31.57" height="31.13" viewBox="0 0 31.57 31.13" class="fill-[#27272A] sm:h-6 sm:w-6 h-4 w-4">
+  loc:`<svg xmlns="http://www.w3.org/2000/svg" width="31.57" height="31.13" viewBox="0 0 31.57 31.13" class="fill-slate-50 sm:h-6 sm:w-6 h-4 w-4">
   <path id="ic_account_balance_24px" d="M5.323,14.341V24.718h4.985V14.341Zm9.969,0V24.718h4.985V14.341ZM2,32.13H33.57V27.683H2ZM25.262,14.341V24.718h4.985V14.341ZM17.785,1,2,8.412v2.965H33.57V8.412Z" transform="translate(-2 -1)" fill="currentColor"></path>
 </svg>`,
   tel: `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="348.077px" height="348.077px" viewBox="0 0 348.077 348.077"  xml:space="preserve" class=" fill-slate-50 h-4 w-4 sm:w-6 sm:h-6">

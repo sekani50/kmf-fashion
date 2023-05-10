@@ -1,11 +1,10 @@
 <!-- eslint-disable -->
 <template>
-  <div class="w-full h-full  collectio inset-0 bg-black bg-opacity-70">
+  <div class="w-full h-full collectio inset-0 bg-black bg-opacity-70">
     <div
       class="marg-style w-[700px] max-[720px]:w-[550px] max-[565px]:w-[350px] h-[80%] overflow-auto sm:overflow-hidden transform transition duration-300 ease-in-out absolute inset-0 m-auto grid grid-cols-1 sm:grid-cols-2 bg-white rounded-lg sm:rounded-xl"
     >
       <div
-     
         class="absolute top-[-30px] right-0"
         v-html="images.closedetail"
       ></div>
@@ -41,14 +40,22 @@
             <p>{{ getDetails.description }}</p>
           </div>
         </div>
-        <p v-if="getDetails.price !== undefined || getDetails.price === 0" class="font-semibold">
+        <p
+          v-if="getDetails.price !== undefined || getDetails.price === 0"
+          class="font-semibold"
+        >
           {{ `Price: ₦${getDetails.price}` }}
         </p>
         <button
-         
+    
           class="text-white w-[90%] rounded-md flex text-center justify-center p-2 text-sm sm:text-lg bg-zinc-700 outline-none hover:bg-zinc-800"
         >
-          Chat with us
+          <span v-if="!isSent">Chat with us</span>
+          <div v-else class="flex justify-center items-center">
+            <div
+              class="rounded-full border-2 animate-spin border-r-0 border-b-0 w-6 h-6 border-slate-50"
+            ></div>
+          </div>
         </button>
       </div>
     </div>
@@ -59,14 +66,19 @@
 /* eslint-disable */
 import { assets } from "@/assets/svgimages.js";
 import { mapGetters } from "vuex";
+import { sendToAdmin } from "../../adminfirebase";
+
 
 export default {
   name: "MoreDetails",
 
-  components: {},
+  components: {
+    
+  },
   data() {
     return {
       images: assets,
+      isSent: false,
     };
   },
   computed: {
@@ -84,6 +96,28 @@ export default {
       slide.scrollBy({ left: slide.scrollWidth / 4, behavior: "smooth" });
       console.log(slide.scrollWidth);
       console.log(slide.offsetWidth);
+    },
+    async chat() {
+      this.isSent = true;
+      console.log(this.getDetails);
+      await sendToAdmin(this.getDetails)
+        .then((res) => {
+          console.log(res);
+          console.log(res.id);
+          this.isSent = false;
+          const url =
+            "https://wa.me/2348118617926?text=" +
+            `identity: ${res.id}` +
+            "\n" +
+            "\n" +
+            "       " +
+            `I like this ${this.getDetails.name}`;
+
+          window.open(url, "blank").focus();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };
@@ -119,6 +153,6 @@ export default {
   display: none;
 }
 .marg-style {
-    margin-top: 90px;
+  margin-top: 90px;
 }
 </style>
