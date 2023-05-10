@@ -150,7 +150,7 @@ export const getData = async (data) => {
       
     };
     
-    setDoc(docRef, data)
+    setDoc(docRef, data, { merge:true })
     .then(docRef => {
         console.log("Entire Document has been updated successfully");
         success = docRef;
