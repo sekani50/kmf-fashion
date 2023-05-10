@@ -140,7 +140,7 @@ export const getData = async (data) => {
   if (data.id) {
     const docRef = doc(db, "productDetails", data.id);
 
-    const data = {
+    const payload = {
       name: data.name,
       description: data.description,
       category: data.category,
@@ -150,7 +150,7 @@ export const getData = async (data) => {
       
     };
     
-    setDoc(docRef, data, { merge:true })
+    setDoc(docRef, payload, { merge:true })
     .then(docRef => {
         console.log("Entire Document has been updated successfully");
         success = docRef;

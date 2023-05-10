@@ -413,7 +413,7 @@ export default {
         .then((res) => {
           console.log(res);
           this.isSubmit = false;
-          if (res) {
+          
             this.$toast.success("Saved successfully");
 
             this.name = "";
@@ -427,9 +427,9 @@ export default {
               third: null,
               forth: null,
             };
-          } else {
-            this.$toast.error("Error");
-          }
+            this.editCategory(null)
+            //this.$toast.error("Error");
+          
         })
         .catch((err) => {
           console.log(err);

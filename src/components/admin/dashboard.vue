@@ -47,7 +47,10 @@
         >{{ cat }}</p>
       
       </div>
-      <p class="font-semibold text-gray-300">Checkouts</p>
+      <p 
+      @click="showCheckOut"
+      :class="currentRoute === 'CheckoutView' ? 'text-white':'text-gray-300'"
+      class="font-semibold text-gray-300">Checkouts</p>
     </div>
   </div>
 </template>
@@ -98,6 +101,9 @@ export default {
         this.$router.push("/category");
       }
       
+    },
+    showCheckOut () {
+      this.$router.push("/checkout");
     }
   },
 };
