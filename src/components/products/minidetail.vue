@@ -67,8 +67,8 @@
 <!-- eslint-disable -->
 <script>
 /* eslint-disable */
-import { assets } from "@/assets/svgimages.js";
-import { Carousel, Slide } from "vue-carousel";
+import { assets } from "@/assets/svgimages.js"
+
 
 export default {
   name: "MiniDetail",
@@ -82,8 +82,7 @@ export default {
     "toggleminiDetails",
   ],
   components: {
-    Carousel,
-    Slide,
+  
   },
   data() {
     return {
