@@ -21,229 +21,253 @@
       <SecBanner />
     </div>
 
-    <div class="flex justify-between items-center">
-      <p class="text-zinc-900 sm:text-xl text-[14px] font-semibold collectio">
-        Asoebi
-      </p>
-    </div>
-
-    <div
-      class="mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-[3rem] lg:gap-[70px] text-zinc-900"
-    >
-      <div
-        class="h-fit md:w-[240px] sm:h-fit"
-        v-for="(item, index) in asoebi.slice(0, 4)"
-        :key="index"
-        @click="
-          showMiniDetail(
-            index,
-            item.name.stringValue,
-            item.description.stringValue,
-            item.image.stringValue,
-            item.price.stringValue,
-            'asoebi'
-          )
-        "
-      >
-        <ProductWidgets
-          :name="item.name.stringValue"
-          :description="item.description.stringValue"
-          :image="item.image.stringValue"
-          :price="item.price.stringValue"
-        />
+    <div class="flex flex-col space-y-2">
+      <div class="flex justify-between items-center">
+        <p class="text-zinc-900 sm:text-xl text-[14px] font-semibold collectio">
+          Asoebi
+        </p>
       </div>
-    </div>
-    <button
-      @click="showMore(asoebi[0].category.stringValue)"
-      class="text-white bg-black text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
-    >
-      <span> more</span>
-    </button>
 
-    <div class="flex justify-between items-center">
-      <p class="text-zinc-900 sm:text-xl text-[14px] font-semibold collectio">
-        Muslimah Wears
-      </p>
-    </div>
-
-    <div class="grids">
       <div
-        class="h-fit md:w-[240px] sm:h-fit"
-        v-for="(item, index) in muslim.slice(0, 4)"
-        :key="index"
-        @click="
-          showMiniDetail(
-            index,
-            item.name.stringValue,
-            item.description.stringValue,
-            item.image.stringValue,
-            item.price.stringValue,
-            'muslim wears'
-          )
-        "
+        class="mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-[3rem] lg:gap-[70px] text-zinc-900"
       >
-        <ProductWidgets
-          :name="item.name.stringValue"
-          :description="item.description.stringValue"
-          :image="item.image.stringValue"
-        />
+        <div
+          class="h-fit md:w-[240px] sm:h-fit"
+          v-for="(item, index) in asoebi.slice(0, 4)"
+          :key="index"
+          @click="
+            showMiniDetail(
+              index,
+              item.name.stringValue,
+              item.description.stringValue,
+              item.image.arrayValue?.values,
+              item.price.stringValue,
+              'asoebi'
+            )
+          "
+        >
+          <ProductWidgets
+            :name="item.name.stringValue"
+            :description="item.description.stringValue"
+            :image="item.image.arrayValue?.values[0].stringValue"
+            :price="item.price.stringValue"
+
+          />
+        </div>
       </div>
-    </div>
-
-    <button
-      @click="showMore(muslim[0].category.stringValue)"
-      class="text-white bg-black text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
-    >
-      <span> more</span>
-    </button>
-
-    <div class="flex justify-between items-center">
-      <p class="text-zinc-900 sm:text-xl text-[14px] font-semibold collectio">
-        Unisex Bespoke
-      </p>
-    </div>
-
-    <div class="grids">
-      <div
-        class="h-fit md:w-[240px] sm:h-fit"
-        v-for="(item, index) in bespoke.slice(0, 4)"
-        :key="index"
-        @click="
-          showMiniDetail(
-            index,
-            item.name.stringValue,
-            item.description.stringValue,
-            item.image.stringValue,
-            item.price.stringValue,
-            'unisex bespoke'
-          )
-        "
+      <button
+        @click="showMore(asoebi[0].category.stringValue)"
+        class="text-white bg-black self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
       >
-        <ProductWidgets
-          :name="item.name.stringValue"
-          :description="item.description.stringValue"
-          :image="item.image.stringValue"
-        />
-      </div>
+        <span> more</span>
+      </button>
     </div>
 
-    <button
-      @click="showMore(bespoke[0].category.stringValue)"
-      class="text-white bg-black text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
-    >
-      <span> more</span>
-    </button>
+    <!---->
+    <div class="flex flex-col space-y-2">
+      <div class="flex justify-between items-center">
+        <p class="text-zinc-900 sm:text-xl text-[14px] font-semibold collectio">
+          Muslimah Wears
+        </p>
+      </div>
+
+      <div class="grids">
+        <div
+          class="h-fit md:w-[240px] sm:h-fit"
+          v-for="(item, index) in muslim.slice(0, 4)"
+          :key="index"
+          @click="
+            showMiniDetail(
+              index,
+              item.name.stringValue,
+              item.description.stringValue,
+              item.image.arrayValue?.values,
+              item.price.stringValue,
+              'muslim wears'
+            )
+          "
+        >
+          <ProductWidgets
+            :name="item.name.stringValue"
+            :description="item.description.stringValue"
+            :image="item.image.arrayValue?.values[0].stringValue"
+            :price="item.price.stringValue"
+          />
+        </div>
+      </div>
+
+      <button
+        @click="showMore(muslim[0].category.stringValue)"
+        class="text-white bg-black self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
+      >
+        <span> more</span>
+      </button>
+    </div>
+
+    <!---->
+    <div class="flex flex-col space-y-2">
+      <div class="flex justify-between items-center">
+        <p class="text-zinc-900 sm:text-xl text-[14px] font-semibold collectio">
+          Unisex Bespoke
+        </p>
+      </div>
+
+      <div class="grids">
+        <div
+          class="h-fit md:w-[240px] sm:h-fit"
+          v-for="(item, index) in bespoke.slice(0, 4)"
+          :key="index"
+          @click="
+            showMiniDetail(
+              index,
+              item.name.stringValue,
+              item.description.stringValue,
+              item.image.arrayValue?.values,
+              item.price.stringValue,
+              'unisex bespoke'
+            )
+          "
+        >
+          <ProductWidgets
+            :name="item.name.stringValue"
+            :description="item.description.stringValue"
+            :image="item.image.arrayValue?.values[0].stringValue"
+            :price="item.price.stringValue"
+          />
+        </div>
+      </div>
+
+      <button
+        @click="showMore(bespoke[0].category.stringValue)"
+        class="text-white bg-black self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
+      >
+        <span> more</span>
+      </button>
+    </div>
 
     <TopBanner class="w-full" />
 
-    <div class="flex justify-between text-zinc-900 items-center">
-      <p class="text-zinc-900 sm:text-xl text-[14px] font-semibold collectio">
-        Bridal Wears
-      </p>
-    </div>
-
-    <div class="grids">
-      <div
-        class="h-fit md:w-[240px] sm:h-fit"
-        v-for="(item, index) in bridal.slice(0, 4)"
-        :key="index"
-        @click="
-          showMiniDetail(
-            index,
-            item.name.stringValue,
-            item.description.stringValue,
-            item.image.stringValue,
-            item.price.stringValue,
-            'bridal wear'
-          )
-        "
-      >
-        <ProductWidgets
-          :name="item.image.arrayValue?.values[0].stringValue "
-          :description="item.description.stringValue"
-          :image="item.image.arrayValue?.values[0].stringValue || item.image.stringValue"
-        />
+    <div class="flex flex-col space-y-2">
+      <div class="flex justify-between text-zinc-900 items-center">
+        <p class="text-zinc-900 sm:text-xl text-[14px] font-semibold collectio">
+          Bridal Wears
+        </p>
       </div>
-    </div>
-    <button
-      @click="showMore(bridal[0].category.stringValue)"
-      class="text-white bg-black text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
-    >
-      <span> more</span>
-    </button>
 
-    <div class="flex justify-between items-center">
-      <p class="text-zinc-900 sm:text-xl text-[14px] font-semibold collectio">
-        Cooperate and Casual Wears
-      </p>
-    </div>
-
-    <div class="grids">
-      <div
-        class="h-fit md:w-[240px] sm:h-fit"
-        v-for="(item, index) in cooperate.slice(0, 4)"
-        :key="index"
-        @click="
-          showMiniDetail(
-            index,
-            item.name.stringValue,
-            item.description.stringValue,
-            item.image.stringValue,
-            item.price.stringValue,
-            'cooperate wear'
-          )
-        "
-      >
-        <ProductWidgets
-          :name="item.name.stringValue"
-          :description="item.description.stringValue"
-          :image="item.image.arrayValue?.values[0].stringValue || item.image.stringValue"
-        />
+      <div class="grids">
+        <div
+          class="h-fit md:w-[240px] sm:h-fit"
+          v-for="(item, index) in bridal.slice(0, 4)"
+          :key="index"
+          @click="
+            showMiniDetail(
+              index,
+              item.name.stringValue,
+              item.description.stringValue,
+              item.image.arrayValue?.values,
+              item.price.stringValue,
+              'bridal wear'
+            )
+          "
+        >
+          <ProductWidgets
+            :name="item.name.stringValue"
+            :description="item.description.stringValue"
+            :image="
+              item.image.arrayValue?.values[0].stringValue
+            "
+            :price="item.price.stringValue"
+          />
+        </div>
       </div>
-    </div>
-    <button
-      @click="showMore(cooperate[0].category.stringValue)"
-      class="text-white bg-black text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
-    >
-      <span> more</span>
-    </button>
-
-    <div class="flex justify-between items-center">
-      <p class="text-zinc-900 sm:text-xl text-[14px] font-semibold collectio">
-        Fabrics
-      </p>
-    </div>
-
-    <div class="grids">
-      <div
-        class="h-fit md:w-[240px] sm:h-fit"
-        v-for="(item, index) in fabrics.slice(0, 4)"
-        :key="index"
-        @click="
-          showMiniDetail(
-            index,
-            item.name.stringValue,
-            item.description.stringValue,
-            item.image.stringValue,
-            item.price.stringValue,
-            'fabrics'
-          )
-        "
+      <button
+        @click="showMore(bridal[0].category.stringValue)"
+        class="text-white bg-black self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
       >
-        <ProductWidgets
-          :name="item.name.stringValue"
-          :description="item.description.stringValue"
-          :image="item.image.stringValue"
-        />
-      </div>
+        <span> more</span>
+      </button>
     </div>
 
-    <button
-      @click="showMore(fabrics[0].category.stringValue)"
-      class="text-white bg-black text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
-    >
-      <span> more</span>
-    </button>
+    <div class="flex flex-col space-y-2">
+      <div class="flex justify-between items-center">
+        <p class="text-zinc-900 sm:text-xl text-[14px] font-semibold collectio">
+          Cooperate and Casual Wears
+        </p>
+      </div>
+
+      <div class="grids">
+        <div
+          class="h-fit md:w-[240px] sm:h-fit"
+          v-for="(item, index) in cooperate.slice(0, 4)"
+          :key="index"
+          @click="
+            showMiniDetail(
+              index,
+              item.name.stringValue,
+              item.description.stringValue,
+              item.image.arrayValue?.values,
+              item.price.stringValue,
+              'cooperate wear'
+            )
+          "
+        >
+          <ProductWidgets
+            :name="item.name.stringValue"
+            :description="item.description.stringValue"
+            :image="
+              item.image.arrayValue?.values[0].stringValue
+            "
+            :price="item.price.stringValue"
+          />
+        </div>
+      </div>
+      <button
+        @click="showMore(cooperate[0].category.stringValue)"
+        class="text-white bg-black self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
+      >
+        <span> more</span>
+      </button>
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <div class="flex justify-between items-center">
+        <p class="text-zinc-900 sm:text-xl text-[14px] font-semibold collectio">
+          Fabrics
+        </p>
+      </div>
+
+      <div class="grids">
+        <div
+          class="h-fit md:w-[240px] sm:h-fit"
+          v-for="(item, index) in fabrics.slice(0, 4)"
+          :key="index"
+          @click="
+            showMiniDetail(
+              index,
+              item.name.stringValue,
+              item.description.stringValue,
+              item.image.arrayValue?.values,
+              item.price.stringValue,
+              'fabrics'
+            )
+          "
+        >
+          <ProductWidgets
+            :name="item.name.stringValue"
+            :description="item.description.stringValue"
+            :image="item.image.arrayValue?.values[0].stringValue"
+            :price="item.price.stringValue"
+          />
+        </div>
+      </div>
+
+      <button
+        @click="showMore(fabrics[0].category.stringValue)"
+        class="text-white bg-black self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
+      >
+        <span> more</span>
+      </button>
+    </div>
 
     <!--training.... chat with admin-->
     <div
@@ -350,6 +374,8 @@ export default {
       this.name = name;
       this.idx = index;
       this.cats = cat;
+
+      console.log(this.image)
     },
     toggleminiDetails() {
       this.isminiDetail = !this.isminiDetail;

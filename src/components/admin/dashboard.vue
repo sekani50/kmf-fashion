@@ -2,26 +2,26 @@
 <template>
   <div
   @click.self="setOpen"
-  :class="isOpen ? 'wrapper' :'nowrapper'"
-    class="fixed cursor-pointer let swipeInLeft  text-gray-300  h-full"
+  :class="isOpen ? 'wrapper let swipeInLeft' :'nowrapper let swipeInLeft'"
+    class="fixed cursor-pointer h-full"
 
   >
   <div
   
-  :class="isOpen ? 'menuhide' :'menu'"
-  class="p-1 sm:p-2 let swipeInLeft">
+  :class="isOpen ? 'menuhide let swipeInLeft' :'menu let swipeInLeft'"
+  class="p-1 sm:p-2 ">
     <img
     @click="setOpen"
     src="@/assets/admenu.svg" alt="" />
    </div>
    
   <div 
-  :class="isOpen ? 'dashhideshow':'dashshow'"
+  :class="isOpen ? 'dashhideshow let swipeInLeft':'dashshow let swipeInLeft'"
   class="px-4 space-y-3 sm:space-y-4  sm:px-12  h-full ">
-    <p class="uppercase font-bold ">Dashboard</p>
-    <p class="font-semibold">Add product</p>
-    <p class="font-semibold">Categories</p>
-    <div class="font-semibold space-y-3 sm:space-y-4">
+    <p class="uppercase font-bold text-white ">Dashboard</p>
+    <p class="font-semibold text-gray-300">Add product</p>
+    <p class="font-semibold text-white">Categories</p>
+    <div class="font-semibold space-y-3 text-gray-300 sm:space-y-4">
         <p>Bespoke</p>
         <p>Bridal Wears</p>
         <p>Muslim Wears</p>
