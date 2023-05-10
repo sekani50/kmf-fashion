@@ -326,7 +326,7 @@ export default {
   },
   async mounted() {
     if (this.getEdit) {
-      await getExistingDoc(this.getEdit)
+      await getExistingDoc(this.getEdit, 'productDetails')
         .then((res) => {
           console.log(res);
           const { category, description, name, price, image } = res;

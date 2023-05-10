@@ -312,8 +312,8 @@ export const deleteFromCat = async (id) => {
 
 
 ///update existing doc 
-export const getExistingDoc = async (id) => {
-  const docRef = doc(db, "productDetails", id);
+export const getExistingDoc = async (id, collection) => {
+  const docRef = doc(db, collection, id);
 let result
   try {
     const docSnap = await getDoc(docRef);

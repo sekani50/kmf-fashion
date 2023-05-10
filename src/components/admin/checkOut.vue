@@ -1,9 +1,9 @@
 <!-- eslint-disable -->
 <template>
-  <div class="let fixed right-0 swipeDown  -z-10 h-full w-[98%] min-[1000px]:w-[90%] pb-[5rem] sm:pb-[5rem] space-y-[5%] float-right p-6 text-zinc-600 bg-black bg-opacity-60">
+  <div class=" fixed right-0 swipeDown  -z-10 h-full w-[98%] min-[1000px]:w-[90%] pb-[5rem] sm:pb-[5rem] space-y-[5%] float-right p-6 text-zinc-600 bg-black bg-opacity-60">
     <div
       :class="!isSubmit ? 'block' : 'hidden'"
-      class="bg-white  text-sm sm:text-[16px] h-fit inset-0 flex flex-col absolute space-y-3 m-auto rounded-lg w-[330px] p-4 sm:w-[500px] sm:rounded-xl"
+      class="bg-white let swipeDown  text-sm sm:text-[16px] h-fit inset-0 flex flex-col absolute space-y-3 m-auto rounded-lg w-[330px] p-4 sm:w-[500px] sm:rounded-xl"
     >
       <div class="form-group space-y-3">
         <label class="block form__label flex-start text-sm sm:text-lg" for=""
@@ -23,7 +23,7 @@
       @click="submit"
         class="rounded-md text-white p-2 sm:p-3 w-[50%] mx-auto flex justify-center items-center font-medium bg-zinc-600 hover:bg-zinc-700"
       >
-        <span v-if="!isSubmit">Submit</span>
+        <span v-if="!isSent">Submit</span>
         <div v-else class="flex justify-center items-center">
           <div
             class="rounded-full border-2 animate-spin border-r-0 border-b-0 w-6 h-6 border-slate-50"
@@ -33,7 +33,7 @@
     </div>
     <div
       :class="isSubmit ? 'block' : 'hidden'"
-      class="marg-style w-[700px] max-[720px]:w-[550px] max-[565px]:w-[350px] h-[80%] overflow-auto sm:overflow-hidden transform transition duration-300 ease-in-out absolute inset-0 m-auto grid grid-cols-1 sm:grid-cols-2 bg-white rounded-lg sm:rounded-xl"
+      class="marg-style let swipeDown w-[650px] max-[710px]:w-[500px] max-[565px]:w-[320px] h-[80%] overflow-auto sm:overflow-hidden transform transition duration-300 ease-in-out absolute inset-0 m-auto grid grid-cols-1 sm:grid-cols-2 bg-white rounded-lg sm:rounded-xl"
     >
       <div
         class="absolute top-[-30px] right-0"
@@ -47,13 +47,13 @@
         <div ref="slide" class="hide-scroll overflow-x-auto w-full h-full">
           <div class="min-w-max flex h-full">
             <div
-              class="w-[400px] max-[720px]:w-[280px] max-[565px]:w-[350px] h-full rounded-tl-lg sm:rounded-l-xl rounded-tr-lg sm:rounded-tr-none object-cover"
+              class="w-[400px] max-[710px]:w-[280px] max-[565px]:w-[350px] h-full rounded-tl-lg sm:rounded-l-xl rounded-tr-lg sm:rounded-tr-none object-cover"
               v-for="(img, index) in photo"
               :key="index"
             >
               <img
                 class="w-full h-full rounded-tl-lg sm:rounded-l-xl rounded-tr-lg sm:rounded-tr-none object-cover"
-                :src="img"
+                :src="img.stringValue"
                 alt=""
               />
             </div>
@@ -92,6 +92,7 @@ export default {
     return {
       images: assets,
       isSubmit: false,
+      isSent:false,
       id: "",
       cats: "",
       name: "",
@@ -115,23 +116,26 @@ export default {
       console.log(slide.offsetWidth);
     },
     async submit() {
-        console.log(id)
-      if (!id) {
+        console.log(this.id)
+      if (!this.id) {
         this.$toast.error("Please enter an ID");
         return;
       }
       this.isSent = true;
 
       console.log();
-      await getExistingDoc(id)
+      await getExistingDoc(this.id, 'checkout')
         .then((res) => {
           console.log(res);
+          this.isSubmit = true;
           const { category, description, name, price, image } = res;
           this.cats = category;
           this.name = name;
           this.description = description;
           this.photo = image;
           this.price = price;
+          this.id = ''
+          this.isSent = false;
         })
         .catch((err) => {
           console.log(err);
@@ -176,4 +180,36 @@ export default {
 .input-field {
   @apply border bg-white text-zinc-600 border-zinc-600 rounded-md focus:outline-none w-full h-8 sm:h-11 px-2;
 }
+
+.let {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  .swipeDown {
+    animation-name: swipeUp;
+    -webkit-animation-name: swipeUp;
+  }
+  
+  @keyframes swipeUp {
+    0% {
+      transform: translateY(-100%);
+    }
+  
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  @-webkit-keyframes swipeUp {
+    0% {
+      -webkit-transform: translateY(-100%);
+    }
+  
+    100% {
+      -webkit-transform: translateY(0px);
+    }
+  }
 </style>

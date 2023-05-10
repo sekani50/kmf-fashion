@@ -50,7 +50,7 @@
       <p 
       @click="showCheckOut"
       :class="currentRoute === 'CheckoutView' ? 'text-white':'text-gray-300'"
-      class="font-semibold text-gray-300">Checkouts</p>
+      class="font-semibold">Checkouts</p>
     </div>
   </div>
 </template>
