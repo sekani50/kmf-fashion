@@ -56,7 +56,7 @@
         </p>
         <button
         @click="explore(image)"
-          class="text-white w-[90%] rounded-md flex text-center justify-center p-2 text-sm sm:text-lg bg-zinc-700 outline-none hover:bg-zinc-800"
+          class="text-white w-full rounded-md flex text-center justify-center p-2 text-sm sm:text-lg bg-zinc-700 outline-none hover:bg-zinc-800"
         >
           Explore
         </button>
