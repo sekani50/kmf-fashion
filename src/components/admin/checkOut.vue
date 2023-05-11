@@ -1,6 +1,6 @@
 <!-- eslint-disable -->
 <template>
-  <div class=" fixed right-0 swipeDown  -z-10 h-full w-[98%] min-[1000px]:w-[90%] pb-[5rem] sm:pb-[5rem] space-y-[5%] float-right p-6 text-zinc-600 bg-black bg-opacity-60">
+  <div class=" fixed right-0 swipeDown  -z-10 h-full w-full min-[1000px]:w-[90%] pb-[5rem] sm:pb-[5rem] space-y-[5%] float-right p-6 text-zinc-600 bg-black bg-opacity-60">
     <div
       :class="!isSubmit ? 'block' : 'hidden'"
       class="bg-white let swipeDown  text-sm sm:text-[16px] h-fit inset-0 flex flex-col absolute space-y-3 m-auto rounded-lg w-[330px] p-4 sm:w-[500px] sm:rounded-xl"

@@ -2,8 +2,8 @@
 <template>
   <div
     @click.self="setOpen"
-    :class="isOpen ? 'wrapper let swipeInLeft' : 'nowrapper let swipeInLeft'"
-    class="fixed cursor-pointer h-full"
+    :class="isOpen ? 'wrapper let swipeInLeft' : 'nowrapper  let swipeInLeft'"
+    class="fixed cursor-pointer hs h-full"
   >
     <div
       :class="isOpen ? 'menuhide let swipeInLeft' : 'menu let swipeInLeft'"
@@ -111,12 +111,14 @@ export default {
 <!-- eslint-disable -->
 <style scoped>
 /* eslint-disable */
-
+.hs {
+  @apply hidden sm:block;
+}
 .wrapper {
-  @apply w-full bg-black bg-opacity-60 inset-0 z-30;
+  @apply w-full  bg-black bg-opacity-60 inset-0 z-30;
 }
 .nowrapper {
-  @apply w-fit bg-zinc-600 inset-y-0 left-0;
+  @apply w-fit  bg-zinc-600 inset-y-0 left-0;
 }
 .menu {
   @apply min-[1000px]:hidden;
