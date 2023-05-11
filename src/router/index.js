@@ -59,6 +59,7 @@ const routes = [
     path: "/checkout/:id",
     name: "CheckoutView",
     component: CheckoutView,
+    props: true
   },
   {
     path: "/services",

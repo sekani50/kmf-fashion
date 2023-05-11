@@ -9,6 +9,9 @@
     <div class="w-full h-full">
       <AddProduct />
     </div>
+
+     
+    <MobileDashboard/>
   </div>
 </template>
 <!--eslint-disable-->
@@ -19,12 +22,14 @@
 
 import AddProduct from "@/components/admin/addproduct.vue";
 import AdminDashboard from "@/components/admin/dashboard.vue";
+import MobileDashboard from "@/components/admin/mobiledashboard.vue"
 
 export default {
   name: "MainPage",
   components: {
     AddProduct,
     AdminDashboard,
+    MobileDashboard
 
   },
 

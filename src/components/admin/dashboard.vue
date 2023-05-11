@@ -47,10 +47,10 @@
         >{{ cat }}</p>
       
       </div>
-      <p 
-      @click="showCheckOut"
+      <router-link to="/checkout/''"
       :class="currentRoute === 'CheckoutView' ? 'text-white':'text-gray-300'"
-      class="font-semibold">Checkouts</p>
+      class="font-semibold">Checkouts
+    </router-link>
     </div>
   </div>
 </template>
@@ -74,7 +74,6 @@ export default {
       "Cooperate",
       "Muslimah",
       "Fabrics"
-
 
       ],
       currcat:''
@@ -103,7 +102,7 @@ export default {
       
     },
     showCheckOut () {
-      this.$router.push("/checkout");
+      //this.$router.push("/checkout");
     }
   },
 };

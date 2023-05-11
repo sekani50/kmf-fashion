@@ -1,7 +1,8 @@
 <!-- eslint-disable -->
 <template>
   <div
-    class="let swipeIn w-full min-[1000px]:w-[85%] pb-[5rem] sm:pb-[5rem] space-y-[5%] float-right p-6 text-zinc-600"
+  @click.self="showCats"
+    class="let swipeIn w-full sm:w-[95%] min-[1000px]:w-[85%] pb-[5rem] sm:pb-[5rem] space-y-[5%] float-right p-6 text-zinc-600"
   >
     <p class="text-zinc-900 sm:text-xl text-lg font-semibold collectio">
       {{ getcat }}
@@ -492,7 +493,7 @@ import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "CatAdmin",
-  props: ["getcat"],
+  props: ["getcat","showCats"],
   components: {},
   data() {
     return {};

@@ -1,11 +1,14 @@
 <!-- eslint-disable -->
 <template>
   <div
+  
     class="w-full h-full bg-[#FFF] inset-0 fixed overflow-y-auto overflow-x-hidden"
   >
     <AdminDashboard />
 
-    <CatAdmin :getcat="getACategory" />
+    <CatAdmin :getcat="getACategory"  />
+
+    <MobileDashboard :showCats="showCats" :isCat="isCat" />
   </div>
 </template>
 <!--eslint-disable-->
@@ -15,12 +18,13 @@ import AdminDashboard from "@/components/admin/dashboard.vue";
 import { getCategory } from "../adminfirebase";
 import { mapGetters, mapActions } from "vuex";
 import CatAdmin from "@/components/admin/catadmin.vue";
-
+import MobileDashboard from "@/components/admin/mobiledashboard.vue";
 export default {
   name: "AdminCategory",
   components: {
     AdminDashboard,
     CatAdmin,
+    MobileDashboard,
   },
 
   data() {
@@ -31,6 +35,7 @@ export default {
       muslim: [],
       fabrics: [],
       cooperate: [],
+      isCat: false,
     };
   },
 
@@ -50,6 +55,9 @@ export default {
   },
   methods: {
     ...mapActions(["updateCurrent"]),
+    showCats() {
+      this.isCat = !this.isCat;
+    },
     storeCurr() {
       this.updateCurrent({
         bespoke: this.bespoke,

@@ -1,9 +1,9 @@
 <!-- eslint-disable -->
 <template>
-  <div class=" fixed right-0 swipeDown  -z-10 h-full w-full min-[1000px]:w-[90%] pb-[5rem] sm:pb-[5rem] space-y-[5%] float-right p-6 text-zinc-600 bg-black bg-opacity-60">
+  <div class=" fixed right-0 swipeDown sm:w-[98%] -z-10 h-full w-full min-[1000px]:w-[90%] pb-[5rem] sm:pb-[5rem] space-y-[5%] float-right p-6 text-zinc-600 bg-white">
     <div
       :class="!isSubmit ? 'block' : 'hidden'"
-      class="bg-white let swipeDown  text-sm sm:text-[16px] h-fit inset-0 flex flex-col absolute space-y-3 m-auto rounded-lg w-[330px] p-4 sm:w-[500px] sm:rounded-xl"
+      class="bg-white let swipeDown  text-sm sm:text-[16px] h-fit inset-0 flex flex-col absolute border shadow-xl space-y-3 m-auto rounded-lg w-[330px] p-4 sm:w-[500px] sm:rounded-xl"
     >
       <div class="form-group space-y-3">
         <label class="block form__label flex-start text-sm sm:text-lg" for=""
@@ -33,7 +33,7 @@
     </div>
     <div
       :class="isSubmit ? 'block' : 'hidden'"
-      class="marg-style let swipeDown w-[650px] max-[710px]:w-[500px] max-[565px]:w-[320px] h-[80%] overflow-auto sm:overflow-hidden transform transition duration-300 ease-in-out absolute inset-0 m-auto grid grid-cols-1 sm:grid-cols-2 bg-white rounded-lg sm:rounded-xl"
+      class="marg-style let swipeDown w-[650px] border shadow-xl max-[710px]:w-[500px] max-[565px]:w-[320px] h-[80%] overflow-auto sm:overflow-hidden transform transition duration-300 ease-in-out absolute inset-0 m-auto grid grid-cols-1 sm:grid-cols-2 bg-white rounded-lg sm:rounded-xl"
     >
       <div
         class="absolute top-[-30px] right-0"

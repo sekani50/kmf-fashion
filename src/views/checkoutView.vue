@@ -6,13 +6,15 @@
     <AdminDashboard />
 
     <CheckOut />
+
+    <MobileDashboard />
   </div>
 </template>
 <!--eslint-disable-->
 <script>
 /* eslint-disable */
 import AdminDashboard from "@/components/admin/dashboard.vue";
-
+import MobileDashboard from "@/components/admin/mobiledashboard.vue";
 import CheckOut from "@/components/admin/checkOut.vue";
 
 export default {
@@ -20,6 +22,7 @@ export default {
   components: {
     AdminDashboard,
     CheckOut,
+    MobileDashboard,
   },
 
   data() {
@@ -35,8 +38,7 @@ export default {
 <style>
 /* eslint-disable */
 /*#FFECD8 */
-@media (max-width: 1024px) {
-}
+
 html,
 body {
   top: 0;
