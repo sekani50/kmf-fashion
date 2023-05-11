@@ -1,20 +1,20 @@
 <!-- eslint-disable -->
 <template>
   <div
-    class="w-full sm:w-[99%] relative m-auto overflow-hidden mt-[-1.25rem] sm:mb-6 md:h-[400px] lg:h-[500px] h-[220px]"
+    class="w-full sm:w-[99%] relative m-auto overflow-hidden mt-[-1.25rem] mb-3  lg:h-[500px] h-[350px]"
   >
-    <transition-group name="fade" tag="div">
+    <transition-group name="fade" tag="div" class="w-full h-full">
       <div class="relative w-full h-full" v-for="i in [currentIndex]" :key="i">
-        <img :src="currentImg" />
+        <img class="h-full" :src="currentImg" />
         <div
-          class="absolute colectio w-[70%] text-sm sm:text-lg md:top-[100px] lg:top-[150px] top-[50px] left-10 text-start right-0 h-fit text-white"
+          class="absolute colectio w-[70%] text-sm sm:text-lg md:top-[100px] lg:top-[150px] top-[100px] left-10 text-start right-0 h-fit text-white"
           v-html="currentText"
         ></div>
         
       </div>
     </transition-group>
-    <a class="prev" @click="prev" href="#">&#10094;</a>
-    <a class="next" @click="next" href="#">&#10095;</a>
+    <a class="prev top-[40%] " @click="prev" href="#">&#10094;</a>
+    <a class="next top-[40%] " @click="next" href="#">&#10095;</a>
   </div>
 </template>
 <!-- eslint-disable -->
@@ -50,9 +50,9 @@ export default {
   },
 
   methods: {
-    startSlide() {
+  startSlide() {
       this.timer = setInterval(this.next, 4000);
-    },
+   },
 
     next() {
       this.currentIndex += 1;
@@ -75,10 +75,13 @@ export default {
 <!-- eslint-disable -->
 <style scoped>
 /* eslint-disable */
+
+
+
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.9s ease;
-  overflow: hidden;
+
   height: 100%;
   position: absolute;
 
@@ -98,7 +101,7 @@ img {
 .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  
   width: auto;
   padding: 16px;
   color: white;

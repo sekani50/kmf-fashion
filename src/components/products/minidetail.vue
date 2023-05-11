@@ -5,11 +5,11 @@
     class="w-full h-full collectio inset-0 bg-black z-40 bg-opacity-70 fixed"
   >
     <div
-      class="w-[700px] max-[720px]:w-[550px] max-[565px]:w-[350px] h-[80%] overflow-auto sm:overflow-hidden transform transition duration-300 ease-in-out absolute inset-0 m-auto grid grid-cols-1 sm:grid-cols-2 bg-white rounded-lg sm:rounded-xl"
+      class="w-[700px] max-[720px]:w-[550px] max-[565px]:w-[320px] h-[610px] sm:h-[80%] overflow-auto sm:overflow-hidden transform transition duration-300 ease-in-out absolute inset-0 m-auto grid grid-cols-1 sm:grid-cols-2 bg-white rounded-lg sm:rounded-xl"
     >
       <div
         @click="toggleminiDetails"
-        class="absolute top-[-30px] right-0"
+        class="absolute top-[-1px] right-0 rounded-full p-1 z-50 bg-gray-300"
         v-html="images.closedetail"
       ></div>
       <div
@@ -23,12 +23,12 @@
        
         <div class="min-w-max flex h-full ">
           <div
-          class="w-[400px] max-[720px]:w-[280px] max-[565px]:w-[350px] h-full rounded-tl-lg sm:rounded-l-xl rounded-tr-lg sm:rounded-tr-none object-cover"
+          class="w-[400px] max-[720px]:w-[280px] max-[565px]:w-[320px] h-[370px] sm:h-full rounded-tl-lg sm:rounded-l-xl rounded-tr-lg sm:rounded-tr-none"
           v-for="(img, index) in image"
           :key="index"
           >
           <img
-            class="w-full h-full rounded-tl-lg sm:rounded-l-xl rounded-tr-lg sm:rounded-tr-none object-cover"
+            class="w-full h-full rounded-tl-lg sm:rounded-l-xl rounded-tr-lg sm:rounded-tr-none object-fill"
             :src="img.stringValue"
             alt=""
           />
@@ -69,6 +69,7 @@
 /* eslint-disable */
 import { assets } from "@/assets/svgimages.js"
 import { mapActions } from "vuex";
+import _ from 'lodash'
 
 export default {
   name: "MiniDetail",
@@ -87,11 +88,13 @@ export default {
   data() {
     return {
       images: assets,
+     
     };
   },
   methods: {
     ...mapActions(["updateDetails"]),
     prev () {
+     
       let slide = this.$refs.slide;
       console.log(slide.scrollWidth)
       console.log(slide.offsetWidth)

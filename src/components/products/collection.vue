@@ -1,6 +1,8 @@
 <!-- eslint-disable -->
 <template>
-  <div class="collection w-[97%] sm:w-[95%] mx-auto p-2 sm:p-6 space-y-[5%]">
+  <div
+    class="collection w-[97%] sm:w-[95%] mx-auto p-2 sm:p-6 space-y-[5%] mt-[-5px]"
+  >
     <div class="flex w-full justify-center items-center space-x-2">
       <span class="h-[2px] w-16 sm:w-24 bg-zinc-900 relative">
         <span
@@ -51,7 +53,6 @@
             :description="item.description.stringValue"
             :image="item.image.arrayValue?.values[0].stringValue"
             :price="item.price.stringValue"
-
           />
         </div>
       </div>
@@ -173,9 +174,7 @@
           <ProductWidgets
             :name="item.name.stringValue"
             :description="item.description.stringValue"
-            :image="
-              item.image.arrayValue?.values[0].stringValue
-            "
+            :image="item.image.arrayValue?.values[0].stringValue"
             :price="item.price.stringValue"
           />
         </div>
@@ -214,9 +213,7 @@
           <ProductWidgets
             :name="item.name.stringValue"
             :description="item.description.stringValue"
-            :image="
-              item.image.arrayValue?.values[0].stringValue
-            "
+            :image="item.image.arrayValue?.values[0].stringValue"
             :price="item.price.stringValue"
           />
         </div>
@@ -364,27 +361,28 @@ export default {
       idx: "",
     };
   },
+  computed: {
+    
+  },
   methods: {
     ...mapActions(["updateCategory"]),
     showMiniDetail(index, name, desc, img, price, cat) {
       this.isminiDetail = true;
-      this.image = img;
+      this.image = img.filter(
+        (i) => i.stringValue !== undefined || i.stringValue !== ""
+      );
       this.price = price;
       this.description = desc;
       this.name = name;
       this.idx = index;
       this.cats = cat;
 
-      console.log(this.image)
+      console.log(this.image);
     },
     toggleminiDetails() {
       this.isminiDetail = !this.isminiDetail;
     },
-    sendMessage(text) {
-      const url = "https://wa.me/2348118617926?text=" + text;
 
-      window.open(url, "blank").focus();
-    },
     showMore(cat) {
       this.updateCategory(cat);
       this.$router.push("/product");

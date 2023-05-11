@@ -1,6 +1,6 @@
 <!-- eslint-disable -->
 <template>
-  <div class="w-full mt-[60px] sm:mt-[80px] space-y-[5%]">
+  <div class="w-full mt-[60px] sm:mt-[80px]">
     <HeroPage />
     <ExploreProducts
       :bespoke="bespoke"
@@ -15,7 +15,7 @@
 <!--eslint-disable-->
 <script>
 /* eslint-disable */
-
+import { mapActions } from "vuex";
 import HeroPage from "@/components/banners/heropage.vue";
 import ExploreProducts from "@/components/products/collection.vue";
 import { getCategory } from "../adminfirebase";
@@ -46,8 +46,18 @@ export default {
       this.fabrics,
       this.cooperate
     );
+    await this.updateallProducts({
+      bespoke: this.bespoke,
+      bridal: this.bridal,
+      asoebi: this.asoebi,
+      muslim: this.muslim,
+      fabrics: this.fabrics,
+      cooperate: this.cooperate,
+    });
   },
-  methods: {},
+  methods: {
+    ...mapActions(["updateallProducts"]),
+  },
 };
 </script>
 

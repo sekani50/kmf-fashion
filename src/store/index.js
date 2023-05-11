@@ -10,7 +10,8 @@ export default new Vuex.Store({
   state: {
     selectedCategory: null,
     moreDetails:null,
-    currentCategories: null
+    currentCategories: null,
+    allProducts: null,
   },
 
   actions: {
@@ -27,6 +28,11 @@ export default new Vuex.Store({
   },
   editCategory({commit}, category) {
       commit('EDIT_CATEGORY', category);
+  },
+  
+  updateallProducts({commit}, products) {
+    commit('UPDATE_ALL_PRODUCTS', products);
+    console.log(products)
   }
 },
   mutations: {
@@ -42,6 +48,9 @@ export default new Vuex.Store({
     },
     EDIT_CATEGORY(state, category) {
       state.editCat = category
+    },
+    UPDATE_ALL_PRODUCTS(state, products) {
+      state.allProducts = products;
     }
 
   },
@@ -49,7 +58,8 @@ export default new Vuex.Store({
     getACategory: (state) => state.selectedCategory,
     getDetails: (state) => state.moreDetails,
     getCurrent: (state) => state.currentCategories,
-    getEdit: (state) => state.editCat
+    getEdit: (state) => state.editCat,
+    getProducts: (state) => state.allProducts
   },
   modules: {},
 });

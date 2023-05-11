@@ -2,12 +2,9 @@
 <template>
   <div class="w-full h-full collectio inset-0 bg-black bg-opacity-70">
     <div
-      class="marg-style w-[700px] max-[720px]:w-[550px] max-[565px]:w-[350px] h-[80%] overflow-auto sm:overflow-hidden transform transition duration-300 ease-in-out absolute inset-0 m-auto grid grid-cols-1 sm:grid-cols-2 bg-white rounded-lg sm:rounded-xl"
+      class="marg-style w-[700px] max-[720px]:w-[550px] max-[565px]:w-[320px] h-[610px] sm:h-[80%] overflow-auto sm:overflow-hidden transform transition duration-300 ease-in-out absolute inset-0 m-auto grid grid-cols-1 sm:grid-cols-2 bg-white rounded-lg sm:rounded-xl"
     >
-      <div
-        class="absolute top-[-30px] right-0"
-        v-html="images.closedetail"
-      ></div>
+     
       <div
         class="relative h-full w-full overflow-hidden rounded-tl-lg sm:rounded-l-xl rounded-tr-lg sm:rounded-tr-none"
       >
@@ -16,12 +13,12 @@
         <div ref="slide" class="hide-scroll overflow-x-auto w-full h-full">
           <div class="min-w-max flex h-full">
             <div
-              class="w-[400px] max-[720px]:w-[280px] max-[565px]:w-[350px] h-full rounded-tl-lg sm:rounded-l-xl rounded-tr-lg sm:rounded-tr-none object-cover"
+              class="w-[400px] max-[720px]:w-[280px] max-[565px]:w-[320px] h-[370px] sm:h-full rounded-tl-lg sm:rounded-l-xl rounded-tr-lg sm:rounded-tr-none"
               v-for="(img, index) in getDetails.image"
               :key="index"
             >
               <img
-                class="w-full h-full rounded-tl-lg sm:rounded-l-xl rounded-tr-lg sm:rounded-tr-none object-cover"
+                class="w-full h-full rounded-tl-lg sm:rounded-l-xl rounded-tr-lg sm:rounded-tr-none object-fill"
                 :src="img.stringValue"
                 alt=""
               />
@@ -47,8 +44,8 @@
           {{ `Price: ₦${getDetails.price}` }}
         </p>
         <button
-    
-          class="text-white w-[90%] rounded-md flex text-center justify-center p-2 text-sm sm:text-lg bg-zinc-700 outline-none hover:bg-zinc-800"
+        @click="chat"
+          class="text-white w-full rounded-md flex text-center justify-center p-2 text-sm sm:text-lg bg-zinc-700 outline-none hover:bg-zinc-800"
         >
           <span v-if="!isSent">Chat with us</span>
           <div v-else class="flex justify-center items-center">
