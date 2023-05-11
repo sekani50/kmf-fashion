@@ -56,7 +56,7 @@ const routes = [
     component: AdminDashboard,
   },
   {
-    path: "/checkout",
+    path: "/checkout/:id",
     name: "CheckoutView",
     component: CheckoutView,
   },

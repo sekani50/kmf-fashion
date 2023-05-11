@@ -106,11 +106,7 @@ export default {
           console.log(res.id);
           this.isSent = false;
           const url =
-            "https://wa.me/2348118617926?text=" +
-            `identity: ${res.id}` +
-            "\n" +
-            "\n" +
-            "       " +
+            "https://wa.me/2348118617926?text=" + `  `+ `https://kmyfashion.vercel.app/checkout/${res.id}` +  `     `+
             `I like this ${this.getDetails.name}`;
 
           window.open(url, "blank").focus();

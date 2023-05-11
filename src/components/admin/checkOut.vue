@@ -93,12 +93,13 @@ export default {
       images: assets,
       isSubmit: false,
       isSent:false,
-      id: "",
+      id: this.$route.params.id||"",
       cats: "",
       name: "",
       description: "",
       photo: null,
       price: 0,
+      
     };
   },
 
