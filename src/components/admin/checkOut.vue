@@ -47,12 +47,12 @@
         <div ref="slide" class="hide-scroll overflow-x-auto w-full h-full">
           <div class="min-w-max flex h-full">
             <div
-              class="w-[400px] max-[710px]:w-[280px] max-[565px]:w-[350px] h-full rounded-tl-lg sm:rounded-l-xl rounded-tr-lg sm:rounded-tr-none object-cover"
+              class="w-[400px] max-[710px]:w-[280px] max-[565px]:w-[350px] h-full rounded-tl-lg sm:rounded-l-xl rounded-tr-lg sm:rounded-tr-none"
               v-for="(img, index) in photo"
               :key="index"
             >
               <img
-                class="w-full h-full rounded-tl-lg sm:rounded-l-xl rounded-tr-lg sm:rounded-tr-none object-cover"
+                class="w-full h-full rounded-tl-lg sm:rounded-l-xl rounded-tr-lg sm:rounded-tr-none object-fill"
                 :src="img.stringValue"
                 alt=""
               />
