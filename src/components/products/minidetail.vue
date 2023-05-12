@@ -96,7 +96,7 @@ export default {
     prev () {
      
       let slide = this.$refs.slide;
-      console.log(slide.scrollWidth)
+      console.log('from slider',slide.scrollWidth)
       console.log(slide.offsetWidth)
       slide.scrollBy({ left: -slide.scrollWidth / 4, behavior: "smooth" });
 
