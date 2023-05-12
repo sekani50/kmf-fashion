@@ -2,7 +2,7 @@
 <template>
   <div
     @click.self="toggleminiDetails"
-    class="w-full h-full collectio inset-0 bg-black z-40 bg-opacity-70 fixed"
+    class="w-full h-full collectio overflow-hidden inset-0 bg-black z-40 bg-opacity-70 fixed"
   >
     <div
       class="w-[700px] max-[720px]:w-[550px] max-[565px]:w-[320px] h-[610px] sm:h-[80%] overflow-auto sm:overflow-hidden transform transition duration-300 ease-in-out absolute inset-0 m-auto grid grid-cols-1 sm:grid-cols-2 bg-white rounded-lg sm:rounded-xl"

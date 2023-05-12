@@ -42,7 +42,7 @@
               index,
               item.name.stringValue,
               item.description.stringValue,
-              item.image.arrayValue?.values,
+              item.images,
               item.price.stringValue,
               'asoebi'
             )
@@ -51,7 +51,7 @@
           <ProductWidgets
             :name="item.name.stringValue"
             :description="item.description.stringValue"
-            :image="item.image.arrayValue?.values[0].stringValue"
+            :image="item.images[0].stringValue"
             :price="item.price.stringValue"
           />
         </div>
@@ -82,7 +82,7 @@
               index,
               item.name.stringValue,
               item.description.stringValue,
-              item.image.arrayValue?.values,
+              item.images,
               item.price.stringValue,
               'muslim wears'
             )
@@ -91,7 +91,7 @@
           <ProductWidgets
             :name="item.name.stringValue"
             :description="item.description.stringValue"
-            :image="item.image.arrayValue?.values[0].stringValue"
+            :image="item.images[0].stringValue"
             :price="item.price.stringValue"
           />
         </div>
@@ -123,7 +123,7 @@
               index,
               item.name.stringValue,
               item.description.stringValue,
-              item.image.arrayValue?.values,
+              item.images,
               item.price.stringValue,
               'unisex bespoke'
             )
@@ -132,7 +132,7 @@
           <ProductWidgets
             :name="item.name.stringValue"
             :description="item.description.stringValue"
-            :image="item.image.arrayValue?.values[0].stringValue"
+            :image="item.images[0].stringValue"
             :price="item.price.stringValue"
           />
         </div>
@@ -165,7 +165,7 @@
               index,
               item.name.stringValue,
               item.description.stringValue,
-              item.image.arrayValue?.values,
+              item.images,
               item.price.stringValue,
               'bridal wear'
             )
@@ -174,7 +174,7 @@
           <ProductWidgets
             :name="item.name.stringValue"
             :description="item.description.stringValue"
-            :image="item.image.arrayValue?.values[0].stringValue"
+            :image="item.images[0].stringValue"
             :price="item.price.stringValue"
           />
         </div>
@@ -204,7 +204,7 @@
               index,
               item.name.stringValue,
               item.description.stringValue,
-              item.image.arrayValue?.values,
+              item.images,
               item.price.stringValue,
               'cooperate wear'
             )
@@ -213,7 +213,7 @@
           <ProductWidgets
             :name="item.name.stringValue"
             :description="item.description.stringValue"
-            :image="item.image.arrayValue?.values[0].stringValue"
+            :image="item.images[0].stringValue"
             :price="item.price.stringValue"
           />
         </div>
@@ -243,7 +243,7 @@
               index,
               item.name.stringValue,
               item.description.stringValue,
-              item.image.arrayValue?.values,
+              item.images,
               item.price.stringValue,
               'fabrics'
             )
@@ -252,7 +252,7 @@
           <ProductWidgets
             :name="item.name.stringValue"
             :description="item.description.stringValue"
-            :image="item.image.arrayValue?.values[0].stringValue"
+            :image="item.images[0].stringValue"
             :price="item.price.stringValue"
           />
         </div>

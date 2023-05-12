@@ -1,7 +1,7 @@
 <!-- eslint-disable -->
 <template>
   <div
-    class="let swipeIn w-full sm:pb-56 mt-[60px] sm:mt-[68px] space-y-[5%] mx-auto p-6 text-gray-300"
+    class="let swipeIn w-full sm:pb-56 pt-[62px] sm:pt-[80px] space-y-[5%] mx-auto p-6"
   >
     <p class="text-zinc-900 sm:text-xl text-lg font-semibold collectio">
       {{ getcat }}
@@ -19,16 +19,26 @@
         class="h-fit  md:w-[240px] sm:h-fit"
         v-for="(item, index) in asoebi"
         :key="index"
+        @click="
+            showMiniDetail(
+              index,
+              item.name.stringValue,
+              item.description.stringValue,
+              item.images,
+              item.price.stringValue,
+              'cooperate wear'
+            )
+          "
       >
         <div class="group w-full h-full">
           <div
-            class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
+            class="rounded-lg overflow-hidden  w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
             <div
               class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
             >
               <img
-                :src="item.image.stringValue"
+                :src="item.images[0].stringValue"
                 alt="new"
                 class="w-full h-full object-cover rounded-t-lg"
               />
@@ -72,16 +82,26 @@
         class="h-fit  md:w-[240px] sm:h-fit"
         v-for="(item, index) in bridal"
         :key="index"
+        @click="
+            showMiniDetail(
+              index,
+              item.name.stringValue,
+              item.description.stringValue,
+              item.images,
+              item.price.stringValue,
+              'cooperate wear'
+            )
+          "
       >
         <div class="group w-full h-full">
           <div
-            class="rounded-lg h-full w-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
+            class="rounded-lg h-full w-full overflow-hidden  group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
             <div
               class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
             >
               <img
-                :src="item.image.arrayValue?.values[0].stringValue || item.image.stringValue"
+                :src="item.images[0].stringValue"
                 alt="new"
                 class="w-full h-full object-cover rounded-t-lg"
               />
@@ -125,16 +145,26 @@
         class="h-fit  md:w-[240px] sm:h-fit"
         v-for="(item, index) in cooperate"
         :key="index"
+        @click="
+            showMiniDetail(
+              index,
+              item.name.stringValue,
+              item.description.stringValue,
+              item.images,
+              item.price.stringValue,
+              'cooperate wear'
+            )
+          "
       >
         <div class="group w-full h-full">
           <div
-            class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
+            class="rounded-lg w-full h-full overflow-hidden  group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
             <div
               class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
             >
               <img
-                :src="item.image.stringValue"
+                :src="item.images[0].stringValue"
                 alt="new"
                 class="w-full h-full object-cover rounded-t-lg"
               />
@@ -178,16 +208,27 @@
         class="h-fit  md:w-[240px] sm:h-fit"
         v-for="(item, index) in fabrics"
         :key="index"
+
+        @click="
+            showMiniDetail(
+              index,
+              item.name.stringValue,
+              item.description.stringValue,
+              item.images,
+              item.price.stringValue,
+              'cooperate wear'
+            )
+          "
       >
         <div class="group w-full h-full">
           <div
-            class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
+            class="rounded-lg w-full h-full overflow-hidden  group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
             <div
               class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
             >
               <img
-                :src="item.image.stringValue"
+                :src="item.images[0].stringValue"
                 alt="new"
                 class="w-full h-full object-cover rounded-t-lg"
               />
@@ -231,16 +272,26 @@
         class="h-fit  md:w-[240px] sm:h-fit"
         v-for="(item, index) in bespoke"
         :key="index"
+        @click="
+            showMiniDetail(
+              index,
+              item.name.stringValue,
+              item.description.stringValue,
+              item.images,
+              item.price.stringValue,
+              'cooperate wear'
+            )
+          "
       >
         <div class="group w-full h-full">
           <div
-            class="rounded-lg h-full w-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
+            class="rounded-lg h-full w-full overflow-hidden  group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
             <div
               class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
             >
               <img
-                :src="item.image.stringValue"
+                :src="item.images[0].stringValue"
                 alt="new"
                 class="w-full h-full object-cover rounded-t-lg"
               />
@@ -284,16 +335,26 @@
         class="h-fit  md:w-[240px] sm:h-fit"
         v-for="(item, index) in muslim"
         :key="index"
+        @click="
+            showMiniDetail(
+              index,
+              item.name.stringValue,
+              item.description.stringValue,
+              item.images,
+              item.price.stringValue,
+              'cooperate wear'
+            )
+          "
       >
         <div class="group w-full h-full">
           <div
-            class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
+            class="rounded-lg w-full h-full overflow-hidden  group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
             <div
               class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
             >
               <img
-                :src="item.image.arrayValue?.values[0].stringValue || item.image.stringValue"
+                :src="item.images[0].stringValue"
                 alt="new"
                 class="w-full h-full object-cover rounded-t-lg"
               />
@@ -323,17 +384,30 @@
         </div>
       </div>
     </div>
+    <!--mini detail-->
+    <div class="inset-0 bg-black z-40 bg-opacity-70 fixed  w-full h-full" :class="isminiDetail ? 'block' : 'hidden'">
+      <MiniDetail
+        :image="image"
+        :name="name"
+        :description="description"
+        :cats="cats"
+        :price="price"
+        :idx="idx"
+        :toggleminiDetails="toggleminiDetails"
+      />
+    </div>
   </div>
 </template>
 <!--eslint-disable-->
 <script>
 /* eslint-disable */
 import ProductWidgets from "./widget.vue";
+import MiniDetail from "./minidetail.vue";
 //import { mapGetters } from "vuex";
 //import {getCategory} from "../../adminfirebase"
 
 export default {
-  name: "ProductWidgets",
+  name: "ProductWidget",
   props: [
     "getcat",
     "bespoke",
@@ -345,17 +419,36 @@ export default {
   ],
   components: {
     ProductWidgets,
+    MiniDetail
   },
   data() {
-    return {};
+    return {
+      image: null,
+      isminiDetail: false,
+      name: "",
+      description: "",
+      cats: "",
+      price: "",
+      idx: "",
+    };
   },
 
   methods: {
-    sendMessage(name) {
-      const url =
-        "https://wa.me/2348118617926?text=  I like the " + name;
+    showMiniDetail(index, name, desc, img, price, cat) {
+      this.isminiDetail = true;
+      this.image = img.filter(
+        (i) => i.stringValue !== undefined || i.stringValue !== ""
+      );
+      this.price = price;
+      this.description = desc;
+      this.name = name;
+      this.idx = index;
+      this.cats = cat;
 
-      window.open(url, "blank").focus();
+      console.log(this.image);
+    },
+    toggleminiDetails() {
+      this.isminiDetail = !this.isminiDetail;
     },
   },
 };

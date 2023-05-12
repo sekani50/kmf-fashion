@@ -146,45 +146,40 @@ export const getData = async (data) => {
       image: result,
       price: data.price,
       createdAt: new Date().getTime(),
-      
     };
-    
-    setDoc(docRef, payload, { merge:true })
-    .then(docRef => {
+
+    setDoc(docRef, payload, { merge: true })
+      .then((docRef) => {
         console.log("Entire Document has been updated successfully");
         success = docRef;
-    })
-    .catch(error => {
+      })
+      .catch((error) => {
         console.log(error);
-    })
-
-    return success
-  }
-else {
-  const productRef = collection(db, "productDetails");
-  //let result;
-
-  await addDoc(productRef, {
-    name: data.name,
-    description: data.description,
-    category: data.category,
-    image: result,
-    price: data.price,
-    createdAt: new Date().getTime(),
-  })
-    .then((res) => {
-      console.log(res);
-      success = res;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+      });
 
     return success;
-}
+  } else {
+    const productRef = collection(db, "productDetails");
+    //let result;
 
+    await addDoc(productRef, {
+      name: data.name,
+      description: data.description,
+      category: data.category,
+      image: result,
+      price: data.price,
+      createdAt: new Date().getTime(),
+    })
+      .then((res) => {
+        console.log(res);
+        success = res;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
- 
+    return success;
+  }
 };
 
 /// getting docs
@@ -204,9 +199,21 @@ export const getCategory = async (
   await getDocs(queryUnisex).then((res) => {
     console.log(res.docs);
     res.docs.forEach((doc) => {
-      const { fields } = doc._document.data.value.mapValue;
-      console.log(fields);
-      bespoke.push({ id: doc.id, ...fields });
+      const { category, description, createdAt, name, price, image } = fields;
+      const { values } = image.arrayValue;
+      console.log(values);
+      const images = values.filter(
+        (val) => val.stringValue !== undefined || val.stringValue !== null
+      );
+      bespoke.push({
+        id: doc.id,
+        category,
+        description,
+        createdAt,
+        name,
+        price,
+        images,
+      });
     });
   });
   const queryBride = query(
@@ -218,7 +225,21 @@ export const getCategory = async (
     res.docs.forEach((doc) => {
       const { fields } = doc._document.data.value.mapValue;
       console.log(fields);
-      bridal.push({ id: doc.id, ...fields });
+      const { category, description, createdAt, name, price, image } = fields;
+      const { values } = image.arrayValue;
+      console.log(values);
+      const images = values.filter(
+        (val) => val.stringValue !== undefined || val.stringValue !== null
+      );
+      bridal.push({
+        id: doc.id,
+        category,
+        description,
+        createdAt,
+        name,
+        price,
+        images,
+      });
     });
 
     console.log(bridal);
@@ -231,8 +252,21 @@ export const getCategory = async (
     console.log(res.docs);
     res.docs.forEach((doc) => {
       const { fields } = doc._document.data.value.mapValue;
-      console.log(fields);
-      asoebi.push({ id: doc.id, ...fields });
+      const { category, description, createdAt, name, price, image } = fields;
+      const { values } = image.arrayValue;
+      console.log(values);
+      const images = values.filter(
+        (val) => val.stringValue !== undefined || val.stringValue !== null
+      );
+      asoebi.push({
+        id: doc.id,
+        category,
+        description,
+        createdAt,
+        name,
+        price,
+        images,
+      });
     });
   });
   const queryCooperate = query(
@@ -243,8 +277,21 @@ export const getCategory = async (
     console.log(res.docs);
     res.docs.forEach((doc) => {
       const { fields } = doc._document.data.value.mapValue;
-      console.log(fields);
-      cooperate.push({ id: doc.id, ...fields });
+      const { category, description, createdAt, name, price, image } = fields;
+      const { values } = image.arrayValue;
+      console.log(values);
+      const images = values.filter(
+        (val) => val.stringValue !== undefined || val.stringValue !== null
+      );
+      cooperate.push({
+        id: doc.id,
+        category,
+        description,
+        createdAt,
+        name,
+        price,
+        images,
+      });
     });
   });
   const queryMuslimah = query(
@@ -255,8 +302,21 @@ export const getCategory = async (
     console.log(res.docs);
     res.docs.forEach((doc) => {
       const { fields } = doc._document.data.value.mapValue;
-      console.log(fields);
-      muslim.push({ id: doc.id, ...fields });
+      const { category, description, createdAt, name, price, image } = fields;
+      const { values } = image.arrayValue;
+      console.log(values);
+      const images = values.filter(
+        (val) => val.stringValue !== undefined || val.stringValue !== null
+      );
+      muslim.push({
+        id: doc.id,
+        category,
+        description,
+        createdAt,
+        name,
+        price,
+        images,
+      });
     });
   });
   const queryfabrics = query(
@@ -267,8 +327,21 @@ export const getCategory = async (
     console.log(res.docs);
     res.docs.forEach((doc) => {
       const { fields } = doc._document.data.value.mapValue;
-      console.log(fields);
-      fabrics.push({ id: doc.id, ...fields });
+      const { category, description, createdAt, name, price, image } = fields;
+      const { values } = image.arrayValue;
+      console.log(values);
+      const images = values.filter(
+        (val) => val.stringValue !== undefined || val.stringValue !== null
+      );
+      fabrics.push({
+        id: doc.id,
+        category,
+        description,
+        createdAt,
+        name,
+        price,
+        images,
+      });
     });
   });
 };
@@ -309,41 +382,36 @@ export const deleteFromCat = async (id) => {
   return result;
 };
 
-
-///update existing doc 
+///update existing doc
 export const getExistingDoc = async (id, collection) => {
   const docRef = doc(db, collection, id);
-let result
+  let result;
   try {
     const docSnap = await getDoc(docRef);
-    if(docSnap.exists()) {
-        console.log(docSnap.data());
+    if (docSnap.exists()) {
+      console.log(docSnap.data());
 
-        result = docSnap.data();
+      result = docSnap.data();
     } else {
-        console.log("Document does not exist")
+      console.log("Document does not exist");
     }
+  } catch (error) {
+    console.log(error);
+  }
 
-} catch(error) {
-    console.log(error)
-}
-
-return result
-}
+  return result;
+};
 
 export const updateData = () => {
   const docRef = doc(db, "cities", "p4eZc05QV43InigxALJ");
 
-const data = {
-  
+  const data = {};
+
+  setDoc(docRef, data)
+    .then((docRef) => {
+      console.log("Entire Document has been updated successfully");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
-
-setDoc(docRef, data)
-.then(docRef => {
-    console.log("Entire Document has been updated successfully");
-})
-.catch(error => {
-    console.log(error);
-})
-
-}
