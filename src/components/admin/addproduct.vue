@@ -303,10 +303,10 @@ export default {
       description: "",
       name: "",
       imageFile: {
-        first: null,
-        second: null,
-        third: null,
-        forth: null,
+        first: { img: null, isEdit: false },
+        second: { img: null, isEdit: false },
+        third: { img: null, isEdit: false },
+        forth: { img: null, isEdit: false },
       },
       selectedImage: null,
       isEditButton: false,
@@ -319,14 +319,18 @@ export default {
         forth: null,
       },
       price: 0,
+      edit: false,
     };
   },
   computed: {
     ...mapGetters(["getEdit"]),
   },
   async mounted() {
-    if (this.getEdit) {
-      await getExistingDoc(this.getEdit, 'productDetails')
+    console.log(this.$route.params.id);
+    //console.log(this.getEdit)
+    if (this.getEdit && this.$route.params.id === "1") {
+      console.log(this.getEdit);
+      await getExistingDoc(this.getEdit, "productDetails")
         .then((res) => {
           console.log(res);
           const { category, description, name, price, image } = res;
@@ -335,10 +339,10 @@ export default {
           this.description = description;
           (this.name = name),
             (this.imageFile = {
-              first: image[0],
-              second: image[1],
-              third: image[2],
-              forth: image[3],
+              first:{ img:image[0], isEdit:false},
+              second:{ img:image[1], isEdit:false},
+              third:{ img:image[2], isEdit:false},
+              forth: { img:image[3], isEdit:false},
             });
           this.selectedImageObj = {
             first: image[0],
@@ -355,21 +359,23 @@ export default {
   },
 
   methods: {
-    ...mapActions(['editCategory']),
+    ...mapActions(["editCategory"]),
     selectedFn(cat) {
       this.selectedCategory = cat;
       console.log(cat);
-      this.editCategory(null)
+      this.editCategory(null);
       // console.log(cat.target.value)
     },
 
     chooseImage(e) {
-      this.editCategory(null)
+      this.editCategory(null);
+      //this.edit = true
       //const imageData = { ...this.selectedImageObj }
       if (e.target.files[0]) {
         const file = e.target.files[0];
         this.selectedImageObj[e.target.id] = file;
-        this.imageFile[e.target.id] = file;
+        this.imageFile[e.target.id].img = file;
+        this.imageFile[e.target.id].isEdit = true;
         if (file.size > 3000000) {
           this.$toast.error("Image size should not exceeds 3MB");
           return;
@@ -382,7 +388,9 @@ export default {
     },
     removeImage(e) {
       this.selectedImageObj[e.target.id] = null;
-      this.imageFile[e.target.id] = null;
+      this.imageFile[e.target.id].img = null;
+      this.imageFile[e.target.id].isEdit = true;
+      //this.edit = true;
     },
     async saveToDatabse() {
       this.isSubmit = true;
@@ -406,30 +414,29 @@ export default {
         image: this.imageFile,
         category: this.selectedCategory,
         price: this.price,
-        id: this.getEdit
+        id: this.getEdit,
       };
 
       await getData(payload)
         .then((res) => {
           console.log(res);
           this.isSubmit = false;
-          
-            this.$toast.success("Saved successfully");
 
-            this.name = "";
-            this.description = "";
-            //this.imageFile = null;
-            this.selectedCategory = "";
-            this.price = 0;
-            this.selectedImageObj = {
-              first: null,
-              second: null,
-              third: null,
-              forth: null,
-            };
-            this.editCategory(null)
-            //this.$toast.error("Error");
-          
+          this.$toast.success("Saved successfully");
+
+          this.name = "";
+          this.description = "";
+          //this.imageFile = null;
+          this.selectedCategory = "";
+          this.price = 0;
+          this.selectedImageObj = {
+            first: null,
+            second: null,
+            third: null,
+            forth: null,
+          };
+          this.editCategory(null);
+          //this.$toast.error("Error");
         })
         .catch((err) => {
           console.log(err);

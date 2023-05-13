@@ -45,9 +45,10 @@ const routes = [
     component: AdminCategory,
   },
   {
-    path: "/admindashboard",
+    path: "/admindashboard/:id",
     name: "AdminDashboard",
     component: AdminDashboard,
+    props:true
   },
   {
     path: "/checkout/:id",

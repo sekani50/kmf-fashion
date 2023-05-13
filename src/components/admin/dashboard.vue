@@ -24,7 +24,7 @@
         :class="
           currentRoute === 'AdminDashboard' ? 'text-white' : 'text-gray-300'
         "
-        to="/admindashboard"
+        to="/admindashboard/0"
         class="font-semibold"
         >Add product</router-link
       >

@@ -59,6 +59,7 @@ export default {
       this.isCat = !this.isCat;
     },
     storeCurr() {
+      console.log(this.bridal)
       this.updateCurrent({
         bespoke: this.bespoke,
         bridal: this.bridal,

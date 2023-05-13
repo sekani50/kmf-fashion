@@ -5,7 +5,7 @@
   >
     <div class="w-full flex justify-between items-center p-2">
       <router-link
-        to="/admindashboard"
+        to="/admindashboard/0"
         class="flex flex-col space-y-1 items-center justify-center"
       >
         <span>
@@ -20,7 +20,7 @@
       </router-link>
 
       <div
-        @click.self="checkcat"
+      
         class="relative flex flex-col space-y-1 items-center justify-center"
       >
         <span
@@ -39,7 +39,7 @@
         @click="showCats"
         :class="isCat ? 'block' : 'hidden'"
         class="fixed inset-0 bg-none w-full flex justify-center h-full">
-        <div class="bg-white p-3 ml-4 shadow-xl space-y-2 bottom-[65px] rounded-md min-h-max min-w-max absolute">
+        <div class="bg-white p-3 ml-4 shadow-xl space-y-3 bottom-[65px] rounded-md min-h-max min-w-max absolute">
             <div
          v-for="(cat, index) in cats"
          :key="index"

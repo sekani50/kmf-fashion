@@ -26,7 +26,7 @@
       >
         <div class="group w-full h-full">
           <div
-            class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
+            class="rounded-lg overflow-hidden w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
             <div
               class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
@@ -108,7 +108,7 @@
       >
         <div class="group w-full h-full">
           <div
-            class="rounded-lg h-full w-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
+            class="rounded-lg overflow-hidden h-full w-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
             <div
               class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
@@ -191,7 +191,7 @@
       >
         <div class="group w-full h-full">
           <div
-            class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
+            class="rounded-lg overflow-hidden w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
             <div
               class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
@@ -272,7 +272,7 @@
       >
         <div class="group w-full h-full">
           <div
-            class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
+            class="rounded-lg overflow-hidden w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
             <div
               class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
@@ -353,7 +353,7 @@
       >
         <div class="group w-full h-full">
           <div
-            class="rounded-lg h-full w-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
+            class="rounded-lg overflow-hidden h-full w-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
             <div
               class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
@@ -434,7 +434,7 @@
       >
         <div class="group w-full h-full">
           <div
-            class="rounded-lg w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
+            class="rounded-lg overflow-hidden w-full h-full group-hover:shadow-xl cursor-pointer duration-300 transform group-hover:-translate-y-2"
           >
             <div
               class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
@@ -505,7 +505,7 @@
         
         <p>No item added</p>
 
-        <router-link to="/admindashboard" class="text-white p-2 text-[16px] text-sm rounded-md bg-zinc-600">Add product</router-link>
+        <router-link to="/admindashboard/0" class="text-white p-2 text-[16px] text-sm rounded-md bg-zinc-600">Add product</router-link>
        </div>
      
       </div>
@@ -534,7 +534,7 @@ export default {
     ...mapActions(["updateCurrent", "editCategory"]),
     async editCat(id, data) {
       await  this.editCategory(id)
-      this.$router.push("/admindashboard")
+      this.$router.push("/admindashboard/1")
     
     
 

@@ -25,116 +25,92 @@ export const adminlogin = (email, password) => {
 export const getData = async (data) => {
   const { image } = data;
   const { first, second, third, forth } = image;
-  const imgArray = [first, second, third, forth];
-  const result = [];
+ console.log('this is the image data', image)
+  //console.log('this is',data.editted)
   let success;
+  const result = [];
 
-  const imgRef = ref(storage, `images/${first + v4()}`);
+if (first.isEdit) {
+    const imgRef = ref(storage, `images/${first.img + v4()}`);
+  
+    await uploadBytes(imgRef, first.img)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  
+    await getDownloadURL(imgRef)
+      .then((res) => {
+        console.log(res);
+        result.push(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
-  await uploadBytes(imgRef, first)
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
-  await getDownloadURL(imgRef)
-    .then((res) => {
-      console.log(res);
-      result.push(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
-  const imgRefS = ref(storage, `images/${second + v4()}`);
-
-  await uploadBytes(imgRefS, second)
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
-  await getDownloadURL(imgRefS)
-    .then((res) => {
-      console.log(res);
-      result.push(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
-  const imgRefT = ref(storage, `images/${third + v4()}`);
-
-  await uploadBytes(imgRefT, third)
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
-  await getDownloadURL(imgRefT)
-    .then((res) => {
-      console.log(res);
-      result.push(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
-  const imgRefF = ref(storage, `images/${forth + v4()}`);
-
-  await uploadBytes(imgRefF, forth)
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
-  await getDownloadURL(imgRefF)
-    .then((res) => {
-      console.log(res);
-      result.push(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
-  /* 
-    for (let img in imgArray) {
-
-    const imgRef =  ref(storage, `images/${img + v4()}`);
-
-    await uploadBytes(imgRef, img)
-    .then((res) => {
-      console.log(res);
-
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
-  await getDownloadURL(imgRef)
-    .then( (res) => {
-      console.log(res);
-      result.push(res)
- 
-
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
+   if (second.isEdit)
+   { const imgRefS = ref(storage, `images/${second + v4()}`);
+  
+    await uploadBytes(imgRefS, second.img)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  
+    await getDownloadURL(imgRefS)
+      .then((res) => {
+        console.log(res);
+        result.push(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });}
+  
+if (third.isEdit) {    const imgRefT = ref(storage, `images/${third + v4()}`);
+  
+    await uploadBytes(imgRefT, third.img)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  
+    await getDownloadURL(imgRefT)
+      .then((res) => {
+        console.log(res);
+        result.push(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });}
+   
+   if (forth.isEdit){ const imgRefF = ref(storage, `images/${forth + v4()}`);
+  
+    await uploadBytes(imgRefF, forth.img)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  
+    await getDownloadURL(imgRefF)
+      .then((res) => {
+        console.log(res);
+        result.push(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
   
-  */
-
-  console.log(result);
+      console.log(result);
 
   if (data.id) {
     const docRef = doc(db, "productDetails", data.id);
@@ -143,7 +119,7 @@ export const getData = async (data) => {
       name: data.name,
       description: data.description,
       category: data.category,
-      image: result,
+      image: data.editted ? result :[ first.img, second.img, third.img, forth.img],
       price: data.price,
       createdAt: new Date().getTime(),
     };
@@ -159,6 +135,9 @@ export const getData = async (data) => {
 
     return success;
   } else {
+   
+   // const imgArray = [first, second, third, forth];
+   
     const productRef = collection(db, "productDetails");
     //let result;
 
@@ -199,6 +178,7 @@ export const getCategory = async (
   await getDocs(queryUnisex).then((res) => {
     console.log(res.docs);
     res.docs.forEach((doc) => {
+      const { fields } = doc._document.data.value.mapValue;
       const { category, description, createdAt, name, price, image } = fields;
       const { values } = image.arrayValue;
       console.log(values);
@@ -226,6 +206,7 @@ export const getCategory = async (
       const { fields } = doc._document.data.value.mapValue;
       console.log(fields);
       const { category, description, createdAt, name, price, image } = fields;
+     console.log(image)
       const { values } = image.arrayValue;
       console.log(values);
       const images = values.filter(

@@ -78,7 +78,7 @@ export default {
       
         this.email =""
         this.password = ""
-        this.$router.push("/admindashboard")
+        this.$router.push("/admindashboard/0")
 
       })
       .catch((err) => {
