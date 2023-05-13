@@ -363,12 +363,12 @@ export default {
     selectedFn(cat) {
       this.selectedCategory = cat;
       console.log(cat);
-      this.editCategory(null);
+      //this.editCategory(null);
       // console.log(cat.target.value)
     },
 
     chooseImage(e) {
-      this.editCategory(null);
+      //this.editCategory(null);
       //this.edit = true
       //const imageData = { ...this.selectedImageObj }
       if (e.target.files[0]) {
@@ -435,7 +435,7 @@ export default {
             third: null,
             forth: null,
           };
-          this.editCategory(null);
+          //this.editCategory(null);
           //this.$toast.error("Error");
         })
         .catch((err) => {
