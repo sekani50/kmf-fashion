@@ -113,6 +113,7 @@ if (third.isEdit) {    const imgRefT = ref(storage, `images/${third.img + v4()}`
       console.log(result);
 
   if (data.id) {
+    console.log("from data id", data.id)
     const docRef = doc(db, "productDetails", data.id);
     const myImages = Object.values({
         first: first.isEdit ? result.first : first.img,
@@ -120,14 +121,22 @@ if (third.isEdit) {    const imgRefT = ref(storage, `images/${third.img + v4()}`
         third: third.isEdit ? result.third : third.img,
         forth: forth.isEdit ? result.forth : forth.img,
       })
+
+      const filterImage = Object.values(myImages).filter((val) => val !== undefined)
      const payload = {
       name: data.name,
       description: data.description,
       category: data.category,
-      image: myImages,
+      image: filterImage,
       price: data.price,
       createdAt: new Date().getTime(),
     };
+
+    if (myImages) {
+      console.log(myImages)
+      console.log(payload)
+    
+    }
 
     setDoc(docRef, payload, { merge: true })
       .then((docRef) => {
@@ -146,7 +155,7 @@ if (third.isEdit) {    const imgRefT = ref(storage, `images/${third.img + v4()}`
     const productRef = collection(db, "productDetails");
     //let result;
     
-    const myImages = Object.values(result)
+    const myImages = Object.values(result).filter((val) => val !== undefined)
 
     await addDoc(productRef, {
       name: data.name,
