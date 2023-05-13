@@ -28,7 +28,7 @@ export const getData = async (data) => {
  console.log('this is the image data', image)
   //console.log('this is',data.editted)
   let success;
-  const result = [];
+  const result = {};
 
 if (first.isEdit) {
     const imgRef = ref(storage, `images/${first.img + v4()}`);
@@ -44,7 +44,7 @@ if (first.isEdit) {
     await getDownloadURL(imgRef)
       .then((res) => {
         console.log(res);
-        result.push({first:res});
+        result['first'] = res
       })
       .catch((err) => {
         console.log(err);
@@ -65,7 +65,7 @@ if (first.isEdit) {
     await getDownloadURL(imgRefS)
       .then((res) => {
         console.log(res);
-        result.push({second:res});
+        result['second'] = res
       })
       .catch((err) => {
         console.log(err);
@@ -84,7 +84,7 @@ if (third.isEdit) {    const imgRefT = ref(storage, `images/${third.img + v4()}`
     await getDownloadURL(imgRefT)
       .then((res) => {
         console.log(res);
-        result.push({third:res});
+        result['third'] = res
       })
       .catch((err) => {
         console.log(err);
@@ -103,7 +103,7 @@ if (third.isEdit) {    const imgRefT = ref(storage, `images/${third.img + v4()}`
     await getDownloadURL(imgRefF)
       .then((res) => {
         console.log(res);
-        result.push({forth:res});
+        result['forth'] = res;
       })
       .catch((err) => {
         console.log(err);
