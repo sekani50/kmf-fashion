@@ -44,7 +44,7 @@ if (first.isEdit) {
     await getDownloadURL(imgRef)
       .then((res) => {
         console.log(res);
-        result.push(res);
+        result.push({first:res});
       })
       .catch((err) => {
         console.log(err);
@@ -52,7 +52,7 @@ if (first.isEdit) {
   }
 
    if (second.isEdit)
-   { const imgRefS = ref(storage, `images/${second + v4()}`);
+   { const imgRefS = ref(storage, `images/${second.img + v4()}`);
   
     await uploadBytes(imgRefS, second.img)
       .then((res) => {
@@ -65,13 +65,13 @@ if (first.isEdit) {
     await getDownloadURL(imgRefS)
       .then((res) => {
         console.log(res);
-        result.push(res);
+        result.push({second:res});
       })
       .catch((err) => {
         console.log(err);
       });}
   
-if (third.isEdit) {    const imgRefT = ref(storage, `images/${third + v4()}`);
+if (third.isEdit) {    const imgRefT = ref(storage, `images/${third.img + v4()}`);
   
     await uploadBytes(imgRefT, third.img)
       .then((res) => {
@@ -84,13 +84,13 @@ if (third.isEdit) {    const imgRefT = ref(storage, `images/${third + v4()}`);
     await getDownloadURL(imgRefT)
       .then((res) => {
         console.log(res);
-        result.push(res);
+        result.push({third:res});
       })
       .catch((err) => {
         console.log(err);
       });}
    
-   if (forth.isEdit){ const imgRefF = ref(storage, `images/${forth + v4()}`);
+   if (forth.isEdit){ const imgRefF = ref(storage, `images/${forth.img + v4()}`);
   
     await uploadBytes(imgRefF, forth.img)
       .then((res) => {
@@ -103,7 +103,7 @@ if (third.isEdit) {    const imgRefT = ref(storage, `images/${third + v4()}`);
     await getDownloadURL(imgRefF)
       .then((res) => {
         console.log(res);
-        result.push(res);
+        result.push({forth:res});
       })
       .catch((err) => {
         console.log(err);
@@ -119,7 +119,12 @@ if (third.isEdit) {    const imgRefT = ref(storage, `images/${third + v4()}`);
       name: data.name,
       description: data.description,
       category: data.category,
-      image: data.editted ? result :[ first.img, second.img, third.img, forth.img],
+      image: Object.values({
+        first: first.isEdit ? result.first : first.img,
+        second: second.isEdit ? result.second : second.img,
+        third: third.isEdit ? result.third : third.img,
+        forth: forth.isEdit ? result.forth : forth.img,
+      }),
       price: data.price,
       createdAt: new Date().getTime(),
     };
@@ -145,7 +150,7 @@ if (third.isEdit) {    const imgRefT = ref(storage, `images/${third + v4()}`);
       name: data.name,
       description: data.description,
       category: data.category,
-      image: result,
+      image: Object.values(result),
       price: data.price,
       createdAt: new Date().getTime(),
     })
