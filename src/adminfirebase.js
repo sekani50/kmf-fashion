@@ -114,17 +114,17 @@ if (third.isEdit) {    const imgRefT = ref(storage, `images/${third.img + v4()}`
 
   if (data.id) {
     const docRef = doc(db, "productDetails", data.id);
-
-    const payload = {
-      name: data.name,
-      description: data.description,
-      category: data.category,
-      image: Object.values({
+    const myImages = Object.values({
         first: first.isEdit ? result.first : first.img,
         second: second.isEdit ? result.second : second.img,
         third: third.isEdit ? result.third : third.img,
         forth: forth.isEdit ? result.forth : forth.img,
-      }),
+      })
+     const payload = {
+      name: data.name,
+      description: data.description,
+      category: data.category,
+      image: myImages,
       price: data.price,
       createdAt: new Date().getTime(),
     };
@@ -145,12 +145,14 @@ if (third.isEdit) {    const imgRefT = ref(storage, `images/${third.img + v4()}`
    
     const productRef = collection(db, "productDetails");
     //let result;
+    
+    const myImages = Object.values(result)
 
     await addDoc(productRef, {
       name: data.name,
       description: data.description,
       category: data.category,
-      image: Object.values(result),
+      image: myImages,
       price: data.price,
       createdAt: new Date().getTime(),
     })
