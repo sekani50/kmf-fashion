@@ -3,7 +3,7 @@
   <div
     class="w-full sm:hidden h-fit text-sm fixed bottom-0 inset-x-0 shadow-lg border-t text-zinc-900 bg-white z-50"
   >
-    <div class="w-full flex justify-between items-center p-2">
+    <div class="w-full flex justify-between items-center p-6">
       <router-link
         to="/admindashboard/0"
         class="flex flex-col space-y-1 items-center justify-center"
