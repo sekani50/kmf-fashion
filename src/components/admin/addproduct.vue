@@ -295,7 +295,7 @@ export default {
         "Bridal wears",
         "Asoebi",
         "Cooperate",
-        "Muslimah",
+        "Muslim Wears",
         "Fabrics",
       ],
       selectedCategory: "",

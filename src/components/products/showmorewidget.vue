@@ -1,7 +1,7 @@
 <!-- eslint-disable -->
 <template>
   <div
-    class=" w-full sm:pb-56 pt-[62px] sm:pt-[80px] space-y-[5%] mx-auto p-6"
+    class=" w-full relative sm:pb-56 pt-[62px] sm:pt-[80px] space-y-[5%] mx-auto p-6"
   >
     <p class="text-zinc-700 sm:text-xl text-lg font-semibold collectio">
       {{ getcat }}
@@ -14,6 +14,9 @@
           ? 'grids'
           : 'hidden'
       "
+      v-if=" asoebi &&
+        asoebi.length !== 0 &&
+        asoebi[0].category.stringValue === getcat"
     >
       <div
         class="h-fit  md:w-[240px] sm:h-fit"
@@ -77,6 +80,9 @@
           ? 'grids'
           : 'hidden'
       "
+      v-else-if="bridal &&
+        bridal.length !== 0 &&
+        bridal[0].category.stringValue === getcat"
     >
       <div
         class="h-fit  md:w-[240px] sm:h-fit"
@@ -140,6 +146,9 @@
           ? 'grids'
           : 'hidden'
       "
+      v-else-if="cooperate &&
+        cooperate.length !== 0 &&
+        cooperate[0].category.stringValue === getcat"
     >
       <div
         class="h-fit  md:w-[240px] sm:h-fit"
@@ -203,6 +212,9 @@
           ? 'grids'
           : 'hidden'
       "
+      v-else-if=" fabrics &&
+        fabrics.length !== 0 &&
+        fabrics[0].category.stringValue === getcat"
     >
       <div
         class="h-fit  md:w-[240px] sm:h-fit"
@@ -267,6 +279,9 @@
           ? 'grids'
           : 'hidden'
       "
+      v-else-if="bespoke &&
+        bespoke.length !== 0 &&
+        bespoke[0].category.stringValue === getcat"
     >
       <div
         class="h-fit  md:w-[240px] sm:h-fit"
@@ -330,6 +345,9 @@
           ? 'grids'
           : 'hidden'
       "
+      v-else-if=" muslim &&
+        muslim.length !== 0 &&
+        muslim[0].category.stringValue === getcat"
     >
       <div
         class="h-fit  md:w-[240px] sm:h-fit"
@@ -384,6 +402,19 @@
         </div>
       </div>
     </div>
+    <!---->
+    <div v-else class=" text-sm sm:text-[16px] h-[70vh] justify-center items-center inset-0 flex flex-col absolute space-y-3 m-auto rounded-lg w-fit p-4  sm:rounded-xl">
+       <div class="space-y-2 flex flex-col justify-center items-center h-fit">
+        <div class="sm:h-20 sm:w-20 h-16 w-16">
+            <img class="w-full h-full" src="@/assets/images/emptybox.png" alt="" />
+        </div>
+        
+        <p>Oops! sorry, no item added</p>
+
+        <router-link to="/" class="text-white p-2 text-[16px] text-sm rounded-md bg-zinc-600">Go Back</router-link>
+       </div>
+     
+      </div>
     <!--mini detail-->
     <div class="inset-0 bg-black z-40 bg-opacity-70 fixed  w-full h-full" :class="isminiDetail ? 'block' : 'hidden'">
       <MiniDetail

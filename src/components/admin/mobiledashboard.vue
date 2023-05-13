@@ -4,20 +4,7 @@
     class="w-full sm:hidden h-fit text-sm fixed bottom-0 inset-x-0 shadow-lg border-t text-zinc-900 bg-white z-50"
   >
     <div class="w-full flex justify-between items-center py-2 px-6">
-      <router-link
-        to="/admindashboard/0"
-        class="flex flex-col space-y-1 items-center justify-center"
-      >
-        <span>
-          <img
-            v-if="currentRoute === 'AdminDashboard'"
-            src="@/assets/addfill.svg"
-            alt="add"
-          />
-          <img v-else src="@/assets/add.svg" alt="add" />
-        </span>
-        <span> Add products </span>
-      </router-link>
+     
 
       <div
       
@@ -38,8 +25,10 @@
         <div
         @click="showCats"
         :class="isCat ? 'block' : 'hidden'"
-        class="fixed inset-0 bg-none w-full flex justify-center h-full">
-        <div class="bg-white p-3 ml-4 shadow-xl space-y-3 bottom-[65px] rounded-md min-h-max min-w-max absolute">
+        class="fixed inset-0 bg-none w-full h-full">
+        <div
+        :class="isOpen ? 'block' : 'hidden'"
+        class="bg-white p-4 ml-4 shadow-xl space-y-4 bottom-[65px] rounded-md min-h-max min-w-max absolute">
             <div
          v-for="(cat, index) in cats"
          :key="index"
@@ -50,6 +39,22 @@
          
         </div>
     </div>
+
+
+    <router-link
+        to="/admindashboard/0"
+        class="flex flex-col space-y-1 items-center justify-center"
+      >
+        <span>
+          <img
+            v-if="currentRoute === 'AdminDashboard'"
+            src="@/assets/addfill.svg"
+            alt="add"
+          />
+          <img v-else src="@/assets/add.svg" alt="add" />
+        </span>
+        <span> Add products </span>
+      </router-link>
 
       <router-link
         to="/"
@@ -84,6 +89,7 @@ export default {
         "Fabrics",
       ],
       isCat: false,
+      isOpen:false,
     };
   },
   computed: {
@@ -94,22 +100,22 @@ export default {
   methods: {
     ...mapActions(["updateCategory"]),
     showCats() {
-        console.log('clicked')
+        console.log('clicked', this.isCat)
         this.isCat = !this.isCat;
+        this.isOpen = true
         //console.log(this.isCat)
     },
-    setOpen() {
-      this.isOpen = !this.isOpen;
-      console.log("clicked");
-    },
+   
     checkCats() {
-      this.isCat = !this.isCat;
+      this.isOpen = !this.isOpen;
       console.log("clicked");
     },
     showItems(cat) {
       this.currcat = cat;
+     
       this.updateCategory(cat);
-      this.isCat = !this.isCat;
+      //this.showCats()
+      this.isOpen =  false
       if (this.$route.name !== "AdminCategory") {
         this.$router.push("/category");
       }

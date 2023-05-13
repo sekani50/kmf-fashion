@@ -48,6 +48,15 @@
             )
           "
         >
+        <!--
+
+          "Unisex Bespoke",
+        "Bridal wears",
+        "Asoebi",
+        "Cooperate",
+        "Muslimah Wears",
+        "Fabrics",
+        -->
           <ProductWidgets
             :name="item.name.stringValue"
             :description="item.description.stringValue"
@@ -57,7 +66,7 @@
         </div>
       </div>
       <button
-        @click="showMore(asoebi[0].category.stringValue)"
+        @click="showMore('Asoebi')"
         class="text-white bg-zinc-700 self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
       >
         <span> more</span>
@@ -68,7 +77,7 @@
     <div class="flex flex-col space-y-2">
       <div class="flex justify-between items-center">
         <p class="text-zinc-700 sm:text-xl text-[14px] font-semibold collectio">
-          Muslimah Wears
+          Muslim Wears
         </p>
       </div>
 
@@ -98,7 +107,7 @@
       </div>
 
       <button
-        @click="showMore(muslim[0].category.stringValue)"
+        @click="showMore('Muslim Wears')"
         class="text-white bg-zinc-700 self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
       >
         <span> more</span>
@@ -139,7 +148,7 @@
       </div>
 
       <button
-        @click="showMore(bespoke[0].category.stringValue)"
+        @click="showMore('Unisex Bespoke')"
         class="text-white bg-zinc-700 self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
       >
         <span> more</span>
@@ -180,7 +189,7 @@
         </div>
       </div>
       <button
-        @click="showMore(bridal[0].category.stringValue)"
+        @click="showMore('Bridal wears')"
         class="text-white bg-zinc-700 self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
       >
         <span> more</span>
@@ -219,7 +228,7 @@
         </div>
       </div>
       <button
-        @click="showMore(cooperate[0].category.stringValue)"
+        @click="showMore('Cooperate')"
         class="text-white bg-zinc-700 self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
       >
         <span> more</span>
@@ -259,7 +268,7 @@
       </div>
 
       <button
-        @click="showMore(fabrics[0].category.stringValue)"
+        @click="showMore('Fabrics')"
         class="text-white bg-zinc-700 self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
       >
         <span> more</span>
@@ -384,8 +393,9 @@ export default {
     },
 
     showMore(cat) {
-      this.updateCategory(cat);
       this.$router.push("/product");
+      this.updateCategory(cat);
+      
     },
   },
 };
