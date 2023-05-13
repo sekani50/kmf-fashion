@@ -41,10 +41,8 @@
         class="fixed inset-0 bg-none w-full flex justify-center h-full">
         <div class="bg-white p-3 ml-4 shadow-xl space-y-2 bottom-[65px] rounded-md min-h-max min-w-max absolute">
             <div
-         
          v-for="(cat, index) in cats"
          :key="index"
-        
        >
          <p @click="showItems(cat)">{{ cat }}</p>
        </div>
@@ -54,18 +52,14 @@
     </div>
 
       <router-link
-        to="/checkout"
+        to="/"
         class="flex flex-col space-y-1 items-center justify-center"
       >
         <span>
-          <img
-            v-if="currentRoute === 'CheckoutView'"
-            src="@/assets/checkfill.svg"
-            alt="check"
-          />
-          <img v-else src="@/assets/check.svg" alt="check" />
+         
+          <img src="@/assets/home.svg" alt="check" />
         </span>
-        <span> Checkouts </span>
+        <span> Home </span>
       </router-link>
     </div>
   </div>

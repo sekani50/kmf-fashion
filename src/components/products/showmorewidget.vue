@@ -1,9 +1,9 @@
 <!-- eslint-disable -->
 <template>
   <div
-    class="let swipeIn w-full sm:pb-56 pt-[62px] sm:pt-[80px] space-y-[5%] mx-auto p-6"
+    class=" w-full sm:pb-56 pt-[62px] sm:pt-[80px] space-y-[5%] mx-auto p-6"
   >
-    <p class="text-zinc-900 sm:text-xl text-lg font-semibold collectio">
+    <p class="text-zinc-700 sm:text-xl text-lg font-semibold collectio">
       {{ getcat }}
     </p>
     <div
@@ -21,7 +21,7 @@
         :key="index"
         @click="
             showMiniDetail(
-              index,
+              item.id,
               item.name.stringValue,
               item.description.stringValue,
               item.images,
@@ -44,10 +44,10 @@
               />
             </div>
             <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-              <p class="truncate  w-[100vw] text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+              <p class="truncate  w-[100vw] text-zinc-700 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
               <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.name.stringValue }}</span>
             </p>
-            <p class="truncate w-[98vw] text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden">
+            <p class="truncate w-[98vw] text-zinc-700 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden">
               <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.description.stringValue }}</span> 
             </p>
               <p
@@ -58,7 +58,7 @@
                     ? 'hidden'
                     : 'block'
                 "
-                class="text-zinc-900 font-semibold text-sm sm:text-lg text-end"
+                class="text-zinc-700 font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
@@ -84,7 +84,7 @@
         :key="index"
         @click="
             showMiniDetail(
-              index,
+              item.id,
               item.name.stringValue,
               item.description.stringValue,
               item.images,
@@ -107,10 +107,10 @@
               />
             </div>
             <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-              <p class="truncate  w-[100vw] text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+              <p class="truncate  w-[100vw] text-zinc-700 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
               <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.name.stringValue }}</span>
             </p>
-            <p class="truncate w-[98vw] text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden">
+            <p class="truncate w-[98vw] text-zinc-700 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden">
               <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.description.stringValue }}</span> 
             </p>
               <p
@@ -121,7 +121,7 @@
                     ? 'hidden'
                     : 'block'
                 "
-                class="text-zinc-900 font-semibold text-sm sm:text-lg text-end"
+                class="text-zinc-700 font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
@@ -147,7 +147,7 @@
         :key="index"
         @click="
             showMiniDetail(
-              index,
+              item.id,
               item.name.stringValue,
               item.description.stringValue,
               item.images,
@@ -170,10 +170,10 @@
               />
             </div>
             <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-              <p class="truncate  w-[100vw] text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+              <p class="truncate  w-[100vw] text-zinc-700 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
               <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.name.stringValue }}</span>
             </p>
-            <p class="truncate w-[98vw] text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden">
+            <p class="truncate w-[98vw] text-zinc-700 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden">
               <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.description.stringValue }}</span> 
             </p>
               <p
@@ -184,7 +184,7 @@
                     ? 'hidden'
                     : 'block'
                 "
-                class="text-zinc-900 font-semibold text-sm sm:text-lg text-end"
+                class="text-zinc-700 font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
@@ -211,7 +211,7 @@
 
         @click="
             showMiniDetail(
-              index,
+              item.id,
               item.name.stringValue,
               item.description.stringValue,
               item.images,
@@ -234,10 +234,10 @@
               />
             </div>
             <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-              <p class="truncate  w-[100vw] text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+              <p class="truncate  w-[100vw] text-zinc-700 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
               <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.name.stringValue }}</span>
             </p>
-            <p class="truncate w-[98vw] text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden">
+            <p class="truncate w-[98vw] text-zinc-700 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden">
               <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.description.stringValue }}</span> 
             </p>
               <p
@@ -248,7 +248,7 @@
                     ? 'hidden'
                     : 'block'
                 "
-                class="text-zinc-900 font-semibold text-sm sm:text-lg text-end"
+                class="text-zinc-700 font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
@@ -274,7 +274,7 @@
         :key="index"
         @click="
             showMiniDetail(
-              index,
+              item.id,
               item.name.stringValue,
               item.description.stringValue,
               item.images,
@@ -297,10 +297,10 @@
               />
             </div>
             <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-              <p class="truncate  w-[100vw] text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+              <p class="truncate  w-[100vw] text-zinc-700 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
               <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.name.stringValue }}</span>
             </p>
-            <p class="truncate w-[98vw] text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden">
+            <p class="truncate w-[98vw] text-zinc-700 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden">
               <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.description.stringValue }}</span> 
             </p>
               <p
@@ -311,7 +311,7 @@
                     ? 'hidden'
                     : 'block'
                 "
-                class="text-zinc-900 font-semibold text-sm sm:text-lg text-end"
+                class="text-zinc-700 font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
@@ -337,7 +337,7 @@
         :key="index"
         @click="
             showMiniDetail(
-              index,
+              item.id,
               item.name.stringValue,
               item.description.stringValue,
               item.images,
@@ -360,10 +360,10 @@
               />
             </div>
             <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
-              <p class="truncate  w-[100vw] text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
+              <p class="truncate  w-[100vw] text-zinc-700 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
               <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.name.stringValue }}</span>
             </p>
-            <p class="truncate w-[98vw] text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden">
+            <p class="truncate w-[98vw] text-zinc-700 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden">
               <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ item.description.stringValue }}</span> 
             </p>
               <p
@@ -374,7 +374,7 @@
                     ? 'hidden'
                     : 'block'
                 "
-                class="text-zinc-900 font-semibold text-sm sm:text-lg text-end"
+                class="text-zinc-700 font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
@@ -434,7 +434,7 @@ export default {
   },
 
   methods: {
-    showMiniDetail(index, name, desc, img, price, cat) {
+    showMiniDetail(id, name, desc, img, price, cat) {
       this.isminiDetail = true;
       this.image = img.filter(
         (i) => i.stringValue !== undefined || i.stringValue !== ""
@@ -442,7 +442,7 @@ export default {
       this.price = price;
       this.description = desc;
       this.name = name;
-      this.idx = index;
+      this.idx = id;
       this.cats = cat;
 
       console.log(this.image);
@@ -458,6 +458,6 @@ export default {
 /* eslint-disable */
 
 .grids {
-  @apply mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-[3rem] lg:gap-[70px] text-zinc-900;
+  @apply mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-[3rem] lg:gap-[70px] text-zinc-700;
 }
 </style>

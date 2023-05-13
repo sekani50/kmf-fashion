@@ -1,20 +1,20 @@
 <!-- eslint-disable -->
 <template>
   <div
-    class="collection w-[97%] sm:w-[95%] mx-auto p-2 sm:p-6 space-y-[5%] mt-[-5px]"
+    class="collectio w-[97%] sm:w-[95%] mx-auto p-2 sm:p-6 space-y-[5%] mt-[-5px]"
   >
     <div class="flex w-full justify-center items-center space-x-2">
-      <span class="h-[2px] w-16 sm:w-24 bg-zinc-900 relative">
+      <span class="h-[2px] w-16 sm:w-24 bg-zinc-700 relative">
         <span
-          class="absolute w-[6px] h-[6px] transform rotate-45 bg-zinc-900 right-0 top-[-2px]"
+          class="absolute w-[6px] h-[6px] transform rotate-45 bg-zinc-700 right-0 top-[-2px]"
         ></span>
       </span>
-      <P class="other-name text-zinc-900 sm:text-2xl text-lg font-medium"
+      <P class="other-name text-zinc-700 sm:text-2xl text-lg font-medium"
         >Our Services</P
       >
-      <span class="h-[2px] w-16 sm:w-24 bg-zinc-900 relative">
+      <span class="h-[2px] w-16 sm:w-24 bg-zinc-700 relative">
         <span
-          class="absolute w-[6px] h-[6px] transform rotate-45 bg-zinc-900 left-0 top-[-2px]"
+          class="absolute w-[6px] h-[6px] transform rotate-45 bg-zinc-700 left-0 top-[-2px]"
         ></span>
       </span>
     </div>
@@ -25,13 +25,13 @@
 
     <div class="flex flex-col space-y-2">
       <div class="flex justify-between items-center">
-        <p class="text-zinc-900 sm:text-xl text-[14px] font-semibold collectio">
+        <p class="text-zinc-700 sm:text-xl text-[14px] font-semibold collectio">
           Asoebi
         </p>
       </div>
 
       <div
-        class="mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-[3rem] lg:gap-[70px] text-zinc-900"
+        class="mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-[3rem] lg:gap-[70px] text-zinc-700"
       >
         <div
           class="h-fit md:w-[240px] sm:h-fit"
@@ -39,7 +39,7 @@
           :key="index"
           @click="
             showMiniDetail(
-              index,
+              item.id,
               item.name.stringValue,
               item.description.stringValue,
               item.images,
@@ -58,7 +58,7 @@
       </div>
       <button
         @click="showMore(asoebi[0].category.stringValue)"
-        class="text-white bg-black self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
+        class="text-white bg-zinc-700 self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
       >
         <span> more</span>
       </button>
@@ -67,7 +67,7 @@
     <!---->
     <div class="flex flex-col space-y-2">
       <div class="flex justify-between items-center">
-        <p class="text-zinc-900 sm:text-xl text-[14px] font-semibold collectio">
+        <p class="text-zinc-700 sm:text-xl text-[14px] font-semibold collectio">
           Muslimah Wears
         </p>
       </div>
@@ -79,7 +79,7 @@
           :key="index"
           @click="
             showMiniDetail(
-              index,
+              item.id,
               item.name.stringValue,
               item.description.stringValue,
               item.images,
@@ -99,7 +99,7 @@
 
       <button
         @click="showMore(muslim[0].category.stringValue)"
-        class="text-white bg-black self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
+        class="text-white bg-zinc-700 self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
       >
         <span> more</span>
       </button>
@@ -108,7 +108,7 @@
     <!---->
     <div class="flex flex-col space-y-2">
       <div class="flex justify-between items-center">
-        <p class="text-zinc-900 sm:text-xl text-[14px] font-semibold collectio">
+        <p class="text-zinc-700 sm:text-xl text-[14px] font-semibold collectio">
           Unisex Bespoke
         </p>
       </div>
@@ -120,7 +120,7 @@
           :key="index"
           @click="
             showMiniDetail(
-              index,
+              item.id,
               item.name.stringValue,
               item.description.stringValue,
               item.images,
@@ -140,7 +140,7 @@
 
       <button
         @click="showMore(bespoke[0].category.stringValue)"
-        class="text-white bg-black self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
+        class="text-white bg-zinc-700 self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
       >
         <span> more</span>
       </button>
@@ -149,8 +149,8 @@
     <TopBanner class="w-full" />
 
     <div class="flex flex-col space-y-2">
-      <div class="flex justify-between text-zinc-900 items-center">
-        <p class="text-zinc-900 sm:text-xl text-[14px] font-semibold collectio">
+      <div class="flex justify-between text-zinc-700 items-center">
+        <p class="text-zinc-700 sm:text-xl text-[14px] font-semibold collectio">
           Bridal Wears
         </p>
       </div>
@@ -162,7 +162,7 @@
           :key="index"
           @click="
             showMiniDetail(
-              index,
+              item.id,
               item.name.stringValue,
               item.description.stringValue,
               item.images,
@@ -181,7 +181,7 @@
       </div>
       <button
         @click="showMore(bridal[0].category.stringValue)"
-        class="text-white bg-black self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
+        class="text-white bg-zinc-700 self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
       >
         <span> more</span>
       </button>
@@ -189,7 +189,7 @@
 
     <div class="flex flex-col space-y-2">
       <div class="flex justify-between items-center">
-        <p class="text-zinc-900 sm:text-xl text-[14px] font-semibold collectio">
+        <p class="text-zinc-700 sm:text-xl text-[14px] font-semibold collectio">
           Cooperate and Casual Wears
         </p>
       </div>
@@ -201,7 +201,7 @@
           :key="index"
           @click="
             showMiniDetail(
-              index,
+              item.id,
               item.name.stringValue,
               item.description.stringValue,
               item.images,
@@ -220,7 +220,7 @@
       </div>
       <button
         @click="showMore(cooperate[0].category.stringValue)"
-        class="text-white bg-black self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
+        class="text-white bg-zinc-700 self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
       >
         <span> more</span>
       </button>
@@ -228,7 +228,7 @@
 
     <div class="flex flex-col space-y-2">
       <div class="flex justify-between items-center">
-        <p class="text-zinc-900 sm:text-xl text-[14px] font-semibold collectio">
+        <p class="text-zinc-700 sm:text-xl text-[14px] font-semibold collectio">
           Fabrics
         </p>
       </div>
@@ -240,7 +240,7 @@
           :key="index"
           @click="
             showMiniDetail(
-              index,
+              item.id,
               item.name.stringValue,
               item.description.stringValue,
               item.images,
@@ -260,7 +260,7 @@
 
       <button
         @click="showMore(fabrics[0].category.stringValue)"
-        class="text-white bg-black self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
+        class="text-white bg-zinc-700 self-end text-[14px] sm:text-lg justify-center flex items-center rounded-sm sm:rounded-md w-[20%] p-2"
       >
         <span> more</span>
       </button>
@@ -366,7 +366,7 @@ export default {
   },
   methods: {
     ...mapActions(["updateCategory"]),
-    showMiniDetail(index, name, desc, img, price, cat) {
+    showMiniDetail(id, name, desc, img, price, cat) {
       this.isminiDetail = true;
       this.image = img.filter(
         (i) => i.stringValue !== undefined || i.stringValue !== ""
@@ -374,7 +374,7 @@ export default {
       this.price = price;
       this.description = desc;
       this.name = name;
-      this.idx = index;
+      this.idx = id;
       this.cats = cat;
 
       console.log(this.image);
@@ -394,6 +394,6 @@ export default {
 <style scoped>
 /* eslint-disable */
 .grids {
-  @apply mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-[3rem] lg:gap-[70px] text-zinc-900;
+  @apply mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-[3rem] lg:gap-[70px] text-zinc-700;
 }
 </style>

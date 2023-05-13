@@ -351,6 +351,7 @@ export const getCategory = async (
 export const sendToAdmin = async (data) => {
   const productRef = collection(db, "checkout");
   let result;
+  console.log(data)
 
   await addDoc(productRef, data)
     .then((res) => {
@@ -402,16 +403,4 @@ export const getExistingDoc = async (id, collection) => {
   return result;
 };
 
-export const updateData = () => {
-  const docRef = doc(db, "cities", "p4eZc05QV43InigxALJ");
 
-  const data = {};
-
-  setDoc(docRef, data)
-    .then((docRef) => {
-      console.log("Entire Document has been updated successfully");
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};

@@ -15,8 +15,8 @@
 
       </div>
       -->
-   <p class="name text-zinc-800 text-2xl sm:text-4xl font-medium">KMY</p>
-   <p class="other-name text-zinc-800 text-xl sm:text-3xl font-medium">Fashion Avenue</p>
+   <p class="name text-zinc-700 text-2xl sm:text-4xl font-medium">KMY</p>
+   <p class="other-name text-zinc-700 text-xl sm:text-3xl font-medium">Fashion Avenue</p>
   </div>
   </router-link>
  
@@ -28,10 +28,10 @@
       <button class="navs relative text-zinc-700">Services</button>
     </router-link>
     <router-link to="/contact">
-      <button class="navs relative text-zinc-700">Contact</button>
+      <button class="navs relative text-zinc-600">Contact</button>
     </router-link>
     <router-link to="/about">
-      <button class="navs relative text-zinc-700">About</button>
+      <button class="navs relative text-zinc-600">About</button>
     </router-link>
    
     
@@ -106,6 +106,6 @@ export default {
   @apply sm:hidden
 }
 .text {
-    @apply text-zinc-700 bg-black bg-opacity-10 sm:text-lg text-sm lg:text-[15px] p-3 rounded-l-none sm:rounded-l-none   sm:rounded-r-lg rounded-md sm:rounded-lg border-l-4 border-l-[#3452FF];
+    @apply text-zinc-600 bg-black bg-opacity-10 sm:text-lg text-sm lg:text-[15px] p-3 rounded-l-none sm:rounded-l-none   sm:rounded-r-lg rounded-md sm:rounded-lg border-l-4 border-l-[#3452FF];
 }
 </style>

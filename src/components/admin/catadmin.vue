@@ -2,9 +2,9 @@
 <template>
   <div
   @click.self="showCats"
-    class="let swipeIn w-full sm:w-[95%] min-[1000px]:w-[85%] pb-[5rem] sm:pb-[5rem] space-y-[5%] float-right p-6 text-zinc-600"
+    class="let swipeIn w-full relative sm:w-[95%] min-[1000px]:w-[85%] pb-[5rem] sm:pb-[5rem] space-y-[5%] float-right p-6 text-zinc-600"
   >
-    <p class="text-zinc-900 sm:text-xl text-lg font-semibold collectio">
+    <p class="text-zinc-700 sm:text-xl text-lg font-semibold collectio">
       {{ getcat }}
     </p>
     <div
@@ -15,6 +15,9 @@
           ? 'grids'
           : 'hidden'
       "
+      v-if=" getCurrent.asoebi &&
+        getCurrent.asoebi?.length !== 0 &&
+        getCurrent.asoebi[0].category.stringValue === getcat"
     >
       <div
         class="h-fit md:w-[240px] sm:h-fit"
@@ -29,14 +32,14 @@
               class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
             >
               <img
-                :src="item.image.stringValue"
+                :src="item.images[0].stringValue"
                 alt="new"
                 class="w-full h-full object-cover rounded-t-lg"
               />
             </div>
             <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
               <p
-                class="truncate w-[100vw] text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]"
+                class="truncate w-[100vw] text-zinc-700 font-semibold text-[15px] sm:text-xl sm:pr-[10%]"
               >
                 <span
                   class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]"
@@ -44,7 +47,7 @@
                 >
               </p>
               <p
-                class="truncate w-[98vw] text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden"
+                class="truncate w-[98vw] text-zinc-700 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden"
               >
                 <span
                   class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]"
@@ -59,7 +62,7 @@
                     ? 'hidden'
                     : 'block'
                 "
-                class="text-zinc-900 font-semibold text-sm sm:text-lg text-end"
+                class="text-zinc-700 font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
@@ -94,6 +97,9 @@
           ? 'grids'
           : 'hidden'
       "
+      v-else-if="getCurrent.bridal &&
+        getCurrent.bridal.length !== 0 &&
+        getCurrent.bridal[0].category.stringValue === getcat"
     >
       <div
         class="h-fit md:w-[240px] sm:h-fit"
@@ -109,8 +115,7 @@
             >
               <img
                 :src="
-                  item.image.arrayValue?.values[0].stringValue ||
-                  item.image.stringValue
+                  item.images[0].stringValue
                 "
                 alt="new"
                 class="w-full h-full object-cover rounded-t-lg"
@@ -118,7 +123,7 @@
             </div>
             <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
               <p
-                class="truncate w-[100vw] text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]"
+                class="truncate w-[100vw] text-zinc-700 font-semibold text-[15px] sm:text-xl sm:pr-[10%]"
               >
                 <span
                   class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]"
@@ -126,7 +131,7 @@
                 >
               </p>
               <p
-                class="truncate w-[98vw] text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden"
+                class="truncate w-[98vw] text-zinc-700 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden"
               >
                 <span
                   class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]"
@@ -141,7 +146,7 @@
                     ? 'hidden'
                     : 'block'
                 "
-                class="text-zinc-900 font-semibold text-sm sm:text-lg text-end"
+                class="text-zinc-700 font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
@@ -175,6 +180,9 @@
           ? 'grids'
           : 'hidden'
       "
+      v-else-if="getCurrent.cooperate &&
+        getCurrent.cooperate.length !== 0 &&
+        getCurrent.cooperate[0].category.stringValue === getcat"
     >
       <div
         class="h-fit md:w-[240px] sm:h-fit"
@@ -189,14 +197,14 @@
               class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
             >
               <img
-                :src="item.image.stringValue"
+                :src="item.images[0].stringValue"
                 alt="new"
                 class="w-full h-full object-cover rounded-t-lg"
               />
             </div>
             <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
               <p
-                class="truncate w-[100vw] text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]"
+                class="truncate w-[100vw] text-zinc-700 font-semibold text-[15px] sm:text-xl sm:pr-[10%]"
               >
                 <span
                   class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]"
@@ -204,7 +212,7 @@
                 >
               </p>
               <p
-                class="truncate w-[98vw] text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden"
+                class="truncate w-[98vw] text-zinc-700 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden"
               >
                 <span
                   class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]"
@@ -219,7 +227,7 @@
                     ? 'hidden'
                     : 'block'
                 "
-                class="text-zinc-900 font-semibold text-sm sm:text-lg text-end"
+                class="text-zinc-700 font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
@@ -253,6 +261,9 @@
           ? 'grids'
           : 'hidden'
       "
+      v-else-if="getCurrent.fabrics &&
+        getCurrent.fabrics.length !== 0 &&
+        getCurrent.fabrics[0].category.stringValue === getcat"
     >
       <div
         class="h-fit md:w-[240px] sm:h-fit"
@@ -267,14 +278,14 @@
               class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
             >
               <img
-                :src="item.image.stringValue"
+                :src="item.images[0].stringValue"
                 alt="new"
                 class="w-full h-full object-cover rounded-t-lg"
               />
             </div>
             <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
               <p
-                class="truncate w-[100vw] text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]"
+                class="truncate w-[100vw] text-zinc-700 font-semibold text-[15px] sm:text-xl sm:pr-[10%]"
               >
                 <span
                   class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]"
@@ -282,7 +293,7 @@
                 >
               </p>
               <p
-                class="truncate w-[98vw] text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden"
+                class="truncate w-[98vw] text-zinc-700 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden"
               >
                 <span
                   class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]"
@@ -297,7 +308,7 @@
                     ? 'hidden'
                     : 'block'
                 "
-                class="text-zinc-900 font-semibold text-sm sm:text-lg text-end"
+                class="text-zinc-700 font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
@@ -331,6 +342,9 @@
           ? 'grids'
           : 'hidden'
       "
+      v-else-if=" getCurrent.bespoke &&
+        getCurrent.bespoke.length !== 0 &&
+        getCurrent.bespoke[0].category.stringValue === getcat"
     >
       <div
         class="h-fit md:w-[240px] sm:h-fit"
@@ -345,14 +359,14 @@
               class="w-full h-[160px] md:w-[240px] sm:h-[280px] overflow-hidden rounded-t-lg"
             >
               <img
-                :src="item.image.stringValue"
+                :src="item.images[0].stringValue"
                 alt="new"
                 class="w-full h-full object-cover rounded-t-lg"
               />
             </div>
             <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
               <p
-                class="truncate w-[100vw] text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]"
+                class="truncate w-[100vw] text-zinc-700 font-semibold text-[15px] sm:text-xl sm:pr-[10%]"
               >
                 <span
                   class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]"
@@ -360,7 +374,7 @@
                 >
               </p>
               <p
-                class="truncate w-[98vw] text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden"
+                class="truncate w-[98vw] text-zinc-700 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden"
               >
                 <span
                   class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]"
@@ -375,7 +389,7 @@
                     ? 'hidden'
                     : 'block'
                 "
-                class="text-zinc-900 font-semibold text-sm sm:text-lg text-end"
+                class="text-zinc-700 font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
@@ -409,6 +423,9 @@
           ? 'grids'
           : 'hidden'
       "
+      v-else-if="getCurrent.muslim &&
+        getCurrent.muslim.length !== 0 &&
+        getCurrent.muslim[0].category.stringValue === getcat"
     >
       <div
         class="h-fit md:w-[240px] sm:h-fit"
@@ -424,8 +441,7 @@
             >
               <img
                 :src="
-                  item.image.arrayValue?.values[0].stringValue ||
-                  item.image.stringValue
+                 item.images[0].stringValue
                 "
                 alt="new"
                 class="w-full h-full object-cover rounded-t-lg"
@@ -433,7 +449,7 @@
             </div>
             <div class="sm:space-y-4 space-y-3 p-2 sm:p-6">
               <p
-                class="truncate w-[100vw] text-zinc-900 font-semibold text-[15px] sm:text-xl sm:pr-[10%]"
+                class="truncate w-[100vw] text-zinc-700 font-semibold text-[15px] sm:text-xl sm:pr-[10%]"
               >
                 <span
                   class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]"
@@ -441,7 +457,7 @@
                 >
               </p>
               <p
-                class="truncate w-[98vw] text-zinc-900 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden"
+                class="truncate w-[98vw] text-zinc-700 text-sm sm:text-lg font-thin sm:pr-[10%] flex flex-wrap overflow-hidden"
               >
                 <span
                   class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]"
@@ -456,7 +472,7 @@
                     ? 'hidden'
                     : 'block'
                 "
-                class="text-zinc-900 font-semibold text-sm sm:text-lg text-end"
+                class="text-zinc-700 font-semibold text-sm sm:text-lg text-end"
               >
                 {{ `₦${item.price.stringValue}` }}
               </p>
@@ -481,6 +497,18 @@
         </div>
       </div>
     </div>
+    <div v-else class=" text-sm sm:text-[16px] h-[100vh] justify-center items-center inset-0 flex flex-col absolute space-y-3 m-auto rounded-lg w-fit p-4  sm:rounded-xl">
+       <div class="space-y-2 flex flex-col justify-center items-center h-fit">
+        <div class="sm:h-20 sm:w-20 h-16 w-16">
+            <img class="w-full h-full" src="@/assets/images/emptybox.png" alt="" />
+        </div>
+        
+        <p>No item added</p>
+
+        <router-link to="/admindashboard" class="text-white p-2 text-[16px] text-sm rounded-md bg-zinc-600">Add product</router-link>
+       </div>
+     
+      </div>
   </div>
 </template>
 <!--eslint-disable-->
@@ -538,6 +566,6 @@ export default {
 /* eslint-disable */
 
 .grids {
-  @apply mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-[3rem] lg:gap-[70px] text-zinc-900;
+  @apply mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-[3rem] lg:gap-[70px] text-zinc-700;
 }
 </style>

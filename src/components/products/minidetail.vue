@@ -2,7 +2,7 @@
 <template>
   <div
     @click.self="toggleminiDetails"
-    class="w-full h-full collectio overflow-hidden inset-0 bg-black z-40 bg-opacity-70 fixed"
+    class="w-full h-full collectio overflow-hidden text-zinc-700 inset-0 bg-black z-40 bg-opacity-70 fixed"
   >
     <div
       class="w-[700px] max-[720px]:w-[550px] max-[565px]:w-[320px] h-[610px] sm:h-[80%] overflow-auto sm:overflow-hidden transform transition duration-300 ease-in-out absolute inset-0 m-auto grid grid-cols-1 sm:grid-cols-2 bg-white rounded-lg sm:rounded-xl"
@@ -43,7 +43,10 @@
       <div
         class="sm:p-4 p-3 flex flex-col relative w-full h-full space-y-2 sm:space-y-5"
       >
-        <p class="uppercase font-semibold">{{ cats }}</p>
+      <!--
+          <p class="uppercase font-semibold">{{ cats }}</p>
+      -->
+      
         <p class="font-semibold">{{ name }}</p>
         <div class="space-y-2 max-h-[100px] w-full">
           <p class="font-semibold">Description</p>
@@ -55,10 +58,15 @@
           {{ `Price: ₦${price}` }}
         </p>
         <button
-        @click="explore(image)"
+        @click="chat"
           class="text-white w-full rounded-md flex text-center justify-center p-2 text-sm sm:text-lg bg-zinc-700 outline-none hover:bg-zinc-800"
         >
-          Explore
+        <span v-if="!isSent">Explore</span>
+        <div v-else class="flex justify-center items-center">
+          <div
+            class="rounded-full border-2 animate-spin border-r-0 border-b-0 w-6 h-6 border-slate-50"
+          ></div>
+        </div>
         </button>
       </div>
     </div>
@@ -68,7 +76,8 @@
 <script>
 /* eslint-disable */
 import { assets } from "@/assets/svgimages.js"
-import { mapActions } from "vuex";
+
+import { sendToAdmin } from "../../adminfirebase";
 import _ from 'lodash'
 
 export default {
@@ -88,12 +97,14 @@ export default {
   data() {
     return {
       images: assets,
+      isSent: false,
      
     };
   },
   methods: {
-    ...mapActions(["updateDetails"]),
+    
     prev () {
+      console.log(this.idx)
      
       let slide = this.$refs.slide;
       console.log('from slider',slide.scrollWidth)
@@ -107,19 +118,32 @@ export default {
       console.log(slide.scrollWidth)
       console.log(slide.offsetWidth)
     },
-    explore () {
-        const toStore = {
-            name: this.name,
-            description: this.description,
-            image:this.image,
-             price:this.price,
-            cats:this.cats
-        }
+    async chat() {
+      this.isSent = true;
+      const payload = {
+        name: this.name,
+      description:this.description,
+      image:this.image,
+      price: this.price,
+     category: this.cats,
 
-        this.updateDetails(toStore)
-        this.$router.push("/moredetail")
-        
       }
+      console.log(payload);
+      await sendToAdmin(payload)
+        .then((res) => {
+          console.log(res);
+          console.log(res.id);
+          this.isSent = false;
+          const url =
+            "https://wa.me/2348118617926?text=" + `  `+ `https://kmyfashion.vercel.app/checkout/${res.id}` +  `     `+
+            `I like this ${this.name}`;
+
+          window.open(url, "blank").focus();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
   },
 };
 </script>

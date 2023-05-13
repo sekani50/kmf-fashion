@@ -14,7 +14,10 @@
       :cooperate="cooperate"
       :getcat="getACategory"
     />
+   
+   <div class="w-full inset-x-0 bottom-0 fixed">
     <NameAbout />
+   </div>
   </div>
 </template>
 <!--eslint-disable-->
