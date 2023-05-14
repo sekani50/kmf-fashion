@@ -2,7 +2,7 @@
 <template>
   <div
   
-    class="w-full h-full bg-[#FFF] inset-0 fixed overflow-y-auto overflow-x-hidden"
+    class="w-full h-full  bg-gray-50 inset-0 fixed overflow-y-auto overflow-x-hidden"
   >
     <AdminDashboard />
 

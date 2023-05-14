@@ -14,7 +14,7 @@
               class="w-full h-full object-cover rounded-t-lg"
             />
           </div>
-          <div class="sm:space-y-4 space-y-3 w-full p-2 sm:p-6">
+          <div class="sm:space-y-4 space-y-3 w-full bg-white p-2 sm:p-6">
             <p class="truncate  w-[100vw] text-zinc-700 font-semibold text-[15px] sm:text-xl sm:pr-[10%]">
               <span class="text-ellipsis whitespace-nowrap overflow-hidden w-[200px]">{{ name }}</span>
             </p>

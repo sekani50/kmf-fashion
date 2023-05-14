@@ -191,6 +191,8 @@ export const getCategory = async (
     collection(db, "productDetails"),
     where("category", "==", "Unisex Bespoke")
   );
+
+  console.log("from env file", process.env.VUE_APP_MESSAGING_ID)
   await getDocs(queryUnisex).then((res) => {
     console.log(res.docs);
     res.docs.forEach((doc) => {

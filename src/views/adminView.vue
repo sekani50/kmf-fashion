@@ -1,7 +1,7 @@
 <!-- eslint-disable -->
 <template>
   <div
-    class="w-full h-full bg-[#FFF] inset-0 sm:pb-56 fixed overflow-y-auto overflow-x-hidden"
+    class="w-full h-full  bg-gray-50 inset-0 sm:pb-56 fixed overflow-y-auto overflow-x-hidden"
   >
     <HeaderSect />
     <div class="w-full h-full">
