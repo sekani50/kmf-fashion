@@ -1,4 +1,4 @@
-# KMF fashion avenue | Contract
+# KMF fashion avenue | Contract | ✅ ✅
 
 ## Project setup
 ```
