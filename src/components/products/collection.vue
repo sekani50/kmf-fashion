@@ -48,7 +48,7 @@
             )
           "
         >
-        <!--
+          <!--
 
           "Unisex Bespoke",
         "Bridal wears",
@@ -370,9 +370,7 @@ export default {
       idx: "",
     };
   },
-  computed: {
-    
-  },
+  computed: {},
   methods: {
     ...mapActions(["updateCategory"]),
     showMiniDetail(id, name, desc, img, price, cat) {
@@ -395,7 +393,12 @@ export default {
     showMore(cat) {
       this.$router.push("/product");
       this.updateCategory(cat);
-      
+    },
+    sendMessage(text) {
+      const url =
+        "https://wa.me/2348118617926?text=" + text;
+
+      window.open(url, "blank").focus();
     },
   },
 };
