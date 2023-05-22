@@ -135,14 +135,14 @@ export default {
           console.log(res.id);
           this.isSent = false;
           const url =
-            "https://wa.me/2348118617926?text=" + `  `+ `https://kmyfashion.vercel.app/checkout/${res.id}` + `      
+            "https://wa.me/2348118617926?text=" 
+
+
+            + `https://kmyfashion.vercel.app/checkout/${res.id}` + "%0a"      
             
+          
             
-            
-              
-            
-            `    +
-            `I like this ${this.name}`;
+           +`I like this ${this.name}`;
 
           window.open(url, "blank").focus();
         })

@@ -192,7 +192,7 @@ export const getCategory = async (
     where("category", "==", "Unisex Bespoke")
   );
 
-  console.log("from env file", process.env.VUE_APP_MESSAGING_ID)
+  //console.log("from env file", process.env.VUE_APP_MESSAGING_ID)
   await getDocs(queryUnisex).then((res) => {
     console.log(res.docs);
     res.docs.forEach((doc) => {
@@ -382,7 +382,7 @@ export const deleteFromCat = async (id) => {
   return result;
 };
 
-///update existing doc
+///get existing doc
 export const getExistingDoc = async (id, collection) => {
   const docRef = doc(db, collection, id);
   let result;
